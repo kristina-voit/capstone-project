@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import "./Todo.css";
 
-function Todo({ todo, remove, update, toggleComplete }) {
+function Todo({ todo, remove, update }) {
   const [isEditing, setIsEditing] = useState(false);
   const [task, setTask] = useState(todo.task);
 
@@ -21,9 +21,7 @@ function Todo({ todo, remove, update, toggleComplete }) {
   const handleChange = evt => {
     setTask(evt.target.value);
   };
-  const toggleCompleted = evt => {
-    toggleComplete(evt.target.id);
-  };
+
 
   let result;
   if (isEditing) {
@@ -40,8 +38,7 @@ function Todo({ todo, remove, update, toggleComplete }) {
       <div className="Todo">
         <li
           id={todo.id}
-          onClick={toggleCompleted}
-          className={todo.completed ? "Todo-task completed" : "Todo-task"}
+  
         >
           {todo.task}
         </li>

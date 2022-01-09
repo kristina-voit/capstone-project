@@ -8,8 +8,10 @@ import "./TodoList.css";
 
 function TodoList() {
   const [todos, setTodos] = useState([
-    { id: uuidv4(), task: "task 1", completed: false },
-    { id: uuidv4(), task: "task 2", completed: true }
+    { id: uuidv4(), task: "Überweisung Augenarzt"
+  },
+    { id: uuidv4(), task: "OP-Bericht anfragen "
+  }
   ]);
 
   const create = newTodo => {
@@ -21,29 +23,20 @@ function TodoList() {
     setTodos(todos.filter(todo => todo.id !== id));
   };
 
-  const update = (id, updtedTask) => {
+  const update = (id, updatedTask) => {
     const updatedTodos = todos.map(todo => {
       if (todo.id === id) {
-        return { ...todo, task: updtedTask };
+        return { ...todo, task: updatedTask };
       }
       return todo;
     });
     setTodos(updatedTodos);
   };
 
-  const toggleComplete = id => {
-    const updatedTodos = todos.map(todo => {
-      if (todo.id === id) {
-        return { ...todo, completed: !todo.completed };
-      }
-      return todo;
-    });
-    setTodos(updatedTodos);
-  };
+
 
   const todosList = todos.map(todo => (
     <Todo
-      toggleComplete={toggleComplete}
       update={update}
       remove={remove}
       key={todo.id}

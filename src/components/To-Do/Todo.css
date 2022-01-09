@@ -12,28 +12,6 @@
   transition: opacity 0.4s linear;
 }
 
-.Todo-task.completed {
-  opacity: 0.6;
-}
-
-.Todo-task.completed:before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: -0.5rem;
-  display: block;
-  width: 0%;
-  height: 2px;
-  background: #fff;
-  animation: strikeitem 0.5s ease-out 0s forwards;
-}
-
-@keyframes strikeitem {
-  to {
-    width: calc(100% + 1rem);
-  }
-}
-
 .Todo-buttons {
   flex-shrink: 0;
   padding-left: 0.7em;
@@ -73,7 +51,6 @@
   border: none;
   background: #509b9b;
   color: #4b417a;
-  text-transform: uppercase;
   font-weight: bold;
   border: 1px solid rgba(255, 255, 255, 0.3);
   margin-left: 5px;

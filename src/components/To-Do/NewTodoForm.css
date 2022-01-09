@@ -1,5 +1,5 @@
 .NewTodoForm {
-  margin-top: 3rem;
+  margin: auto;
   display: flex;
   flex-wrap: wrap;
 }
@@ -23,12 +23,11 @@
   border: none;
   background: #509b9b;
   color: #4b417a;
-  text-transform: uppercase;
   font-weight: bold;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+
+  border-radius: 15px;
   margin-left: 5px;
   cursor: pointer;
-  transform: background 0.2s ease-out;
 }
 
 .NewTodoForm button:hover {
@@ -38,5 +37,5 @@
 .NewTodoForm input,
 .NewTodoForm button {
   font-family: "Quicksand", sans-serif;
-  height: 3rem;
+  height: 2rem;
 }

@@ -18,24 +18,24 @@ function NewTodoForm({ task, createTodo }) {
 
   const handleSubmit = evt => {
     evt.preventDefault();
-    const newTodo = { id: uuidv4(), task: userInput.task, completed: false };
+    const newTodo = { id: uuidv4(), task: userInput.task,
+    };
     createTodo(newTodo);
     setUserInput({ task: "" });
   };
 
   return (
     <form className="NewTodoForm" onSubmit={handleSubmit}>
-      <label htmlFor="task">To-Do hinzufügen</label>
+      <label htmlFor="task"></label>
       <input
         value={userInput.task}
         onChange={handleChange}
         id="task"
         type="text"
         name="task"
-        placeholder="Text eingeben"
+        placeholder="To-Do hier eingeben..."
       />
       <button>Hinzufügen</button>
-      <button>Reset</button>
     </form>
   );
 }

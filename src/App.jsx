@@ -8,6 +8,8 @@ import Medikamente from "./pages/medikamente.jsx"
 import Termine from "./pages/termine.jsx"
 import Footer from './components/Footer/Footer.jsx'
 import Header from './components/Header/Header.jsx'
+import TodoList from './components/To-Do/TodoList.jsx'
+
 
 function App() {
   
@@ -25,6 +27,10 @@ function App() {
         <Route path="termine" element={<Termine />} />
       </Routes>
    
+
+      <TodoList />
+
+
       <Footer/>
 
     </div>

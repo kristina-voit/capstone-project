@@ -4,13 +4,14 @@ import './index.css'
 import App from './App'
 import { StrictMode } from "react";
 import { BrowserRouter } from "react-router-dom";
+import GlobalStyle from "./GlobalStyles"
 
-const rootElement = document.getElementById("root");
 ReactDOM.render(
-  <StrictMode>
+  <React.StrictMode>
+    <GlobalStyle />
     <BrowserRouter>
       <App />
     </BrowserRouter>
-  </StrictMode>,
-  rootElement
+  </React.StrictMode>,
+  document.getElementById("root")
 );

@@ -33,7 +33,9 @@ function NewTodoForm({ task, createTodo }) {
         name="task"
         placeholder="To-Do hier eingeben..."
       />
+
       <NewTodoFormButton>Hinzufügen</NewTodoFormButton>
+   
     </NewTodoFormStyle>
   );
 }

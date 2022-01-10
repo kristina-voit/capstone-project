@@ -10,10 +10,10 @@ function Footer () {
 
   return (
 <NavbarStyled>
-    <NavLink to="/"><img className="home" src={HomeIcon}/><p>Home</p></NavLink>
-      <NavLink to="symptome"><img className="symptome" src={SymptomeIcon}/><p>Symptome</p></NavLink>
-      <NavLink to="medikamente"><img className="medikamente" src={MedikamenteIcon}/><p>Medikamente</p></NavLink>
-      <NavLink to="termine"><img className="termine" src={TermineIcon}/><p>Termine</p></NavLink>
+    <NavLink to="/"><img className="home" src={HomeIcon}/></NavLink>
+      <NavLink to="symptome"><img className="symptome" src={SymptomeIcon}/></NavLink>
+      <NavLink to="medikamente"><img className="medikamente" src={MedikamenteIcon}/></NavLink>
+      <NavLink to="termine"><img className="termine" src={TermineIcon}/></NavLink>
       </NavbarStyled>
   )
 }

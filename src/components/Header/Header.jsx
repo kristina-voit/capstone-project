@@ -1,6 +1,6 @@
 import React from "react";
 import logo from '../../images/statusbar.svg';
-//import styled from 'styled-components'
+import styled from 'styled-components'
 
 function Header() {
   const current = new Date();
@@ -25,16 +25,14 @@ function Header() {
       <h1>
         {day}, {date}
       </h1>
-      <p>Kristina, wie geht es Dir heute?</p>
+      <Greeting><p>Kristina, wie geht es Dir heute?</p>
+      </Greeting>
     </header>
   );
 }
 
 export default Header;
 
-/*const NavbarStyled = styled.footer`
-  width: 100vw;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  transform: translateY(0);
-  `*/
+const Greeting = styled.div`
+//for further styling
+`

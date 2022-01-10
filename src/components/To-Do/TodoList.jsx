@@ -59,7 +59,6 @@ export default TodoList;
 const TodoListStyle = styled.div`
   text-align: left;
   padding: 1rem 1rem 1rem;
-  max-width: 500px;
   background: #f5f9f9;
   color: #509b9b;
   border-style: solid;

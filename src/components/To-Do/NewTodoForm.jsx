@@ -2,7 +2,7 @@ import styled from "styled-components";
 import React, { useState, useReducer } from "react";
 import ReactDOM from "react-dom";
 import { v4 as uuidv4 } from 'uuid'
-import "./newTodoForm.css";
+import "./NewTodoForm.css";
 
 function NewTodoForm({ task, createTodo }) {
   const [userInput, setUserInput] = useReducer(

@@ -4,7 +4,6 @@ import ReactDOM from "react-dom";
 import Todo from "./Todo";
 import NewTodoForm from "./NewTodoForm";
 import { v4 as uuidv4 } from 'uuid';
-import "./TodoList.css";
 
 function TodoList() {
   const [todos, setTodos] = useState([
@@ -45,14 +44,31 @@ function TodoList() {
   ));
 
   return (
-    <div className="TodoList">
+    <TodoListStyle className="TodoList">
       <h1>
         To-Do's
       </h1>
-      <ul>{todosList}</ul>
+      <TodoListUl>{todosList}</TodoListUl>
       <NewTodoForm createTodo={create} />
-    </div>
+    </TodoListStyle>
   );
 }
 
 export default TodoList;
+
+const TodoListStyle = styled.div`
+  text-align: left;
+  padding: 1rem 1rem 1rem;
+  max-width: 500px;
+  background: #f5f9f9;
+  color: #509b9b;
+  border-style: solid;
+  border-radius: 25px;
+  border-color: white;
+  margin: 1rem;
+`
+  
+const TodoListUl = styled. div`
+margin-top: 1rem;
+  color: #4b417a;
+  `

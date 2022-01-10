@@ -10,7 +10,7 @@ function Footer () {
 
   return (
 <NavbarStyled>
-    <NavLink to="/"><img className="home" src={HomeIcon}/></NavLink>
+    <NavLink to="home"><img className="home" src={HomeIcon}/></NavLink>
       <NavLink to="symptome"><img className="symptome" src={SymptomeIcon}/></NavLink>
       <NavLink to="medikamente"><img className="medikamente" src={MedikamenteIcon}/></NavLink>
       <NavLink to="termine"><img className="termine" src={TermineIcon}/></NavLink>

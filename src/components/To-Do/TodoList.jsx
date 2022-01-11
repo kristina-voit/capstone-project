@@ -61,9 +61,8 @@ const TodoListStyle = styled.div`
   padding: 1rem 1rem 1rem;
   background: #f5f9f9;
   color: #509b9b;
-  border-style: solid;
+  border-style: none;
   border-radius: 25px;
-  border-color: white;
   margin: 1rem;
 `
   

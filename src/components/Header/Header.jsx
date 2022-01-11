@@ -21,7 +21,6 @@ function Header() {
 
   return (
     <header className="App-header">
-      <img src={logo} className="Statusbar" alt="logo" />
       <h1>
         {day}, {date}
       </h1>
@@ -36,3 +35,5 @@ export default Header;
 const Greeting = styled.div`
 //for further styling
 `
+
+{/*<img src={logo} className="Statusbar" alt="logo" />*/}

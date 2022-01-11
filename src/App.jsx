@@ -5,7 +5,7 @@ import Symptome from "./pages/symptome.jsx"
 import Medikamente from "./pages/medikamente.jsx"
 import Termine from "./pages/termine.jsx"
 import Footer from './components/Footer/Footer.jsx'
-import Header from './components/Header/Header.jsx'
+
 
 
 
@@ -15,7 +15,7 @@ function App() {
 
     <div className="App">
       
-      <Header/>
+     {/* <Header/>*/}
 
       <Routes>
         <Route path="/" element={<Home />} />

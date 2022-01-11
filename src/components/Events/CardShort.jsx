@@ -11,18 +11,6 @@ function CardContent(props) {
       <StyleDescription className="styleDescription">
         {props.fachrichtung}
       </StyleDescription>
-      <StyleDescription className="styleDescription">
-        {props.adresse}
-      </StyleDescription>
-      <StyleDescription className="styleDescription">
-        {props.telefon}
-      </StyleDescription>
-      <StyleDescription className="styleDescription">
-        {props.email}
-      </StyleDescription>
-      <StyleDescription className="styleDescription">
-        {props.website}
-      </StyleDescription>
     </StyleCardContent>
   );
 }
@@ -36,10 +24,6 @@ export default class Card extends React.Component {
             name={this.props.name}
             datum={this.props.datum}
             fachrichtung={this.props.fachrichtung}
-            adresse={this.props.adresse}
-            telefon={this.props.telefon}
-            email={this.props.email}
-            website={this.props.website}
           />
         </StyleCard>
       </div>

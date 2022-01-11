@@ -55,8 +55,6 @@ export default Todo;
 
 const TodoStyle = styled.div`
   display: flex;
-  margin: 0 -3rem 4px;
-  padding: 0.25rem 3rem;
   justify-content: space-between;
   align-items: center;
   background: rgba(255, 255, 255, 0.1);

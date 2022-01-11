@@ -57,7 +57,7 @@ export default class Card extends React.Component {
 }
 
 const StyleCardContent = styled.div`
-  padding: 4px 16px 20px 16px;
+  padding: 4px 4px 4px 4px;
   text-align: left;
   margin: 1rem;
 `;

@@ -25,7 +25,6 @@ function App() {
         <Route path="termine" element={<Termine />} />
       </Routes>
   
-
       <Footer/>
 
     </div>

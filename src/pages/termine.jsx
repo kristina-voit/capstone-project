@@ -1,12 +1,14 @@
 import React from 'react';
+import EventsList from "../components/Events/EventsList"
+import { eventsData } from "../components/Events/appointmentdata"
+
 const Termine = () =>{
   return (
-    <div>
-     <h1>Termine</h1>
+    
       <div>
-   
+        <EventsList data={eventsData} />
       </div>
-    </div>
+   
   );
 }
 export default Termine;

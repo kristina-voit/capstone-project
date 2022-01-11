@@ -24,5 +24,7 @@ const NavbarStyled = styled.footer`
   width: 100vw;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+  position: absolute;
+  bottom: 0;
   `
 

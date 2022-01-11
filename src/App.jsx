@@ -1,45 +1,35 @@
-import { useState } from 'react'
-import logo from './logo.svg'
 import './App.css'
+import { Route, Routes } from "react-router-dom";
+import Home from "./pages/home.jsx"
+import Symptome from "./pages/symptome.jsx"
+import Medikamente from "./pages/medikamente.jsx"
+import Termine from "./pages/termine.jsx"
+import Footer from './components/Footer/Footer.jsx'
+import Header from './components/Header/Header.jsx'
+
+
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  
   return (
+
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Welcome to VitaMed!</p>
-        <p>
-          <button type="button" onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
-        <p>
-          Edit <code>App.jsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {' | '}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-        </p>
-      </header>
+      
+      <Header/>
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="home" element={<Home />} />
+        <Route path="symptome" element={<Symptome />} />
+        <Route path="medikamente" element={<Medikamente />} />
+        <Route path="termine" element={<Termine />} />
+      </Routes>
+  
+
+      <Footer/>
+
     </div>
+
   )
 }
-
 export default App

@@ -9,6 +9,8 @@ const Home = () =>{
   return (
     <TodoListBlock>
     <Header/>
+    <Greeting><p>Kristina, wie geht es Dir heute?</p>
+      </Greeting>
     <div>
     <EventsListShort data={eventsData} />
       </div>
@@ -22,4 +24,8 @@ export default Home;
 
 const TodoListBlock = styled.div`
   text-align: center;
+`
+
+const Greeting = styled.div`
+//for further styling
 `

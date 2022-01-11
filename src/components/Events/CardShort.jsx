@@ -21,8 +21,8 @@ export default class Card extends React.Component {
       <div style={{ width: this.props.width + "px" }}>
         <StyleCard className="styleCard" id={this.props.id}>
           <CardContent
-            name={this.props.name}
             datum={this.props.datum}
+            name={this.props.name}
             fachrichtung={this.props.fachrichtung}
           />
         </StyleCard>
@@ -43,7 +43,7 @@ const StyleCardTitle = styled.p`
 `;
 
 const StyleCard = styled.div`
-  border-radius: 8px;
+  border-radius: 15px;
   box-shadow: 0px 0px 8px #ccc;
   background: #FFF4F4;
   color: #253b56;

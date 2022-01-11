@@ -14,19 +14,9 @@ export let eventsData = [
     name: "Dr. Martin Butz",
     datum: "19.03.2021,   Uhr",
     fachrichtung: "Zahnarzt",
-    adresse: "Theatinerstrasse 15,80333 München",
+    adresse: "Theatinerstrasse 15, 80333 München",
     telefon: "089980889",
     email: "info@zahnarzt-fuenfhoefe.de",
     website: "https://www.zahnarzt-fuenfhoefe.de",
-  },
-  {
-    id: 2,
-    name: "Dr. Martin Butz",
-    datum: "19.03.2021,   Uhr",
-    fachrichtung: "Zahnarzt",
-    adresse: "Theatinerstrasse 15,80333 München",
-    telefon: "089980889",
-    email: "info@zahnarzt-fuenfhoefe.de",
-    website: "https://www.zahnarzt-fuenfhoefe.de",
-  },
+  }
 ];

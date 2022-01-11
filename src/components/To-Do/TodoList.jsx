@@ -48,8 +48,11 @@ function TodoList() {
       <h1>
         To-Do's
       </h1>
+      <ul>
       <TodoListUl>{todosList}</TodoListUl>
+      </ul>
       <NewTodoForm createTodo={create} />
+     
     </TodoListStyle>
   );
 }

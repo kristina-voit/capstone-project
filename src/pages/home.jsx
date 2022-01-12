@@ -1,13 +1,21 @@
 import React from 'react';
 import TodoList from '../components/To-Do/TodoList.jsx'
 import styled from 'styled-components';
+import Header from '../components/Header/Header.jsx'
+import EventsListShort from "../components/Events/EventsListShort"
+import { eventsData } from "../components/Events/appointmentdata"
 
 const Home = () =>{
   return (
     <TodoListBlock>
-      <h3>Home</h3>
+    <Header/>
+    <Greeting><p>Kristina, wie geht es Dir heute?</p>
+      </Greeting>
+    <div>
+    <EventsListShort data={eventsData} />
+      </div>
       <div>
-      <TodoList />
+        <TodoList />
       </div>
     </TodoListBlock>
   );
@@ -16,4 +24,8 @@ export default Home;
 
 const TodoListBlock = styled.div`
   text-align: center;
+`
+
+const Greeting = styled.div`
+//for further styling
 `

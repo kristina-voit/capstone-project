@@ -1,1 +1,0 @@
-import { termine, medikamente} from '../../lib/data'

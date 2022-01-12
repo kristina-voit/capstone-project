@@ -2,6 +2,7 @@ const termine = [
     {
       id: 1,
       name: "Dermazentrum München",
+      datum: "15.03.2021, 16:30 Uhr",
       fachrichtung: "Dermatologie",
       adresse: [
         { strasse: "Albert-Roßhaupter-Strasse", hausnummer: "32", plz: "81369", ort: "München" },
@@ -27,8 +28,6 @@ const termine = [
       website: "https://www.zahnarzt-fuenfhoefe.de",
     }
 ];
-
-
   
   const medikamente = [
     {
@@ -55,4 +54,4 @@ const termine = [
     },
   ];*/
   
-  export { termine, medikamente };
+  export default { termine, medikamente };

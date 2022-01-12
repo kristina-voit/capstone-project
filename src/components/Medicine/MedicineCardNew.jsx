@@ -77,7 +77,8 @@ const Form = () => {
       />
     </form>
     <div>
-      <HinzufügenButton type="submit">Hinzufügen</HinzufügenButton>
+      <NewMedicineButton type="submit">Hinzufügen</NewMedicineButton>
+      <NewMedicineButton type="submit">Abbrechen</NewMedicineButton>
     </div>
     </StyleCard>
     </div>
@@ -88,7 +89,7 @@ export default Form;
 
 
 
-const HinzufügenButton = styled.button`
+const NewMedicineButton = styled.button`
   padding: 0 1.3rem;
   border: none;
   background: #509b9b;

@@ -21,10 +21,12 @@ function Footer () {
 export default Footer;
 
 const NavbarStyled = styled.footer`
+background: #d7d4e3; 
   width: 100vw;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  position: relative;
+  position: sticky;
   bottom: 0;
+padding: 0.25em;
   `
 

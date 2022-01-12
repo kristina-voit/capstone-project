@@ -1,71 +1,124 @@
 import styled from "styled-components";
-import React, { useState } from "react";
-import ReactDOM from "react-dom";
-import Todo from "./MedicineNew";
-import MedicineNewForm from "./MedicineNewForm/"
 import { v4 as uuidv4 } from 'uuid';
+import React, { useState } from "react";
 
+const Form = () => {
+  const [formData, setFormData] = useState({
+    nameAndDose: "",
+    einnahmehinweis: "",
+    einnahmeMorgens: "",
+    einnahmeMittags: "",
+    einnahmeAbends: "",
+    einnahmeNachts: ""
 
-function TodoList() {
-  const [todos, setTodos] = useState([
-    { id: uuidv4(), task: "Überweisung Augenarzt"
-  }
-  ]);
+  });
 
-  const create = newTodo => {
-    console.log(newTodo);
-    setTodos([...todos, newTodo]);
-  };
-
-  const remove = id => {
-    setTodos(todos.filter(todo => todo.id !== id));
-  };
-
-  const update = (id, updatedTask) => {
-    const updatedTodos = todos.map(todo => {
-      if (todo.id === id) {
-        return { ...todo, task: updatedTask };
-      }
-      return todo;
+  const updateFormData = event =>
+    setFormData({
+      ...formData,
+      [event.target.name]: event.target.value
     });
-    setTodos(updatedTodos);
-  };
 
+  const { nameAndDose, einnahmehinweis, einnahmeMorgens, einnahmeMittags, einnahmeAbends, einnahmeNachts } = formData;
 
-
-  const todosList = todos.map(todo => (
-    <Todo
-      update={update}
-      remove={remove}
-      key={todo.id}
-      todo={todo}
-    />
-  ));
 
   return (
-    <TodoListStyle className="TodoList">
-      <ul>
-      <TodoListUl>{todosList}</TodoListUl>
-      </ul>
-      <MedicineNewForm createTodo={create} />
-     
-    </TodoListStyle>
+    <div>
+      <StyleCard>
+        <p>Bitte folgende Felder ausfüllen:</p>
+    <form>
+      <Inputfield
+        value={nameAndDose}
+        onChange={e => updateFormData(e)}
+        placeholder="Name und Dosierung"
+        type="text"
+        name="nameAndDose"
+        required
+      />
+      <Inputfield
+        value={einnahmehinweis}
+        onChange={e => updateFormData(e)}
+        placeholder="Einnahmehinweis"
+        type="text"
+        name="einnahmehinweis"
+        required
+      />
+      <Inputfield
+        value={einnahmeMorgens}
+        onChange={e => updateFormData(e)}
+        placeholder="Einnahme Morgens"
+        type="text"
+        name="einnahmeMorgens"
+        required
+      />
+      <Inputfield
+        value={einnahmeMittags}
+        onChange={e => updateFormData(e)}
+        placeholder="Einnahme Mittags"
+        type="text"
+        name="text"
+        required
+      />
+<Inputfield
+        value={einnahmeAbends}
+        onChange={e => updateFormData(e)}
+        placeholder="Einnahme Abends"
+        type="text"
+        name="einnahmeAbends"
+        required
+      />
+      <Inputfield
+        value={einnahmeNachts}
+        onChange={e => updateFormData(e)}
+        placeholder="Einnahme Nachts"
+        type="text"
+        name="Einnahme Nachts"
+        required
+      />
+    </form>
+    <div>
+      <HinzufügenButton type="submit">Hinzufügen</HinzufügenButton>
+    </div>
+    </StyleCard>
+    </div>
   );
-}
+};
 
-export default TodoList;
+export default Form;
 
-const TodoListStyle = styled.div`
-  text-align: left;
-  padding: 1rem 1rem 1rem;
-  background: #f5f9f9;
-  color: #509b9b;
-  border-style: none;
-  border-radius: 25px;
-  margin: 1rem;
-`
-  
-const TodoListUl = styled. div`
-margin-top: 1rem;
+
+
+const HinzufügenButton = styled.button`
+  padding: 0 1.3rem;
+  border: none;
+  background: #509b9b;
   color: #4b417a;
-  `
+  font-weight: bold;
+  border-radius: 15px;
+  margin-left: 5px;
+  margin-top: 1rem;
+  cursor: pointer;
+  font-family: "Montserrat", sans-serif;
+  height: 2rem;
+`;
+
+const Inputfield = styled.input`
+ flex-grow: 1;
+  border: none;
+  background: #f7f1f1;
+  padding: 0 1.5em;
+  margin: 0.5em;
+  font-size: initial;
+  font-family: "Montserrat", sans-serif;
+  height: 2rem;
+`
+
+const StyleCard = styled.div`
+  border-radius: 15px;
+  box-shadow: 0px 0px 8px #ccc;
+  background: #F6F5FB;
+  color: #4b417a;
+  margin: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+`;

@@ -40,15 +40,26 @@ export default class Card extends React.Component {
             datum={this.props.datum}
             fachrichtung={this.props.fachrichtung}
             adresse={this.props.adresse}
-            telefon={this.props.telefon}
-            email={this.props.email}
-            website={this.props.website}
           />
           <Icons>
          
-<a href="https://github.com"><SingleIcon src={WebsiteIcon} className="Homepage" alt="Homepage" /></a>
-<SingleIcon src={CallIcon} className="Call" alt="Call" />
-<a href="mailto:email@example.com?subject=Anfrage von Kristina Voit, *13.01.1989"><SingleIcon src={EmailIcon} className="Email" alt="Email" /></a>
+<a target="_blank" href={this.props.website}><SingleIcon src={WebsiteIcon} className="Homepage" alt="Homepage" /></a>
+<a href={`mailto:{this.props.email}`}><SingleIcon src={EmailIcon} className="Email" alt="Email" /></a>
+
+
+
+
+
+
+<a href={this.props.telefon}><SingleIcon src={CallIcon} className="Call" alt="Call" /></a>
+{/*<a href="089-123456"><SingleIcon src={CallIcon} className="Call" alt="Call" /></a>*/}
+<a href="tel:555-666-7777">555-666-7777</a>
+
+
+
+
+
+
           </Icons>
         </StyleCard>
       </div>

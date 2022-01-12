@@ -6,6 +6,7 @@ export default function MedicineList(props) {
     <Card
       id={event.id}
       name={event.name}
+      einnahmehinweis={event.einnahmehinweis}
       einnahmeMorgens={event.einnahmeMorgens}
       einnahmeMittags={event.einnahmeMittags}
       einnahmeAbends={event.einnahmeAbends}

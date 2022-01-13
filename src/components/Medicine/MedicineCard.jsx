@@ -8,28 +8,28 @@ import Night from "../../images/night.svg";
 function CardContent(props) {
   return (
     <div>
-      <StyleCardTitle className="styleCardTitle">{props.name}</StyleCardTitle>
-      <StyleCardTitle className="styleCardTitle">
+      <CardTitle>{props.name}</CardTitle>
+      <CardTitle>
         {props.einnahmehinweis}
-      </StyleCardTitle>
-      <StyleCardContent className="styleCardContent">
-        <StyleDescription className="styleDescription">
+      </CardTitle>
+      <FullCardContent>
+        <StyleDescription>
           {props.einnahmeMorgens}
         </StyleDescription>
-        <StyleDescription className="styleDescription">
+        <StyleDescription>
           {props.einnahmeMittags}
         </StyleDescription>
-        <StyleDescription className="styleDescription">
+        <StyleDescription>
           {props.einnahmeAbends}
         </StyleDescription>
-        <StyleDescription className="styleDescription">
+        <StyleDescription>
           {props.einnahmeNachts}
         </StyleDescription>
-        <IconStyling src={Morning} className="Morning" alt="Morning" />
-        <IconStyling src={Noon} className="Noon" alt="Noon" />
-        <IconStyling src={Evening} className="Evening" alt="Evening" />
-        <IconStyling src={Night} className="Night" alt="Night" />
-      </StyleCardContent>
+        <IconStyling src={Morning} alt="Morning" />
+        <IconStyling src={Noon} alt="Noon" />
+        <IconStyling src={Evening} alt="Evening" />
+        <IconStyling src={Night} alt="Night" />
+      </FullCardContent>
     </div>
   );
 }
@@ -39,7 +39,7 @@ export default class Card extends React.Component {
     return (
       <div>
         <div>
-          <StyleCard className="styleCard" id={this.props.id}>
+          <SingleCard id={this.props.id}>
             <h4>{this.props.name}</h4>
             <p>{this.props.einnahmehinweis}</p>
             <CardContent
@@ -48,14 +48,14 @@ export default class Card extends React.Component {
               einnahmeAbends={this.props.einnahmeAbends}
               einnahmeNachts={this.props.einnahmeNachts}
             />
-          </StyleCard>
+          </SingleCard>
         </div>
       </div>
     );
   }
 }
 
-const StyleCardContent = styled.div`
+const FullCardContent = styled.div`
   padding: 0px 0px 4px 0px;
   margin: 1rem;
   display: grid;
@@ -64,12 +64,12 @@ const StyleCardContent = styled.div`
   justify-items: center;
 `;
 
-const StyleCardTitle = styled.p`
+const CardTitle = styled.p`
   font-size: 8px;
   color: #4b417a;
 `;
 
-const StyleCard = styled.div`
+const SingleCard = styled.div`
   border-radius: 15px;
   box-shadow: 0px 0px 8px #ccc;
   background: #f6f5fb;

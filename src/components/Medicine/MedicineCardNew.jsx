@@ -29,7 +29,7 @@ const Form = () => {
 
   return (
     <div>
-      <StyleCard>
+      <Card>
         <p>Bitte folgende Felder ausfüllen:</p>
         <form>
           <Inputfield
@@ -85,7 +85,7 @@ const Form = () => {
           <NewMedicineButton type="submit">Hinzufügen</NewMedicineButton>
           <NewMedicineButton type="submit">Abbrechen</NewMedicineButton>
         </div>
-      </StyleCard>
+      </Card>
     </div>
   );
 };
@@ -117,7 +117,7 @@ const Inputfield = styled.input`
   height: 2rem;
 `;
 
-const StyleCard = styled.div`
+const Card = styled.div`
   border-radius: 15px;
   box-shadow: 0px 0px 8px #ccc;
   background: #f6f5fb;

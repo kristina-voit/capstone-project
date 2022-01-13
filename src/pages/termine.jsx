@@ -23,9 +23,6 @@ const Termine = () => {
 };
 export default Termine;
 
-{
-  /*<img src={logo} className="Statusbar" alt="logo" />*/
-}
 
 const ButtonStyle = styled.button`
   background: #f5f9f9;

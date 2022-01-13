@@ -24,7 +24,7 @@ function NewTodoForm({ task, createTodo }) {
   };
 
   return (
-    <NewTodoFormStyle className="NewTodoForm" onSubmit={handleSubmit}>
+    <NewTodoFormStyle onSubmit={handleSubmit}>
       <label htmlFor="task"></label>
       <NewTodoFormInput
         value={userInput.task}

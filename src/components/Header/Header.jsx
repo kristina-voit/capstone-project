@@ -19,7 +19,7 @@ function Header() {
   let day = weekday[current.getDay()];
 
   return (
-    <header className="App-header">
+    <header>
       <h1>
         {day}, {date}
       </h1>
@@ -28,7 +28,3 @@ function Header() {
 }
 
 export default Header;
-
-{
-  /*<img src={logo} className="Statusbar" alt="logo" />*/
-}

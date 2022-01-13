@@ -26,8 +26,8 @@ function Todo({ todo, remove, update }) {
   let result;
   if (isEditing) {
     result = (
-      <TodoStyle className="Todo">
-        <TodoEditForm className="TodoEditForm" onSubmit={handleUpdate}>
+      <TodoStyle>
+        <TodoEditForm onSubmit={handleUpdate}>
           <TodoEditFormInput onChange={handleChange} value={task} type="text" />
           <TodoEditFormButton>Speichern</TodoEditFormButton>
         </TodoEditForm>
@@ -35,14 +35,14 @@ function Todo({ todo, remove, update }) {
     );
   } else {
     result = (
-      <TodoStyle className="TodoStyle">
+      <TodoStyle>
         <li id={todo.id}>{todo.task}</li>
-        <div className="TodoButton">
+        <div>
           <TodoButton onClick={toggleFrom}>
-            <img className="EditIcon" src={EditIcon} />
+            <img src={EditIcon} />
           </TodoButton>
           <TodoButton onClick={handleClick}>
-            <img id={todo.id} className="DeleteIcon" src={DeleteIcon} />
+            <img id={todo.id} src={DeleteIcon} />
           </TodoButton>
         </div>
       </TodoStyle>

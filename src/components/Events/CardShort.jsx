@@ -3,15 +3,15 @@ import styled from "styled-components";
 
 function CardContent(props) {
   return (
-    <StyleCardContent className="styleCardContent">
-      <StyleDescription className="styleDescription">
+    <FullCardContent>
+      <Description>
         {props.datum}
-      </StyleDescription>
-      <StyleCardTitle className="styleCardTitle">{props.name}</StyleCardTitle>
-      <StyleDescription className="styleDescription">
+      </Description>
+      <CardTitle>{props.name}</CardTitle>
+      <Description>
         {props.fachrichtung}
-      </StyleDescription>
-    </StyleCardContent>
+      </Description>
+    </FullCardContent>
   );
 }
 
@@ -19,30 +19,30 @@ export default class Card extends React.Component {
   render() {
     return (
       <div style={{ width: this.props.width + "px" }}>
-        <StyleCard className="styleCard" id={this.props.id}>
+        <SingleCard id={this.props.id}>
           <CardContent
             datum={this.props.datum}
             name={this.props.name}
             fachrichtung={this.props.fachrichtung}
           />
-        </StyleCard>
+        </SingleCard>
       </div>
     );
   }
 }
 
-const StyleCardContent = styled.div`
+const FullCardContent = styled.div`
   padding: 4px 4px 4px 4px;
   text-align: left;
   margin: 1rem;
 `;
 
-const StyleCardTitle = styled.p`
+const CardTitle = styled.p`
   font-weight: 600;
   margin: 12px 0px 0px 0px;
 `;
 
-const StyleCard = styled.div`
+const SingleCard = styled.div`
   border-radius: 15px;
   box-shadow: 0px 0px 8px #ccc;
   background: #fff4f4;
@@ -50,7 +50,7 @@ const StyleCard = styled.div`
   margin: 1rem;
 `;
 
-const StyleDescription = styled.p`
+const Description = styled.p`
   font-size: 14;
   margin: 8px 0 0 0;
 `;

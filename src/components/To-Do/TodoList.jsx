@@ -35,7 +35,7 @@ function TodoList() {
   ));
 
   return (
-    <TodoListStyle className="TodoList">
+    <TodoListStyle>
       <h1>To-Do's</h1>
       <ul>
         <TodoListUl>{todosList}</TodoListUl>

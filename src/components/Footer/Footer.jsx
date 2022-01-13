@@ -10,16 +10,16 @@ function Footer() {
   return (
     <NavbarStyled>
       <NavLink to="home">
-        <img className="home" src={HomeIcon} />
+        <img src={HomeIcon} />
       </NavLink>
       <NavLink to="symptome">
-        <img className="symptome" src={SymptomeIcon} />
+        <img src={SymptomeIcon} />
       </NavLink>
       <NavLink to="medikamente">
-        <img className="medikamente" src={MedikamenteIcon} />
+        <img src={MedikamenteIcon} />
       </NavLink>
       <NavLink to="termine">
-        <img className="termine" src={TermineIcon} />
+        <img src={TermineIcon} />
       </NavLink>
     </NavbarStyled>
   );

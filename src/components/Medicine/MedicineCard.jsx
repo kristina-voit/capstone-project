@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import Morning from "../../images/sunrise.svg";
 import Noon from "../../images/noon.svg";
@@ -9,22 +8,12 @@ function CardContent(props) {
   return (
     <div>
       <CardTitle>{props.name}</CardTitle>
-      <CardTitle>
-        {props.einnahmehinweis}
-      </CardTitle>
+      <CardTitle>{props.einnahmehinweis}</CardTitle>
       <FullCardContent>
-        <StyleDescription>
-          {props.einnahmeMorgens}
-        </StyleDescription>
-        <StyleDescription>
-          {props.einnahmeMittags}
-        </StyleDescription>
-        <StyleDescription>
-          {props.einnahmeAbends}
-        </StyleDescription>
-        <StyleDescription>
-          {props.einnahmeNachts}
-        </StyleDescription>
+        <Description>{props.einnahmeMorgens}</Description>
+        <Description>{props.einnahmeMittags}</Description>
+        <Description>{props.einnahmeAbends}</Description>
+        <Description>{props.einnahmeNachts}</Description>
         <IconStyling src={Morning} alt="Morning" />
         <IconStyling src={Noon} alt="Noon" />
         <IconStyling src={Evening} alt="Evening" />
@@ -34,25 +23,23 @@ function CardContent(props) {
   );
 }
 
-export default class Card extends React.Component {
-  render() {
-    return (
+export default function Card(props) {
+  return (
+    <div>
       <div>
-        <div>
-          <SingleCard id={this.props.id}>
-            <h4>{this.props.name}</h4>
-            <p>{this.props.einnahmehinweis}</p>
-            <CardContent
-              einnahmeMorgens={this.props.einnahmeMorgens}
-              einnahmeMittags={this.props.einnahmeMittags}
-              einnahmeAbends={this.props.einnahmeAbends}
-              einnahmeNachts={this.props.einnahmeNachts}
-            />
-          </SingleCard>
-        </div>
+        <SingleCard id={props.id}>
+          <h4>{props.name}</h4>
+          <p>{props.einnahmehinweis}</p>
+          <CardContent
+            einnahmeMorgens={props.einnahmeMorgens}
+            einnahmeMittags={props.einnahmeMittags}
+            einnahmeAbends={props.einnahmeAbends}
+            einnahmeNachts={props.einnahmeNachts}
+          />
+        </SingleCard>
       </div>
-    );
-  }
+    </div>
+  );
 }
 
 const FullCardContent = styled.div`
@@ -78,7 +65,7 @@ const SingleCard = styled.div`
   padding-top: 0.1rem;
 `;
 
-const StyleDescription = styled.p`
+const Description = styled.p`
   font-size: 14;
   margin: 8px 0 0 0;
   font-weight: 600;

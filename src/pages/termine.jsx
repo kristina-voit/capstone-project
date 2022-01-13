@@ -1,4 +1,3 @@
-import React from "react";
 import EventsList from "../components/Events/EventsList";
 import { eventsData } from "../components/Events/appointmentdata";
 import Header from "../components/Header/Header.jsx";
@@ -22,7 +21,6 @@ const Termine = () => {
   );
 };
 export default Termine;
-
 
 const ButtonStyle = styled.button`
   background: #f5f9f9;

@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import React, { useState } from "react";
-import ReactDOM from "react-dom";
 import Todo from "./Todo";
 import NewTodoForm from "./NewTodoForm";
 import { v4 as uuidv4 } from "uuid";

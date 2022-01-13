@@ -1,6 +1,3 @@
-import React from "react";
-import styled from "styled-components";
-
 function Header() {
   const current = new Date();
   const date = `${current.getDate()}/${

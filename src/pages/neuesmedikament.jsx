@@ -1,6 +1,4 @@
-import React from "react";
 import Header from "../components/Header/Header.jsx";
-import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import MedicineCardNew from "../components/Medicine/MedicineCardNew.jsx";
 

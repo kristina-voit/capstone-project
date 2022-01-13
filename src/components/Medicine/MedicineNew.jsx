@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import React, { useState } from "react";
-import ReactDOM from "react-dom";
 import DeleteIcon from "../../images/delete.svg";
 import EditIcon from "../../images/edit.svg";
 

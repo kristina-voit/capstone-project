@@ -1,4 +1,3 @@
-import React from "react";
 import Card from "../Medicine/MedicineCard";
 
 export default function MedicineList(props) {

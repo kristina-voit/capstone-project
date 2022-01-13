@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import React, { useState, useReducer } from "react";
-import ReactDOM from "react-dom";
 import { v4 as uuidv4 } from "uuid";
 
 function NewTodoForm({ task, createTodo }) {

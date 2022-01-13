@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 
 function CardContent(props) {
@@ -9,16 +8,14 @@ function CardContent(props) {
   );
 }
 
-export default class Card extends React.Component {
-  render() {
-    return (
-      <div style={{ width: this.props.width + "px" }}>
-        <SingleCard id={this.props.id}>
-          <CardContent name={this.props.name} />
-        </SingleCard>
-      </div>
-    );
-  }
+export default function Card(props) {
+  return (
+    <div style={{ width: props.width + "px" }}>
+      <SingleCard id={props.id}>
+        <CardContent name={props.name} />
+      </SingleCard>
+    </div>
+  );
 }
 
 const FullCardContent = styled.div`

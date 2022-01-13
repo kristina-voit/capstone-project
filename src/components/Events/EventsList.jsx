@@ -1,4 +1,3 @@
-
 import Card from "../Events/Card";
 
 export default function EventsList(props) {

@@ -18,6 +18,17 @@ const Form = () => {
       [event.target.name]: event.target.value,
     });
 
+
+
+
+
+
+
+
+
+
+
+    
   const {
     nameAndDose,
     einnahmehinweis,

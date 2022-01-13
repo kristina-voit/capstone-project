@@ -1,4 +1,3 @@
-import React from "react";
 import TodoList from "../components/To-Do/TodoList.jsx";
 import styled from "styled-components";
 import Header from "../components/Header/Header.jsx";

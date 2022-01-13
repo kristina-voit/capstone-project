@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import WebsiteIcon from "../../images/homepage.svg";
 import CallIcon from "../../images/phone.svg";
@@ -8,63 +7,42 @@ function CardContent(props) {
   return (
     <FullCardContent>
       <CardTitle>{props.name}</CardTitle>
-      <Description>
-        {props.datum}
-      </Description>
-      <Description>
-        {props.fachrichtung}
-      </Description>
-      <Description>
-        {props.adresse}
-      </Description>
-      <Description>
-        {props.telefon}
-      </Description>
-      <Description>
-        {props.email}
-      </Description>
-      <Description>
-        {props.website}
-      </Description>
+      <Description>{props.datum}</Description>
+      <Description>{props.fachrichtung}</Description>
+      <Description>{props.adresse}</Description>
+      <Description>{props.telefon}</Description>
+      <Description>{props.email}</Description>
+      <Description>{props.website}</Description>
     </FullCardContent>
   );
 }
+export default function Card(props) {
+  return (
+    <div style={{ width: props.width + "px" }}>
+      <SingleCard id={props.id}>
+        <CardContent
+          name={props.name}
+          datum={props.datum}
+          fachrichtung={props.fachrichtung}
+          adresse={props.adresse}
+        />
+        <Icons>
+          <a target="_blank" href={props.website}>
+            <SingleIcon src={WebsiteIcon} alt="Homepage" />
+          </a>
+          <a href={`mailto:{this.props.email}`}>
+            <SingleIcon src={EmailIcon} alt="Email" />
+          </a>
 
-export default class Card extends React.Component {
-  render() {
-    return (
-      <div style={{ width: this.props.width + "px" }}>
-        <SingleCard id={this.props.id}>
-          <CardContent
-            name={this.props.name}
-            datum={this.props.datum}
-            fachrichtung={this.props.fachrichtung}
-            adresse={this.props.adresse}
-          />
-          <Icons>
-         
-<a target="_blank" href={this.props.website}><SingleIcon src={WebsiteIcon} alt="Homepage" /></a>
-<a href={`mailto:{this.props.email}`}><SingleIcon src={EmailIcon} alt="Email" /></a>
-
-
-
-
-
-
-<a href={this.props.telefon}><SingleIcon src={CallIcon} alt="Call" /></a>
-{/*<a href="089-123456"><SingleIcon src={CallIcon} " alt="Call" /></a>*/}
-<a href="tel:555-666-7777">555-666-7777</a>
-
-
-
-
-
-
-          </Icons>
-        </SingleCard>
-      </div>
-    );
-  }
+          <a href={props.telefon}>
+            <SingleIcon src={CallIcon} alt="Call" />
+          </a>
+          {/*<a href="089-123456"><SingleIcon src={CallIcon} " alt="Call" /></a>*/}
+          <a href="tel:555-666-7777">555-666-7777</a>
+        </Icons>
+      </SingleCard>
+    </div>
+  );
 }
 
 const FullCardContent = styled.div`
@@ -92,14 +70,14 @@ const Description = styled.p`
 `;
 
 const Icons = styled.div`
-display: flex;
-padding: 0.5rem;
-margin: 0.5rem;
-justify-content: right;
+  display: flex;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  justify-content: right;
 `;
 
 const SingleIcon = styled.img`
-    margin-left: 5px;
-    margin-right: 5px;
-    margin-bottom: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 5px;
 `;

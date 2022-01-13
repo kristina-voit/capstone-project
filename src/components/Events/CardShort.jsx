@@ -1,34 +1,26 @@
-import React from "react";
 import styled from "styled-components";
 
 function CardContent(props) {
   return (
     <FullCardContent>
-      <Description>
-        {props.datum}
-      </Description>
+      <Description>{props.datum}</Description>
       <CardTitle>{props.name}</CardTitle>
-      <Description>
-        {props.fachrichtung}
-      </Description>
+      <Description>{props.fachrichtung}</Description>
     </FullCardContent>
   );
 }
-
-export default class Card extends React.Component {
-  render() {
-    return (
-      <div style={{ width: this.props.width + "px" }}>
-        <SingleCard id={this.props.id}>
-          <CardContent
-            datum={this.props.datum}
-            name={this.props.name}
-            fachrichtung={this.props.fachrichtung}
-          />
-        </SingleCard>
-      </div>
-    );
-  }
+export default function Card(props) {
+  return (
+    <div style={{ width: props.width + "px" }}>
+      <SingleCard id={props.id}>
+        <CardContent
+          datum={props.datum}
+          name={props.name}
+          fachrichtung={props.fachrichtung}
+        />
+      </SingleCard>
+    </div>
+  );
 }
 
 const FullCardContent = styled.div`

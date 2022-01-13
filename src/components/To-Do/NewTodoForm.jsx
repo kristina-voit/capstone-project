@@ -35,7 +35,6 @@ function NewTodoForm({ task, createTodo }) {
       />
 
       <NewTodoFormButton>Hinzufügen</NewTodoFormButton>
-   
     </NewTodoFormStyle>
   );
 }

@@ -18,5 +18,5 @@ export let eventsData = [
     telefon: "089980889",
     email: "info@zahnarzt-fuenfhoefe.de",
     website: "https://www.zahnarzt-fuenfhoefe.de",
-  }
+  },
 ];

@@ -14,9 +14,7 @@ export default class Card extends React.Component {
     return (
       <div style={{ width: this.props.width + "px" }}>
         <StyleCard className="styleCard" id={this.props.id}>
-          <CardContent
-            name={this.props.name}
-          />
+          <CardContent name={this.props.name} />
         </StyleCard>
       </div>
     );
@@ -37,7 +35,7 @@ const StyleCardTitle = styled.p`
 const StyleCard = styled.div`
   border-radius: 15px;
   box-shadow: 0px 0px 8px #ccc;
-  background: #F6F5FB;
+  background: #f6f5fb;
   color: #253b56;
   margin: 1rem;
 `;

@@ -36,8 +36,9 @@ function NewTodoForm({ task, createTodo }) {
       />
 
       <NewTodoFormButton>Hinzufügen</NewTodoFormButton>
-      <NavLink to ="/medikamente"><NewTodoFormButton>Abbrechen</NewTodoFormButton></NavLink>
-   
+      <NavLink to="/medikamente">
+        <NewTodoFormButton>Abbrechen</NewTodoFormButton>
+      </NavLink>
     </NewTodoFormStyle>
   );
 }

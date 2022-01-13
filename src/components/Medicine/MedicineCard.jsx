@@ -65,14 +65,14 @@ const StyleCardContent = styled.div`
 `;
 
 const StyleCardTitle = styled.p`
- font-size: 8px;
+  font-size: 8px;
   color: #4b417a;
 `;
 
 const StyleCard = styled.div`
   border-radius: 15px;
   box-shadow: 0px 0px 8px #ccc;
-  background: #F6F5FB;
+  background: #f6f5fb;
   color: #4b417a;
   margin: 1rem;
   padding-top: 0.1rem;

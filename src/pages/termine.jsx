@@ -11,9 +11,12 @@ const Termine = () => {
       <Header />
       <h1>Deine anstehenden Termine</h1>
       <EventsList data={eventsData} />
-      <NavLink to ="/neuertermin"><ButtonStyle>Termin eintragen</ButtonStyle></NavLink>
-  
-      <a target="_blank" href="https://jameda.de"><ButtonStyle>Neuen Termin finden</ButtonStyle>
+      <NavLink to="/neuertermin">
+        <ButtonStyle>Termin eintragen</ButtonStyle>
+      </NavLink>
+
+      <a target="_blank" href="https://jameda.de">
+        <ButtonStyle>Neuen Termin finden</ButtonStyle>
       </a>
     </div>
   );

@@ -2,7 +2,7 @@ import React from "react";
 import Header from "../components/Header/Header.jsx";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
-import MedicineCardNew from '../components/Medicine/MedicineCardNew.jsx'
+import MedicineCardNew from "../components/Medicine/MedicineCardNew.jsx";
 
 const NeuesMedikament = () => {
   return (
@@ -11,12 +11,11 @@ const NeuesMedikament = () => {
       <h1>Neues Medikament eintragen</h1>
       <div>
         <MedicineCardNew />
-      </div> 
+      </div>
     </div>
   );
 };
 export default NeuesMedikament;
-
 
 const ButtonStyle = styled.button`
   background: #f5f9f9;
@@ -31,5 +30,3 @@ const ButtonStyle = styled.button`
   font-family: "Montserrat", sans-serif;
   height: 5rem;
 `;
-
-

@@ -7,13 +7,10 @@ const NeuerTermin = () => {
     <div>
       <Header />
       <h1>Neuen Termin eintragen</h1>
-
-      
     </div>
   );
 };
 export default NeuerTermin;
-
 
 /*const ButtonStyle = styled.button`
   background: #f5f9f9;
@@ -28,5 +25,3 @@ export default NeuerTermin;
   font-family: "Montserrat", sans-serif;
   height: 5rem;
 `;*/
-
-

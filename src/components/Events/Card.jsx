@@ -42,24 +42,22 @@ export default class Card extends React.Component {
             adresse={this.props.adresse}
           />
           <Icons>
-         
-<a target="_blank" href={this.props.website}><SingleIcon src={WebsiteIcon} className="Homepage" alt="Homepage" /></a>
-<a href={`mailto:{this.props.email}`}><SingleIcon src={EmailIcon} className="Email" alt="Email" /></a>
+            <a target="_blank" href={this.props.website}>
+              <SingleIcon
+                src={WebsiteIcon}
+                className="Homepage"
+                alt="Homepage"
+              />
+            </a>
+            <a href={`mailto:{this.props.email}`}>
+              <SingleIcon src={EmailIcon} className="Email" alt="Email" />
+            </a>
 
-
-
-
-
-
-<a href={this.props.telefon}><SingleIcon src={CallIcon} className="Call" alt="Call" /></a>
-{/*<a href="089-123456"><SingleIcon src={CallIcon} className="Call" alt="Call" /></a>*/}
-<a href="tel:555-666-7777">555-666-7777</a>
-
-
-
-
-
-
+            <a href={this.props.telefon}>
+              <SingleIcon src={CallIcon} className="Call" alt="Call" />
+            </a>
+            {/*<a href="089-123456"><SingleIcon src={CallIcon} className="Call" alt="Call" /></a>*/}
+            <a href="tel:555-666-7777">555-666-7777</a>
           </Icons>
         </StyleCard>
       </div>
@@ -92,14 +90,14 @@ const StyleDescription = styled.p`
 `;
 
 const Icons = styled.div`
-display: flex;
-padding: 0.5rem;
-margin: 0.5rem;
-justify-content: right;
+  display: flex;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  justify-content: right;
 `;
 
 const SingleIcon = styled.img`
-    margin-left: 5px;
-    margin-right: 5px;
-    margin-bottom: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 5px;
 `;

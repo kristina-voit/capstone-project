@@ -45,7 +45,7 @@ const StyleCardTitle = styled.p`
 const StyleCard = styled.div`
   border-radius: 15px;
   box-shadow: 0px 0px 8px #ccc;
-  background: #FFF4F4;
+  background: #fff4f4;
   color: #253b56;
   margin: 1rem;
 `;

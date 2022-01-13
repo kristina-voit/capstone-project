@@ -18,7 +18,7 @@ function CardContent(props) {
 }
 export default function Card(props) {
   return (
-    <div style={{ width: props.width + "px" }}>
+    <div>
       <SingleCard id={props.id}>
         <CardContent
           name={props.name}
@@ -37,7 +37,6 @@ export default function Card(props) {
           <a href={props.telefon}>
             <SingleIcon src={CallIcon} alt="Call" />
           </a>
-          {/*<a href="089-123456"><SingleIcon src={CallIcon} " alt="Call" /></a>*/}
           <a href="tel:555-666-7777">555-666-7777</a>
         </Icons>
       </SingleCard>

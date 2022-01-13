@@ -10,7 +10,7 @@ const Medikamente = () => {
       <Header />
       <h1>Deine Medikamente</h1>
       <MedicineList data={medicineData} />
-      <NavLink to="neuesmedikament">
+      <NavLink to="/neuesmedikament">
         <ButtonStyle>Neues Medikament eintragen</ButtonStyle>
       </NavLink>
       <a

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import React, { useState, useReducer } from "react";
 import { v4 as uuidv4 } from "uuid";
+import { NavLink } from "react-router-dom";
 
 function NewTodoForm({ task, createTodo }) {
   const [userInput, setUserInput] = useReducer(
@@ -34,6 +35,9 @@ function NewTodoForm({ task, createTodo }) {
       />
 
       <NewTodoFormButton>Hinzufügen</NewTodoFormButton>
+      <NavLink to="medikamente">
+        <NewTodoFormButton>Abbrechen</NewTodoFormButton>
+      </NavLink>
     </NewTodoFormStyle>
   );
 }

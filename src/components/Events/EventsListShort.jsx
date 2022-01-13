@@ -1,4 +1,3 @@
-import React from "react";
 import Card from "./CardShort";
 
 export default function EventsList(props) {

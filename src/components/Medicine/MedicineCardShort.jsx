@@ -3,21 +3,16 @@ import styled from "styled-components";
 function CardContent(props) {
   return (
     <FullCardContent>
-      <Description>{props.datum}</Description>
       <CardTitle>{props.name}</CardTitle>
-      <Description>{props.fachrichtung}</Description>
     </FullCardContent>
   );
 }
+
 export default function Card(props) {
   return (
     <div style={{ width: props.width + "px" }}>
       <SingleCard id={props.id}>
-        <CardContent
-          datum={props.datum}
-          name={props.name}
-          fachrichtung={props.fachrichtung}
-        />
+        <CardContent name={props.name} />
       </SingleCard>
     </div>
   );
@@ -37,12 +32,7 @@ const CardTitle = styled.p`
 const SingleCard = styled.div`
   border-radius: 15px;
   box-shadow: 0px 0px 8px #ccc;
-  background: #fff4f4;
+  background: #f6f5fb;
   color: #253b56;
   margin: 1rem;
-`;
-
-const Description = styled.p`
-  font-size: 14;
-  margin: 8px 0 0 0;
 `;

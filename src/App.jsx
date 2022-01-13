@@ -1,11 +1,11 @@
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home.jsx"
-import Symptome from "./pages/symptome.jsx";
-import Medikamente from "./pages/medikamente.jsx";
-import Termine from "./pages/termine.jsx";
-import NeuerTermin from "./pages/neuertermin.jsx";
-import NeuesMedikament from "./pages/neuesmedikament.jsx";
+import Symptome from "./pages/Symptome.jsx";
+import Medikamente from "./pages/Medikamente.jsx";
+import Termine from "./pages/Termine.jsx";
+import NeuerTermin from "./pages/Neuertermin.jsx";
+import NeuesMedikament from "./pages/Neuesmedikament.jsx";
 import Footer from "./components/Footer/Footer.jsx";
 
 function App() {

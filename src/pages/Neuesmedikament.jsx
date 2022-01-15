@@ -1,18 +1,12 @@
 import Header from "../components/Header/Header.jsx";
 import styled from "styled-components";
-import NewMedicineForm from "../components/Medicine/NewMedicineForm"
 
 const NeuesMedikament = () => {
   return (
     <div>
       <Header />
       <h1>Neues Medikament eintragen</h1>
-      <div>
-       
-      </div>
-      <div>
-        <NewMedicineForm />
-      </div>
+      <div></div>
     </div>
   );
 };

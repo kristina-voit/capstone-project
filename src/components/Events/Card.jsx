@@ -30,11 +30,13 @@ export default function Card(props) {
           <a target="_blank" href={props.website}>
             <SingleIcon src={WebsiteIcon} alt="Homepage" />
           </a>
-          <a href={`mailto:${props.email}?subject=Anfrage von Kristina Voit, *13.01.1989`}>
+          <a
+            href={`mailto:${props.email}?subject=Anfrage von Kristina Voit, *13.01.1989`}
+          >
             <SingleIcon src={EmailIcon} alt="Email" />
           </a>
 
-           <a href={`tel:${props.telefon}`}>
+          <a href={`tel:${props.telefon}`}>
             <SingleIcon src={CallIcon} alt="Call" />
           </a>
         </Icons>

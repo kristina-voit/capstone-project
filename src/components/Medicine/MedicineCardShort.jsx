@@ -3,17 +3,17 @@ import Morning from "../../images/sunrise.svg";
 import Noon from "../../images/noon.svg";
 import Evening from "../../images/sunset.svg";
 import Night from "../../images/night.svg";
-import Dosage from "../Medicine/Dosage"
+import Dosage from "../Medicine/Dosage";
 
 function CardContent(props) {
   return (
     <div>
       <CardTitle>{props.name}</CardTitle>
       <FullCardContent>
-        <Dosage einnahmeMenge={props.einnahmeMorgens}/>
-        <Dosage einnahmeMenge={props.einnahmeMittags}/>
-        <Dosage einnahmeMenge={props.einnahmeAbends}/>
-        <Dosage einnahmeMenge={props.einnahmeNachts}/>
+        <Dosage einnahmeMenge={props.einnahmeMorgens} />
+        <Dosage einnahmeMenge={props.einnahmeMittags} />
+        <Dosage einnahmeMenge={props.einnahmeAbends} />
+        <Dosage einnahmeMenge={props.einnahmeNachts} />
         <IconStyling src={Morning} alt="Morning" />
         <IconStyling src={Noon} alt="Noon" />
         <IconStyling src={Evening} alt="Evening" />
@@ -28,8 +28,7 @@ export default function Card(props) {
     <div>
       <div>
         <SingleCard>
-        <div>
-        </div>
+          <div></div>
           <CardTitle>{props.name}</CardTitle>
           <CardContent
             einnahmeMorgens={props.einnahmeMorgens}
@@ -52,7 +51,7 @@ const FullCardContent = styled.div`
 `;
 
 const CardTitle = styled.p`
-color: #4b417a;
+  color: #4b417a;
   font-size: 14;
   margin: 8px 0 0 0;
   font-weight: 600;
@@ -71,10 +70,8 @@ const Description = styled.p`
   font-size: 14;
   margin: 8px 0 0 0;
   font-weight: 600;
-  color: ${(props)=> props.color ? "red" : "green"}
+  color: ${(props) => (props.color ? "red" : "green")};
 `;
-
-
 
 const IconStyling = styled.img`
   margin-left: 5px;

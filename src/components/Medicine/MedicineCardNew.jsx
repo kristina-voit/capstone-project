@@ -61,7 +61,7 @@ const Form = () => {
             onChange={(e) => updateFormData(e)}
             placeholder="Einnahme Mittags"
             type="text"
-            name="text"
+            name="einnahmeMittags"
             required
           />
           <Inputfield
@@ -77,7 +77,7 @@ const Form = () => {
             onChange={(e) => updateFormData(e)}
             placeholder="Einnahme Nachts"
             type="text"
-            name="Einnahme Nachts"
+            name="einnahmeNachts"
             required
           />
         </form>

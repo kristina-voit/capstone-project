@@ -1,6 +1,6 @@
 import Header from "../components/Header/Header.jsx";
 import styled from "styled-components";
-import MedicineCardNew from "../components/Medicine/MedicineCardNew.jsx";
+import NewMedicineForm from "../components/Medicine/NewMedicineForm"
 
 const NeuesMedikament = () => {
   return (
@@ -8,7 +8,10 @@ const NeuesMedikament = () => {
       <Header />
       <h1>Neues Medikament eintragen</h1>
       <div>
-        <MedicineCardNew />
+       
+      </div>
+      <div>
+        <NewMedicineForm />
       </div>
     </div>
   );

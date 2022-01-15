@@ -9,6 +9,7 @@ function CardContent(props) {
     <div>
       <CardTitle>{props.name}</CardTitle>
       <CardTitle>{props.einnahmehinweis}</CardTitle>
+      <CardTitle>{props.hersteller}</CardTitle>
       <FullCardContent>
         <Description>{props.einnahmeMorgens}</Description>
         <Description>{props.einnahmeMittags}</Description>
@@ -28,7 +29,8 @@ export default function Card(props) {
     <div>
       <div>
         <SingleCard id={props.id}>
-          <h4>{props.name}</h4>
+          <CardTitle>{props.name}</CardTitle>
+          <CardTitle>{props.hersteller}</CardTitle>
           <p>{props.einnahmehinweis}</p>
           <CardContent
             einnahmeMorgens={props.einnahmeMorgens}
@@ -52,9 +54,12 @@ const FullCardContent = styled.div`
 `;
 
 const CardTitle = styled.p`
-  font-size: 8px;
-  color: #4b417a;
+color: #4b417a;
+  font-size: 14;
+  margin: 8px 0 0 0;
+  font-weight: 600;
 `;
+
 
 const SingleCard = styled.div`
   border-radius: 15px;

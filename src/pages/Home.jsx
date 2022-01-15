@@ -19,10 +19,10 @@ const Home = () => {
       <div>
         <EventsListShort data={eventsData} />
       </div>
-
-      <div>
+       <div>
         <TodoList />
       </div>
+    
     </TodoListBlock>
   );
 };

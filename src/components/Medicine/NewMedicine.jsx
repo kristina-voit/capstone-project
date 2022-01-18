@@ -2,130 +2,138 @@ import styled from "styled-components";
 import { useEffect, useState } from "react";
 import NewMedicineInput from "./NewMedicineInput";
 import { saveToLocal, loadFromLocal } from "../../lib/localStorage";
+import Morning from "../../images/sunrise.svg";
+import Noon from "../../images/noon.svg";
+import Evening from "../../images/sunset.svg";
+import Night from "../../images/night.svg";
 
 function NewMedicine() {
-    const initialProduct = {
-        name: "",
-        contactEmail: "",
-    };
-    const [product, setProduct] = useState(initialProduct);
-    const localStorageProducts = loadFromLocal("_products");
-    const [products, setProducts] = useState(localStorageProducts ?? []);
+  const initialProduct = {
+    name: "",
+    hersteller: "",
+    einnahmehinweis: "",
+    einnahmeMorgens: "",
+    einnahmeMittags: "",
+    einnahmeAbends: "",
+    einnahmeNachts: "",
+  };
+  const [product, setProduct] = useState(initialProduct);
+  const localStorageProducts = loadFromLocal("_products");
+  const [products, setProducts] = useState(localStorageProducts ?? []);
 
-    useEffect(() => {
-        saveToLocal("_products", products);
-    }, [products]);
+  const removeItem = () => localStorage.removeItem("_products");
 
-    const handleChange = (event) => {
-        let inputValue = event.target.value;
+  useEffect(() => {
+    saveToLocal("_products", products);
+  }, [products]);
 
-        setProduct({
-            ...product,
-            [event.target.name]: inputValue,
-        });
-    };
+  const handleChange = (event) => {
+    let inputValue = event.target.value;
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        {
-            setProducts([...products, product]);
-        }
-    };
+    setProduct({
+      ...product,
+      [event.target.name]: inputValue,
+    });
+  };
 
-    return (
-        <div>
-            <section>
-                <Form onSubmit={handleSubmit}>
-                    <FormInput
-                        onNewMedicineInputChange={handleChange}
-                        name="name"
-                        value={product.name}
-                        placeholder="Name, Dosierung"
-                    ></FormInput>
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    {
+      setProducts([...products, product]);
+    }
+  };
 
+  return (
+    <div>
+      <section>
+        <Form onSubmit={handleSubmit}>
+          <NewMedicineInput
+            onNewMedicineInputChange={handleChange}
+            name="name"
+            value={product.name}
+            placeholder="Name, Dosierung"
+          ></NewMedicineInput>
 
-                    <FormInput
-                        onNewMedicineInputChange={handleChange}
-                        name="hersteller"
-                        value={product.hersteller}
-                        placeholder="Hersteller"
-                    ></FormInput>
+          <NewMedicineInput
+            onNewMedicineInputChange={handleChange}
+            name="hersteller"
+            value={product.hersteller}
+            placeholder="Hersteller"
+          ></NewMedicineInput>
 
-                    <FormInput
-                        onNewMedicineInputChange={handleChange}
-                        name="einnahmehinweis"
-                        value={product.einnahmehinweis}
-                        placeholder="Einnahmehinweis"
-                    ></FormInput>
+          <NewMedicineInput
+            onNewMedicineInputChange={handleChange}
+            name="einnahmehinweis"
+            value={product.einnahmehinweis}
+            placeholder="Einnahmehinweis"
+          ></NewMedicineInput>
 
-                    <FormInput
-                        onNewMedicineInputChange={handleChange}
-                        name="einnahmeMorgens"
-                        value={product.einnahmeMorgens}
-                        placeholder="Einnahme Morgens"
-                    ></FormInput>
+          <NewMedicineInput
+            onNewMedicineInputChange={handleChange}
+            name="einnahmeMorgens"
+            value={product.einnahmeMorgens}
+            placeholder="Einnahme Morgens"
+          ></NewMedicineInput>
 
-                    <FormInput
-                        onNewMedicineInputChange={handleChange}
-                        name="einnahmeMittags"
-                        value={product.einnahmeMittags}
-                        placeholder="Einnahme Mittags"
-                    ></FormInput>
+          <NewMedicineInput
+            onNewMedicineInputChange={handleChange}
+            name="einnahmeMittags"
+            value={product.einnahmeMittags}
+            placeholder="Einnahme Mittags"
+          ></NewMedicineInput>
 
-                 
-                    <FormInput
-                        onNewMedicineInputChange={handleChange}
-                        name="einnahmeAbends"
-                        value={product.einnahmeAbends}
-                        placeholder="Einnahme Abends"
-                    >
-                     </FormInput>
-                  
+          <NewMedicineInput
+            onNewMedicineInputChange={handleChange}
+            name="einnahmeAbends"
+            value={product.einnahmeAbends}
+            placeholder="Einnahme Abends"
+          ></NewMedicineInput>
 
-                    <FormInput
-                        onNewMedicineInputChange={handleChange}
-                        name="einnahmeNachts"
-                        value={product.einnahmeNachts}
-                        placeholder="Einnahme Nachts"
-                    ></FormInput>
+          <NewMedicineInput
+            onNewMedicineInputChange={handleChange}
+            name="einnahmeNachts"
+            value={product.einnahmeNachts}
+            placeholder="Einnahme Nachts"
+          ></NewMedicineInput>
 
-                    <div>
-                        <Button>Medikament hinzufügen</Button>
+          <div>
+            <Button>Medikament hinzufügen</Button>
 
-                        <Button
-                            type="reset"
-                            onClick={() => {
-                                setProduct(initialProduct);
-                            }}
-                        >
-                            Zurücksetzen
-                        </Button>
-                    </div>
-                </Form>
-            </section>
+            <Button
+              type="reset"
+              onClick={() => {
+                setProduct(initialProduct);
+              }}
+            >
+              Zurücksetzen
+            </Button>
+          </div>
+        </Form>
+      </section>
 
-            <Card>
-                {products.map((product, index) => (
-                    <article>
+      <Card>
+        {products.map((product, index) => (
+          <Article>
+            <CardTitle>{product.name}</CardTitle>
+            <CardTitle>{product.hersteller}</CardTitle>
+            <p>{product.einnahmehinweis}</p>
+            <FullCardContent>
+              <Description>{product.einnahmeMorgens} </Description>
+              <Description> {product.einnahmeMittags} </Description>
+              <Description> {product.einnahmeAbends} </Description>
+              <Description> {product.einnahmeNachts} </Description>
 
-                       
-                            <CardTitle>{product.name}</CardTitle>
-                            <CardTitle>{product.hersteller}</CardTitle>
-                            <p>{product.einnahmehinweis}</p>
-                            <div>
-                                {product.einnahmeMorgens}
-                                {product.einnahmeMittags}
-                                {product.einnahmeAbends}
-                                {product.einnahmeNachts}
-                            </div>
-                   
-
-
-                    </article>
-                ))}
-            </Card>
-        </div>
-    );
+              <IconStyling src={Morning} alt="Morning" />
+              <IconStyling src={Noon} alt="Noon" />
+              <IconStyling src={Evening} alt="Evening" />
+              <IconStyling src={Night} alt="Night" />
+            </FullCardContent>
+            <Button onClick={removeItem}>Entfernen</Button>
+          </Article>
+        ))}
+      </Card>
+    </div>
+  );
 }
 
 export default NewMedicine;
@@ -173,11 +181,27 @@ const CardTitle = styled.p`
   margin: 12px 0px 0px 0px;
 `;
 
-const FormInput = styled.input`
-  flex-grow: 1;
-  border: solid 1px gray;
-  margin: 0.25rem;
-  background: #f7f1f1;
-  padding: 0 1.5em;
-  height: 2rem;
+const IconStyling = styled.img`
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+`;
+
+const FullCardContent = styled.div`
+  padding: 0px 0px 4px 0px;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+  justify-items: center;
+`;
+
+const Description = styled.p`
+  font-size: 14;
+  margin: 8px 0 0 0;
+  font-weight: 600;
+`;
+
+const Article = styled.article`
+  padding: 1rem;
 `;

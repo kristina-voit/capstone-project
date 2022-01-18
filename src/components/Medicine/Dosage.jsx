@@ -3,11 +3,19 @@ import { useState } from "react";
 
 export default function Dosage(props) {
   const [color, setColor] = useState(true);
-  return (
-    <Description onClick={() => setColor(!color)} color={color}>
-      {props.einnahmeMenge}
-    </Description>
-  );
+  if (props.einnahmeMenge > 0) {
+    return (
+      <Description onClick={() => setColor(!color)} color={color}>
+        {props.einnahmeMenge}
+      </Description>
+    );
+  } else {
+    return (
+      <Description onClick={() => setColor(color)} color={color}>
+        {props.einnahmeMenge}
+      </Description>
+    );
+  }
 }
 
 const Description = styled.p`

@@ -10,15 +10,17 @@ const Medikamente = () => {
       <Header />
       <h1>Deine Medikamente</h1>
       <MedicineList data={medicineData} />
-      <NavLink to="/neuesmedikament">
-        <ButtonStyle>Neues Medikament eintragen</ButtonStyle>
-      </NavLink>
-      <a
-        target="_blank"
-        href="https://www.apotheken-umschau.de/medikamente/wechselwirkungscheck/"
-      >
-        <ButtonStyle>Wechselwirkungen prüfen</ButtonStyle>
-      </a>
+      <Container>
+        <NavLink to="/neuesmedikament">
+          <ButtonStyle>Neues Medikament eintragen</ButtonStyle>
+        </NavLink>
+        <a
+          target="_blank"
+          href="https://www.apotheken-umschau.de/medikamente/wechselwirkungscheck/"
+        >
+          <ButtonStyle>Wechselwirkungen prüfen</ButtonStyle>
+        </a>
+      </Container>
     </div>
   );
 };
@@ -36,4 +38,12 @@ const ButtonStyle = styled.button`
   cursor: pointer;
   font-family: "Montserrat", sans-serif;
   height: 5rem;
+`;
+
+const Container = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  margin: 1rem;
+  margin-bottom: 2rem;
 `;

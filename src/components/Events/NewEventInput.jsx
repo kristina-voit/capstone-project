@@ -1,7 +1,7 @@
-function NewMedicineInput({
+function NewEventInput({
   name,
   value,
-  onNewMedicineInputChange,
+  onNewEventInputChange,
   placeholder,
   children,
 }) {
@@ -12,7 +12,7 @@ function NewMedicineInput({
         type="text"
         id={name}
         name={name}
-        onChange={onNewMedicineInputChange}
+        onChange={onNewEventInputChange}
         placeholder={placeholder}
         value={value}
       />
@@ -20,4 +20,4 @@ function NewMedicineInput({
   );
 }
 
-export default NewMedicineInput;
+export default NewEventInput;

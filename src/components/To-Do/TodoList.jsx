@@ -58,5 +58,6 @@ const TodoListStyle = styled.div`
 
 const TodoListUl = styled.div`
   margin-top: 1rem;
+  margin-inline-start: -20px;
   color: #4b417a;
 `;

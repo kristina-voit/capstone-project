@@ -6,6 +6,7 @@ import Morning from "../../images/sunrise.svg";
 import Noon from "../../images/noon.svg";
 import Evening from "../../images/sunset.svg";
 import Night from "../../images/night.svg";
+import isProductValid from "../../lib/validationMedicine"
 
 function NewMedicine() {
   const initialProduct = {
@@ -23,6 +24,9 @@ function NewMedicine() {
 
   const removeItem = () => localStorage.removeItem("_products");
 
+  const [hasFormErrors, setHasFormErrors] = useState(false);
+
+
   useEffect(() => {
     saveToLocal("_products", products);
   }, [products]);
@@ -38,14 +42,25 @@ function NewMedicine() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    {
+    if (isProductValid(product)) {
       setProducts([...products, product]);
+      setHasFormErrors(false);
+    } else {
+      setHasFormErrors(true);
     }
   };
+
 
   return (
     <div>
       <section>
+      {hasFormErrors && (
+          <ErrorMessage>
+            <p>
+              Bitte füllen Sie alle Felder korrekt aus.
+            </p>
+          </ErrorMessage>
+        )}
         <Form onSubmit={handleSubmit}>
           <NewMedicineInput
             onNewMedicineInputChange={handleChange}
@@ -205,3 +220,11 @@ const Description = styled.p`
 const Article = styled.article`
   padding: 1rem;
 `;
+
+const ErrorMessage = styled.div`
+  align-items: center;
+  background: var(--warning);
+  border-radius: 6px;
+  color: white;
+  margin: 0 0 1rem;
+  `

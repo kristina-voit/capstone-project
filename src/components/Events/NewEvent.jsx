@@ -1,11 +1,11 @@
 import styled from "styled-components";
 import { useEffect, useState } from "react";
 import NewEventInput from "./NewEventInput";
-import DeleteIcon from "../../images/delete.svg"
 import WebsiteIcon from "../../images/homepage.svg";
 import CallIcon from "../../images/phone.svg";
 import EmailIcon from "../../images/email.svg";
 import { saveToLocal, loadFromLocal } from "../../lib/localStorage";
+import isAppointmentValid from "../../lib/validationAppointment"
 
 function NewAppointment() {
   const initialAppointment = {
@@ -24,6 +24,7 @@ function NewAppointment() {
 
 	const removeItem = () => localStorage.removeItem("_appointments")
 
+  const [hasFormErrors, setHasFormErrors] = useState(false);
 
   useEffect(() => {
     saveToLocal("_appointments", appointments);
@@ -38,16 +39,35 @@ function NewAppointment() {
     });
   };
 
-  const handleSubmit = (event) => {
+  /*const handleSubmit = (event) => {
     event.preventDefault();
     {
       setAppointments([...appointments, appointment]);
     }
+  };*/
+
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    if (isAppointmentValid(appointment)) {
+      setAppointments([...appointments, appointment]);
+      setHasFormErrors(false);
+    } else {
+      setHasFormErrors(true);
+    }
   };
 
+  
   return (
     <div>
       <section>
+      {hasFormErrors && (
+          <ErrorMessage>
+            <p>
+              Bitte füllen Sie alle Felder korrekt aus.
+            </p>
+          </ErrorMessage>
+        )}
         <Form onSubmit={handleSubmit}>
           <NewEventInput
             onNewEventInputChange={handleChange}
@@ -218,3 +238,11 @@ const SingleIcon = styled.img`
   margin-right: 5px;
   margin-bottom: 5px;
 `;
+
+const ErrorMessage = styled.div`
+  align-items: center;
+  background: var(--warning);
+  border-radius: 6px;
+  color: white;
+  margin: 0 0 1rem;
+  `

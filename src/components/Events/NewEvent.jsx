@@ -5,11 +5,10 @@ import WebsiteIcon from "../../images/homepage.svg";
 import CallIcon from "../../images/phone.svg";
 import EmailIcon from "../../images/email.svg";
 import { saveToLocal, loadFromLocal } from "../../lib/localStorage";
-import isAppointmentValid from "../../lib/validationAppointment"
+import isAppointmentValid from "../../lib/validationAppointment";
 
 function NewAppointment() {
   const initialAppointment = {
-
     arztname: "",
     datum: "",
     fachrichtung: "",
@@ -20,9 +19,11 @@ function NewAppointment() {
   };
   const [appointment, setAppointment] = useState(initialAppointment);
   const localStorageAppointments = loadFromLocal("_appointments");
-  const [appointments, setAppointments] = useState(localStorageAppointments ?? []);
+  const [appointments, setAppointments] = useState(
+    localStorageAppointments ?? []
+  );
 
-	const removeItem = () => localStorage.removeItem("_appointments")
+  const removeItem = () => localStorage.removeItem("_appointments");
 
   const [hasFormErrors, setHasFormErrors] = useState(false);
 
@@ -39,14 +40,6 @@ function NewAppointment() {
     });
   };
 
-  /*const handleSubmit = (event) => {
-    event.preventDefault();
-    {
-      setAppointments([...appointments, appointment]);
-    }
-  };*/
-
-
   const handleSubmit = (event) => {
     event.preventDefault();
     if (isAppointmentValid(appointment)) {
@@ -57,15 +50,12 @@ function NewAppointment() {
     }
   };
 
-  
   return (
     <div>
       <section>
-      {hasFormErrors && (
+        {hasFormErrors && (
           <ErrorMessage>
-            <p>
-              Bitte füllen Sie alle Felder korrekt aus.
-            </p>
+            <p>Bitte füllen Sie alle Felder korrekt aus.</p>
           </ErrorMessage>
         )}
         <Form onSubmit={handleSubmit}>
@@ -143,26 +133,24 @@ function NewAppointment() {
               <Description>{appointment.adresse}</Description>
 
               <Icons>
-          <a target="_blank" href={appointment.website}>
-            <SingleIcon src={WebsiteIcon} alt="Homepage" />
-          </a>
-          <a
-            href={`mailto:${appointment.email}?subject=Anfrage von Kristina Voit, *13.01.1989`}
-          >
-            <SingleIcon src={EmailIcon} alt="Email" />
-          </a>
+                <a target="_blank" href={appointment.website}>
+                  <SingleIcon src={WebsiteIcon} alt="Homepage" />
+                </a>
+                <a
+                  href={`mailto:${appointment.email}?subject=Anfrage von Kristina Voit, *13.01.1989`}
+                >
+                  <SingleIcon src={EmailIcon} alt="Email" />
+                </a>
 
-          <a href={`tel:${appointment.telefon}`}>
-            <SingleIcon src={CallIcon} alt="Call" />
-          </a>
-        </Icons>
+                <a href={`tel:${appointment.telefon}`}>
+                  <SingleIcon src={CallIcon} alt="Call" />
+                </a>
+              </Icons>
 
-        <Button onClick={removeItem}>Entfernen</Button>
+              <Button onClick={removeItem}>Entfernen</Button>
             </FullCardContent>
           </article>
-          
         ))}
-    
       </Card>
     </div>
   );
@@ -194,7 +182,6 @@ const Form = styled.form`
   padding: 1rem;
 `;
 
-
 const Button = styled.button`
   padding: 0 1.3rem;
   border: none;
@@ -217,14 +204,13 @@ const CardTitle = styled.p`
 `;
 
 const Description = styled.p`
-text-align: left;
+  text-align: left;
 `;
 
 const FullCardContent = styled.div`
   padding: 0px 0px 4px 0px;
   margin: 1rem;
 `;
-
 
 const Icons = styled.div`
   display: flex;
@@ -245,4 +231,4 @@ const ErrorMessage = styled.div`
   border-radius: 6px;
   color: white;
   margin: 0 0 1rem;
-  `
+`;

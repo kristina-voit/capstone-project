@@ -2,6 +2,7 @@ import { useState } from "react";
 import { journaldata } from "../journaldata";
 import SearchInput from "./SearchInput";
 import JournalData from "../Search/JournalData";
+import ModalFull from "../Modal/ModalFull";
 
 function Search() {
   const [state, setState] = useState({ searchTerm: "" });
@@ -15,6 +16,7 @@ function Search() {
   return (
     <section>
       <SearchInput searchTerm={searchTerm} onSearch={onSearch} />
+      <ModalFull />
       {journaldata
         .filter((journaldata) =>
           `${journaldata.stimmung} ${journaldata.datum} ${journaldata.notizen}`

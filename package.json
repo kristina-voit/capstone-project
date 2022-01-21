@@ -9,8 +9,10 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
+    "bootstrap": "^4.6.0",
     "chart.js": "^3.7.0",
     "react": "^17.0.2",
+    "react-bootstrap": "^2.1.1",
     "react-chartjs-2": "^4.0.0",
     "react-dom": "^17.0.2",
     "react-router-dom": "^6.2.1",

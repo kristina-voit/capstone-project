@@ -31,7 +31,8 @@ const NavbarStyled = styled.footer`
   width: 100vw;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  position: sticky;
+  position: fixed;
   bottom: 0;
+  padding-top: 3rem;
   padding: 0.25em;
 `;

@@ -25,7 +25,7 @@ export default Termine;
 const ButtonStyle = styled.button`
   background: #f5f9f9;
   color: #509b9b;
-  padding: 0 1.3rem;
+  padding: 0.2;
   border: none;
   font-weight: bold;
   border-radius: 15px;

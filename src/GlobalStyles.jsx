@@ -16,7 +16,7 @@ html {
   /* height: 100vh; */
 }
 body {
-  padding: 0;
+margin-bottom: 3rem;
   background: var(--background-one);
   font-family: 'Montserrat', sans-serif;
   /* height: 100vh; */

@@ -54,6 +54,7 @@ const TodoListStyle = styled.div`
   border-style: none;
   border-radius: 25px;
   margin: 1rem;
+  margin-bottom: 40px;
 `;
 
 const TodoListUl = styled.div`

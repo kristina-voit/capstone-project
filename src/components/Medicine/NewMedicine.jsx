@@ -221,7 +221,7 @@ const Description = styled.p`
 `;
 
 const Article = styled.article`
-  padding: 1rem;
+  padding-bottom: 1rem;
 `;
 
 const ErrorMessage = styled.div`

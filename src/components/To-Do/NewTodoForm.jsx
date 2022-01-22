@@ -55,7 +55,8 @@ const NewTodoFormButton = styled.button`
   font-weight: bold;
   border-radius: 15px;
   margin-left: 5px;
-  margin-top: 1rem;
+  margin-top: 10px;
+  
   cursor: pointer;
   font-family: "Montserrat", sans-serif;
   height: 2rem;

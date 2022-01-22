@@ -45,7 +45,7 @@ const TodoListBlock = styled.div`
 `;
 
 const Greeting = styled.div`
-  //for further styling
+font-size: 20px;
 `;
 
 const ButtonStyle = styled.a`

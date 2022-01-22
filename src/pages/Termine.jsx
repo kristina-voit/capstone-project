@@ -31,7 +31,6 @@ const ButtonStyle = styled.button`
   font-weight: bold;
   border-radius: 15px;
   margin-left: 5px;
-  margin-top: 1rem;
   margin-bottom: 40px;
   cursor: pointer;
   font-family: "Montserrat", sans-serif;

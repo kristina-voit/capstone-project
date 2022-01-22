@@ -54,6 +54,8 @@ function NewMedicine() {
   return (
     <div>
       <section>
+      <details>
+          <summary>Neues Medikament eintragen</summary>
       {hasFormErrors && (
           <ErrorMessage>
             <p>
@@ -124,6 +126,7 @@ function NewMedicine() {
             </Button>
           </div>
         </Form>
+        </details>
       </section>
 
       <Card>

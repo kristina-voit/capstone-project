@@ -2,7 +2,7 @@ import { useState } from "react";
 import { journaldata } from "../journaldata";
 import SearchInput from "./SearchInput";
 import JournalData from "../Search/JournalData";
-import ModalFull from "../Modal/ModalFull";
+import NewSymptom from "../NewSymptom"
 
 function Search() {
   const [state, setState] = useState({ searchTerm: "" });
@@ -14,19 +14,29 @@ function Search() {
   const { searchTerm } = state;
 
   return (
+<div>
     <section>
+     
       <SearchInput searchTerm={searchTerm} onSearch={onSearch} />
-      <ModalFull />
+   
+  
+    </section>
+    <NewSymptom />
+    <section>
       {journaldata
         .filter((journaldata) =>
           `${journaldata.stimmung} ${journaldata.datum} ${journaldata.notizen}`
             .toUpperCase()
             .includes(searchTerm.toUpperCase())
         )
+        
         .map((journaldata) => (
           <JournalData key={journaldata.id} journaldata={journaldata} />
         ))}
+   
     </section>
+  
+    </div>
   );
 }
 

@@ -56,7 +56,7 @@ class ModalFull extends React.Component {
           Neuen Eintrag hinzufügen
         </ButtonStyle>
         <Modal show={this.state.modal} handleClose={(e) => this.modalClose(e)}>
-          <h2>Servus</h2>
+      
           <div className="form-group">
             <label>Stimmung:</label>
             <input
@@ -64,15 +64,16 @@ class ModalFull extends React.Component {
               value={this.state.modalInputName}
               name="modalInputName"
               onChange={(e) => this.handleChange(e)}
-              className="form-control"
+            
             />
             <label>Datum:</label>
             <input
-              type="text"
+              type="date"
               value={this.state.modalInputDate}
               name="modalInputDate"
+              pattern='(0[1-9]|1[0-9]|2[0-9]|3[01]).(0[1-9]|1[012]).[0-9]{4}'
               onChange={(e) => this.handleChange(e)}
-              className="form-control"
+            
             />
             <label>Notizen:</label>
             <input
@@ -80,7 +81,7 @@ class ModalFull extends React.Component {
               value={this.state.modalInputNotes}
               name="modalInputNotes"
               onChange={(e) => this.handleChange(e)}
-              className="form-control"
+             
             />
           </div>
           <div className="form-group">

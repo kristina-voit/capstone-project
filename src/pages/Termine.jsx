@@ -1,3 +1,4 @@
+import NewEvent from "../components/Events/NewEvent";
 import EventsList from "../components/Events/EventsList";
 import { eventsData } from "../components/Events/appointmentdata";
 import Header from "../components/Header/Header.jsx";
@@ -9,10 +10,10 @@ const Termine = () => {
     <div>
       <Header />
       <h1>Deine anstehenden Termine</h1>
+
+      <NewEvent />
+
       <EventsList data={eventsData} />
-      <NavLink to="/neuertermin">
-        <ButtonStyle>Termin eintragen</ButtonStyle>
-      </NavLink>
 
       <a target="_blank" href="https://jameda.de">
         <ButtonStyle>Neuen Termin finden</ButtonStyle>
@@ -31,6 +32,7 @@ const ButtonStyle = styled.button`
   border-radius: 15px;
   margin-left: 5px;
   margin-top: 1rem;
+  margin-bottom: 40px;
   cursor: pointer;
   font-family: "Montserrat", sans-serif;
   height: 5rem;

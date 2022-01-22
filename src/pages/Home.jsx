@@ -14,8 +14,15 @@ const Home = () => {
       <Greeting>
         <p>Kristina, wie geht es Dir heute?</p>
       </Greeting>
+ 
+      <ButtonStyle class href="/symptome">
+      Stimmung & Symptome verwalten
 
-<Mood/>
+      </ButtonStyle>
+    
+      
+
+{/*<Mood/>*/}
 
 
 
@@ -39,4 +46,19 @@ const TodoListBlock = styled.div`
 
 const Greeting = styled.div`
   //for further styling
+`;
+
+const ButtonStyle = styled.a`
+  background: #f5f9f9;
+  color: #509b9b;
+  border: none;
+  font-weight: bold;
+  text-decoration:none;
+  border-radius: 15px;
+  margin-left: 5px;
+  margin-top: 1rem;
+  margin-bottom: 40px;
+  cursor: pointer;
+  font-family: "Montserrat", sans-serif;
+ 
 `;

@@ -26,7 +26,7 @@ const FormInput = styled.input`
   font-size: initial;
   font-family: "Montserrat", sans-serif;
   height: 2rem;
-  margin-bottom: 50px;
+  margin-bottom: 25px;
   margin-top: 40px;
   padding-right: 2rem;
   padding-left: 2rem;

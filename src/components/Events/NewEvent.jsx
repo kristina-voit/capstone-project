@@ -53,74 +53,77 @@ function NewAppointment() {
   return (
     <div>
       <section>
-        {hasFormErrors && (
-          <ErrorMessage>
-            <p>Bitte füllen Sie alle Felder korrekt aus.</p>
-          </ErrorMessage>
-        )}
-        <Form onSubmit={handleSubmit}>
-          <NewEventInput
-            onNewEventInputChange={handleChange}
-            name="arztname"
-            value={appointment.arztname}
-            placeholder="Name"
-          ></NewEventInput>
+        <details>
+          <summary>Neuen Termin eintragen</summary>
+          {hasFormErrors && (
+            <ErrorMessage>
+              <p>Bitte füllen Sie alle Felder korrekt aus.</p>
+            </ErrorMessage>
+          )}
+          <Form onSubmit={handleSubmit}>
+            <NewEventInput
+              onNewEventInputChange={handleChange}
+              name="arztname"
+              value={appointment.arztname}
+              placeholder="Name"
+            ></NewEventInput>
 
-          <NewEventInput
-            onNewEventInputChange={handleChange}
-            name="datum"
-            value={appointment.datum}
-            placeholder="Datum, Uhrzeit"
-          ></NewEventInput>
+            <NewEventInput
+              onNewEventInputChange={handleChange}
+              name="datum"
+              value={appointment.datum}
+              placeholder="Datum, Uhrzeit"
+            ></NewEventInput>
 
-          <NewEventInput
-            onNewEventInputChange={handleChange}
-            name="fachrichtung"
-            value={appointment.fachrichtung}
-            placeholder="Fachrichtung"
-          ></NewEventInput>
+            <NewEventInput
+              onNewEventInputChange={handleChange}
+              name="fachrichtung"
+              value={appointment.fachrichtung}
+              placeholder="Fachrichtung"
+            ></NewEventInput>
 
-          <NewEventInput
-            onNewEventInputChange={handleChange}
-            name="adresse"
-            value={appointment.adresse}
-            placeholder="Adresse"
-          ></NewEventInput>
+            <NewEventInput
+              onNewEventInputChange={handleChange}
+              name="adresse"
+              value={appointment.adresse}
+              placeholder="Adresse"
+            ></NewEventInput>
 
-          <NewEventInput
-            onNewEventInputChange={handleChange}
-            name="telefon"
-            value={appointment.telefon}
-            placeholder="Telefon"
-          ></NewEventInput>
+            <NewEventInput
+              onNewEventInputChange={handleChange}
+              name="telefon"
+              value={appointment.telefon}
+              placeholder="Telefon"
+            ></NewEventInput>
 
-          <NewEventInput
-            onNewEventInputChange={handleChange}
-            name="email"
-            value={appointment.email}
-            placeholder="Email-Adresse"
-          ></NewEventInput>
+            <NewEventInput
+              onNewEventInputChange={handleChange}
+              name="email"
+              value={appointment.email}
+              placeholder="Email-Adresse"
+            ></NewEventInput>
 
-          <NewEventInput
-            onNewEventInputChange={handleChange}
-            name="website"
-            value={appointment.website}
-            placeholder="Website"
-          ></NewEventInput>
+            <NewEventInput
+              onNewEventInputChange={handleChange}
+              name="website"
+              value={appointment.website}
+              placeholder="Website"
+            ></NewEventInput>
 
-          <div>
-            <Button>Termin hinzufügen</Button>
+            <div>
+              <Button>Termin hinzufügen</Button>
 
-            <Button
-              type="reset"
-              onClick={() => {
-                setAppointment(initialAppointment);
-              }}
-            >
-              Zurücksetzen
-            </Button>
-          </div>
-        </Form>
+              <Button
+                type="reset"
+                onClick={() => {
+                  setAppointment(initialAppointment);
+                }}
+              >
+                Zurücksetzen
+              </Button>
+            </div>
+          </Form>
+        </details>
       </section>
 
       <Card>
@@ -231,4 +234,8 @@ const ErrorMessage = styled.div`
   border-radius: 6px;
   color: white;
   margin: 0 0 1rem;
+`;
+
+const Summary = styled.div`
+  color: green;
 `;

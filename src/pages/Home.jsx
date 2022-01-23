@@ -5,7 +5,7 @@ import EventsListShort from "../components/Events/EventsListShort";
 import MedicineListShort from "../components/Medicine/MedicineListShort";
 import { eventsData } from "../components/Events/appointmentdata";
 import { medicineData } from "../components/Medicine/medicinedata";
-import Mood from "../components/Symptoms/Mood"
+
 
 const Home = () => {
   return (

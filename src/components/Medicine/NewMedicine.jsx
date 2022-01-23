@@ -24,6 +24,10 @@ function NewMedicine() {
 
   const removeItem = () => localStorage.removeItem("_products");
 
+  const refreshPage = () => {
+    window.location.reload();
+  };
+
   const [hasFormErrors, setHasFormErrors] = useState(false);
 
 
@@ -146,7 +150,14 @@ function NewMedicine() {
               <IconStyling src={Evening} alt="Evening" />
               <IconStyling src={Night} alt="Night" />
             </FullCardContent>
-            <Button onClick={removeItem}>Entfernen</Button>
+            <Button
+                onClick={() => {
+                  removeItem();
+                  refreshPage();
+                }}
+              >
+                Entfernen
+              </Button>
           </Article>
         ))}
       </Card>

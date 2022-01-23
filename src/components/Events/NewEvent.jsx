@@ -24,6 +24,9 @@ function NewAppointment() {
   );
 
   const removeItem = () => localStorage.removeItem("_appointments");
+  const refreshPage = () => {
+    window.location.reload();
+  };
 
   const [hasFormErrors, setHasFormErrors] = useState(false);
 
@@ -150,7 +153,14 @@ function NewAppointment() {
                 </a>
               </Icons>
 
-              <Button onClick={removeItem}>Entfernen</Button>
+              <Button
+                onClick={() => {
+                  removeItem();
+                  refreshPage();
+                }}
+              >
+                Entfernen
+              </Button>
             </FullCardContent>
           </article>
         ))}

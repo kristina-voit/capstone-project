@@ -27,10 +27,6 @@ function NewMedicine() {
     setProducts (remainingProducts)
     }
 
-  /*const refreshPage = () => {
-    window.location.reload();
-  };*/
-
   const [hasFormErrors, setHasFormErrors] = useState(false);
 
 
@@ -156,7 +152,7 @@ function NewMedicine() {
             <Button
                 onClick={() => {
                   removeItem(product);
-                
+
                 }}
               >
                 Entfernen

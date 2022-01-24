@@ -27,9 +27,7 @@ function NewAppointment() {
     const remainingAppointments = appointments.filter(appointment => appointment.datum !== appointmentToRemove.datum)
     setAppointments (remainingAppointments)
     }
-  const refreshPage = () => {
-    window.location.reload();
-  };
+
 
   const [hasFormErrors, setHasFormErrors] = useState(false);
 
@@ -159,7 +157,6 @@ function NewAppointment() {
               <Button
                 onClick={() => {
                   removeItem(appointment);
-                  refreshPage();
                 }}
               >
                 Entfernen

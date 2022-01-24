@@ -1,8 +1,11 @@
 import TodoList from "../components/To-Do/TodoList.jsx";
 import styled from "styled-components";
 import Header from "../components/Header/Header.jsx";
+import NewEventShort from "../components/Events/NewEventShort"
 import EventsListShort from "../components/Events/EventsListShort";
+import NewMedicineShort from "../components/Medicine/NewMedicineShort"
 import MedicineListShort from "../components/Medicine/MedicineListShort";
+
 import { eventsData } from "../components/Events/appointmentdata";
 import { medicineData } from "../components/Medicine/medicinedata";
 
@@ -21,13 +24,15 @@ const Home = () => {
       </ButtonStyle>
     
       
-
-{/*<Mood/>*/}
-
-
+<div>
+  <NewMedicineShort />
+  </div>
+     <div>
+        <MedicineListShort data={medicineData} />
+      </div>
 
       <div>
-        <MedicineListShort data={medicineData} />
+        <NewEventShort/>
       </div>
       <div>
         <EventsListShort data={eventsData} />

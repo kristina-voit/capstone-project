@@ -23,7 +23,10 @@ function NewAppointment() {
     localStorageAppointments ?? []
   );
 
-  const removeItem = () => localStorage.removeItem("_appointments");
+  const removeItem = (appointmentToRemove) => {
+    const remainingAppointments = appointments.filter(appointment => appointment.datum !== appointmentToRemove.datum)
+    setAppointments (remainingAppointments)
+    }
   const refreshPage = () => {
     window.location.reload();
   };
@@ -155,7 +158,7 @@ function NewAppointment() {
 
               <Button
                 onClick={() => {
-                  removeItem();
+                  removeItem(appointment);
                   refreshPage();
                 }}
               >

@@ -1,30 +1,29 @@
 import styled from "styled-components";
 import { useState } from "react";
 
-export default function Dosage(props) {
+export default function Dosage(product) {
   const [color, setColor] = useState(true);
-  if (props.einnahmeMenge > 0) {
+  if (product.einnahmeMenge > 0) {
     return (
       <Description onClick={() => setColor(!color)} color={color}>
-        {props.einnahmeMenge}
+        {product.einnahmeMenge}
       </Description>
     );
   } else if (
-    props.einnahmeMenge == 0) {
+    product.einnahmeMenge == 0) {
       return (
         <Description color={!color}>
-          {props.einnahmeMenge}
+          {product.einnahmeMenge}
         </Description>
       );
   } else {
     return (
       <Description onClick={() => setColor(color)} color={color}>
-        {props.einnahmeMenge}
+        {product.einnahmeMenge}
       </Description>
     );
   }
 }
-
 const Description = styled.p`
   font-size: 14;
   margin: 8px 0 0 0;

@@ -16,7 +16,7 @@ const Home = () => {
       </Greeting>
  
       <ButtonStyle class href="/symptome">
-      Stimmung & Symptome verwalten
+      Stimmung & Symptome verwalten, und zwar sofort! :-o
 
       </ButtonStyle>
     

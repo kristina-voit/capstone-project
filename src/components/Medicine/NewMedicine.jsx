@@ -22,7 +22,10 @@ function NewMedicine() {
   const localStorageProducts = loadFromLocal("_products");
   const [products, setProducts] = useState(localStorageProducts ?? []);
 
-  const removeItem = () => localStorage.removeItem("_products");
+  const removeItem = (productToRemove) => {
+    const remainingProducts = products.filter(product => product.name !== productToRemove.name)
+    setProducts (remainingProducts)
+    }
 
   const refreshPage = () => {
     window.location.reload();
@@ -152,7 +155,7 @@ function NewMedicine() {
             </FullCardContent>
             <Button
                 onClick={() => {
-                  removeItem();
+                  removeItem(product);
                   refreshPage();
                 }}
               >

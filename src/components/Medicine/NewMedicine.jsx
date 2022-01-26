@@ -22,11 +22,10 @@ function NewMedicine() {
   const localStorageProducts = loadFromLocal("_products");
   const [products, setProducts] = useState(localStorageProducts ?? []);
 
-  const removeItem = () => localStorage.removeItem("_products");
-
-  const refreshPage = () => {
-    window.location.reload();
-  };
+  const removeItem = (productToRemove) => {
+    const remainingProducts = products.filter(product => product.name !== productToRemove.name)
+    setProducts (remainingProducts)
+    }
 
   const [hasFormErrors, setHasFormErrors] = useState(false);
 
@@ -152,8 +151,8 @@ function NewMedicine() {
             </FullCardContent>
             <Button
                 onClick={() => {
-                  removeItem();
-                  refreshPage();
+                  removeItem(product);
+
                 }}
               >
                 Entfernen

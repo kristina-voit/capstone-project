@@ -35,12 +35,12 @@ const FullCardContent = styled.div`
 
 const CardTitle = styled.p`
   font-weight: 600;
-  margin: 12px 0px 0px 0px;
+  margin: 12px 0 0 0;
 `;
 
 const SingleCard = styled.div`
   border-radius: 15px;
-  box-shadow: 0px 0px 8px #ccc;
+  box-shadow: 0 0 8px #ccc;
   background: #fff4f4;
   color: #253b56;
   margin: 1rem;

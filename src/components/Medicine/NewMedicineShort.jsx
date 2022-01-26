@@ -18,10 +18,10 @@ function NewProduct() {
  
   return (
     <div>
-      <Card>
+ 
         {products.map((product, index) => (
           <article>
-         
+              <Section>
             <CardTitle>{product.name}</CardTitle>
 
             <FullCardContent>
@@ -36,23 +36,34 @@ function NewProduct() {
               <IconStyling src={Evening} alt="Evening" />
               <IconStyling src={Night} alt="Night" />
             </FullCardContent>
-
+            </Section>
           </article>
         ))}
-      </Card>
+    
     </div>
   );
 }
 
 export default NewProduct;
 
+const Section = styled.div`
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 10px;
+  border-radius: 15px;
+  box-shadow: 0 0 8px #ccc;
+  background: #f6f5fb;
+  color: #4b417a;
+  margin: 1rem;
+`
 const FullCardContent = styled.div`
-  padding: 0px 0px 4px 0px;
+  padding: 0 0 4px 0;
   margin: 1rem;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 10px;
   justify-items: center;
+ 
 `;
 
 const CardTitle = styled.p`
@@ -67,19 +78,13 @@ const Card = styled.div`
   grid-template-columns: repeat(1, 1fr);
   grid-gap: 10px;
   border-radius: 15px;
-  box-shadow: 0px 0px 8px #ccc;
+  box-shadow: 0 0 8px #ccc;
   background: #f6f5fb;
   color: #4b417a;
   margin: 1rem;
   padding-top: 0.1rem;
 `;
 
-const Description = styled.p`
-  font-size: 14;
-  margin: 8px 0 0 0;
-  font-weight: 600;
-  color: ${(props) => (props.color ? "red" : "green")};
-`;
 
 const IconStyling = styled.img`
   margin-left: 5px;

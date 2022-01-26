@@ -1,14 +1,9 @@
 import styled from "styled-components";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import NewMedicineInput from "./NewMedicineInput";
-import { saveToLocal, loadFromLocal } from "../../lib/localStorage";
-import Morning from "../../images/sunrise.svg";
-import Noon from "../../images/noon.svg";
-import Evening from "../../images/sunset.svg";
-import Night from "../../images/night.svg";
-import isProductValid from "../../lib/validationMedicine"
+import isProductValid from "../../lib/validationMedicine";
 
-function NewMedicine() {
+function NewMedicine({ onAddProduct }) {
   const initialProduct = {
     name: "",
     hersteller: "",
@@ -19,20 +14,8 @@ function NewMedicine() {
     einnahmeNachts: "",
   };
   const [product, setProduct] = useState(initialProduct);
-  const localStorageProducts = loadFromLocal("_products");
-  const [products, setProducts] = useState(localStorageProducts ?? []);
-
-  const removeItem = (productToRemove) => {
-    const remainingProducts = products.filter(product => product.name !== productToRemove.name)
-    setProducts (remainingProducts)
-    }
 
   const [hasFormErrors, setHasFormErrors] = useState(false);
-
-
-  useEffect(() => {
-    saveToLocal("_products", products);
-  }, [products]);
 
   const handleChange = (event) => {
     let inputValue = event.target.value;
@@ -46,24 +29,20 @@ function NewMedicine() {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (isProductValid(product)) {
-      setProducts([...products, product]);
+      onAddProduct(product);
       setHasFormErrors(false);
     } else {
       setHasFormErrors(true);
     }
   };
 
-
   return (
-    <div>
-      <section>
+    <section>
       <details>
-          <summary>Neues Medikament eintragen</summary>
-      {hasFormErrors && (
+        <summary>Neues Medikament eintragen</summary>
+        {hasFormErrors && (
           <ErrorMessage>
-            <p>
-              Bitte füllen Sie alle Felder korrekt aus.
-            </p>
+            <p>Bitte füllen Sie alle Felder korrekt aus.</p>
           </ErrorMessage>
         )}
         <Form onSubmit={handleSubmit}>
@@ -129,53 +108,22 @@ function NewMedicine() {
             </Button>
           </div>
         </Form>
-        </details>
-      </section>
-
-      <Card>
-        {products.map((product, index) => (
-          <Article>
-            <CardTitle>{product.name}</CardTitle>
-            <CardTitle>{product.hersteller}</CardTitle>
-            <p>{product.einnahmehinweis}</p>
-            <FullCardContent>
-              <Description>{product.einnahmeMorgens} </Description>
-              <Description> {product.einnahmeMittags} </Description>
-              <Description> {product.einnahmeAbends} </Description>
-              <Description> {product.einnahmeNachts} </Description>
-
-              <IconStyling src={Morning} alt="Morning" />
-              <IconStyling src={Noon} alt="Noon" />
-              <IconStyling src={Evening} alt="Evening" />
-              <IconStyling src={Night} alt="Night" />
-            </FullCardContent>
-            <Button
-                onClick={() => {
-                  removeItem(product);
-
-                }}
-              >
-                Entfernen
-              </Button>
-          </Article>
-        ))}
-      </Card>
-    </div>
+      </details>
+    </section>
   );
 }
 
 export default NewMedicine;
 
-const Card = styled.div`
+const Section = styled.div`
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  grid-gap: 10px;
+
   border-radius: 15px;
-  box-shadow: 0px 0px 8px #ccc;
+  box-shadow: 0 0 8px #ccc;
   background: #f6f5fb;
   color: #4b417a;
   margin: 1rem;
-  padding-top: 0.1rem;
 `;
 
 const Form = styled.form`
@@ -183,7 +131,7 @@ const Form = styled.form`
   grid-template-columns: repeat(1, 1fr);
   grid-gap: 10px;
   border-radius: 15px;
-  box-shadow: 0px 0px 8px #ccc;
+  box-shadow: 0 0 8px #ccc;
   background: #f6f5fb;
   color: #4b417a;
   margin: 1rem;
@@ -197,8 +145,9 @@ const Button = styled.button`
   color: #4b417a;
   font-weight: bold;
   border-radius: 15px;
-  margin-left: 5px;
+  align-items: center;
   margin-top: 1rem;
+  margin-bottom: 1rem;
 
   cursor: pointer;
   font-family: "Montserrat", sans-serif;
@@ -206,7 +155,7 @@ const Button = styled.button`
 `;
 const CardTitle = styled.p`
   font-weight: 600;
-  margin: 12px 0px 0px 0px;
+  margin: 12px 0 0 0;
 `;
 
 const IconStyling = styled.img`
@@ -216,7 +165,7 @@ const IconStyling = styled.img`
 `;
 
 const FullCardContent = styled.div`
-  padding: 0px 0px 4px 0px;
+  padding: 0 0 4px 0;
 
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -230,9 +179,7 @@ const Description = styled.p`
   font-weight: 600;
 `;
 
-const Article = styled.article`
-  padding-bottom: 1rem;
-`;
+const Article = styled.article``;
 
 const ErrorMessage = styled.div`
   align-items: center;
@@ -240,4 +187,4 @@ const ErrorMessage = styled.div`
   border-radius: 6px;
   color: white;
   margin: 0 0 1rem;
-  `
+`;

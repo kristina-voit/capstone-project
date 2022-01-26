@@ -1,13 +1,9 @@
 import styled from "styled-components";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import NewEventInput from "./NewEventInput";
-import WebsiteIcon from "../../images/homepage.svg";
-import CallIcon from "../../images/phone.svg";
-import EmailIcon from "../../images/email.svg";
-import { saveToLocal, loadFromLocal } from "../../lib/localStorage";
 import isAppointmentValid from "../../lib/validationAppointment";
 
-function NewAppointment() {
+function NewAppointment({ onAddAppointment }) {
   const initialAppointment = {
     arztname: "",
     datum: "",
@@ -18,22 +14,8 @@ function NewAppointment() {
     website: "",
   };
   const [appointment, setAppointment] = useState(initialAppointment);
-  const localStorageAppointments = loadFromLocal("_appointments");
-  const [appointments, setAppointments] = useState(
-    localStorageAppointments ?? []
-  );
-
-  const removeItem = (appointmentToRemove) => {
-    const remainingAppointments = appointments.filter(appointment => appointment.datum !== appointmentToRemove.datum)
-    setAppointments (remainingAppointments)
-    }
-
 
   const [hasFormErrors, setHasFormErrors] = useState(false);
-
-  useEffect(() => {
-    saveToLocal("_appointments", appointments);
-  }, [appointments]);
 
   const handleChange = (event) => {
     let inputValue = event.target.value;
@@ -47,7 +29,7 @@ function NewAppointment() {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (isAppointmentValid(appointment)) {
-      setAppointments([...appointments, appointment]);
+      onAddAppointment(appointment);
       setHasFormErrors(false);
     } else {
       setHasFormErrors(true);
@@ -55,84 +37,83 @@ function NewAppointment() {
   };
 
   return (
-    <div>
-      <section>
-        <details>
-          <summary>Neuen Termin eintragen</summary>
-          {hasFormErrors && (
-            <ErrorMessage>
-              <p>Bitte füllen Sie alle Felder korrekt aus.</p>
-            </ErrorMessage>
-          )}
-          <Form onSubmit={handleSubmit}>
-            <NewEventInput
-              onNewEventInputChange={handleChange}
-              name="arztname"
-              value={appointment.arztname}
-              placeholder="Name"
-            ></NewEventInput>
+    <section>
+      <details>
+        <summary>Neuen Termin eintragen</summary>
+        {hasFormErrors && (
+          <ErrorMessage>
+            <p>Bitte füllen Sie alle Felder korrekt aus.</p>
+          </ErrorMessage>
+        )}
+        <Form onSubmit={handleSubmit}>
+          <NewEventInput
+            onNewEventInputChange={handleChange}
+            name="arztname"
+            value={appointment.arztname}
+            placeholder="Name"
+          ></NewEventInput>
 
-            <NewEventInput
-              onNewEventInputChange={handleChange}
-              name="datum"
-              value={appointment.datum}
-              placeholder="Datum, Uhrzeit"
-            ></NewEventInput>
+          <NewEventInput
+            onNewEventInputChange={handleChange}
+            name="datum"
+            value={appointment.datum}
+            placeholder="Datum, Uhrzeit"
+          ></NewEventInput>
 
-            <NewEventInput
-              onNewEventInputChange={handleChange}
-              name="fachrichtung"
-              value={appointment.fachrichtung}
-              placeholder="Fachrichtung"
-            ></NewEventInput>
+          <NewEventInput
+            onNewEventInputChange={handleChange}
+            name="fachrichtung"
+            value={appointment.fachrichtung}
+            placeholder="Fachrichtung"
+          ></NewEventInput>
 
-            <NewEventInput
-              onNewEventInputChange={handleChange}
-              name="adresse"
-              value={appointment.adresse}
-              placeholder="Adresse"
-            ></NewEventInput>
+          <NewEventInput
+            onNewEventInputChange={handleChange}
+            name="adresse"
+            value={appointment.adresse}
+            placeholder="Adresse"
+          ></NewEventInput>
 
-            <NewEventInput
-              onNewEventInputChange={handleChange}
-              name="telefon"
-              value={appointment.telefon}
-              placeholder="Telefon"
-            ></NewEventInput>
+          <NewEventInput
+            onNewEventInputChange={handleChange}
+            name="telefon"
+            value={appointment.telefon}
+            placeholder="Telefon"
+          ></NewEventInput>
 
-            <NewEventInput
-              onNewEventInputChange={handleChange}
-              name="email"
-              value={appointment.email}
-              placeholder="Email-Adresse"
-            ></NewEventInput>
+          <NewEventInput
+            onNewEventInputChange={handleChange}
+            name="email"
+            value={appointment.email}
+            placeholder="Email-Adresse"
+          ></NewEventInput>
 
-            <NewEventInput
-              onNewEventInputChange={handleChange}
-              name="website"
-              value={appointment.website}
-              placeholder="Website"
-            ></NewEventInput>
+          <NewEventInput
+            onNewEventInputChange={handleChange}
+            name="website"
+            value={appointment.website}
+            placeholder="Website"
+          ></NewEventInput>
 
-            <div>
-              <Button>Termin hinzufügen</Button>
+          <div>
+            <Button>Termin hinzufügen</Button>
 
-              <Button
-                type="reset"
-                onClick={() => {
-                  setAppointment(initialAppointment);
-                }}
-              >
-                Zurücksetzen
-              </Button>
-            </div>
-          </Form>
-        </details>
-      </section>
+            <Button
+              type="reset"
+              onClick={() => {
+                setAppointment(initialAppointment);
+              }}
+            >
+              Zurücksetzen
+            </Button>
+          </div>
+        </Form>
+      </details>
+    </section>
 
-      <Card>
-        {appointments.map((appointment, index) => (
+    /* {appointments.map((appointment, index) => (
           <article>
+             <Section>
             <FullCardContent>
               <CardTitle>{appointment.arztname}</CardTitle>
               <Description>{appointment.datum}</Description>
@@ -153,7 +134,7 @@ function NewAppointment() {
                   <SingleIcon src={CallIcon} alt="Call" />
                 </a>
               </Icons>
-
+              <div>
               <Button
                 onClick={() => {
                   removeItem(appointment);
@@ -161,22 +142,33 @@ function NewAppointment() {
               >
                 Entfernen
               </Button>
+              </div>
             </FullCardContent>
+            </Section>
           </article>
-        ))}
-      </Card>
-    </div>
+              ))}*/
   );
 }
 
 export default NewAppointment;
+
+const Section = styled.div`
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 10px;
+  border-radius: 15px;
+  box-shadow: 0 0 8px #ccc;
+  background: #fff4f4;
+  color: #4b417a;
+  margin: 1rem;
+`;
 
 const Card = styled.div`
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   grid-gap: 10px;
   border-radius: 15px;
-  box-shadow: 0px 0px 8px #ccc;
+  box-shadow: 0 0 8px #ccc;
   background: #fff4f4;
   color: #4b417a;
   margin: 1rem;
@@ -188,7 +180,7 @@ const Form = styled.form`
   grid-template-columns: repeat(1, 1fr);
   grid-gap: 10px;
   border-radius: 15px;
-  box-shadow: 0px 0px 8px #ccc;
+  box-shadow: 0 0 8px #ccc;
   background: #fff4f4;
   color: #4b417a;
   margin: 1rem;
@@ -212,7 +204,7 @@ const Button = styled.button`
 
 const CardTitle = styled.p`
   font-weight: 600;
-  margin: 12px 0px 0px 0px;
+  margin: 12px 0 0 0;
   text-align: left;
 `;
 
@@ -221,7 +213,7 @@ const Description = styled.p`
 `;
 
 const FullCardContent = styled.div`
-  padding: 0px 0px 4px 0px;
+  padding: 0 0 4px 0;
   margin: 1rem;
 `;
 

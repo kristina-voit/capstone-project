@@ -42,7 +42,7 @@ export default function Card(props) {
   );
 }
 const FullCardContent = styled.div`
-  padding: 0px 0px 4px 0px;
+  padding: 0 0 4px 0;
   margin: 1rem;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -59,7 +59,7 @@ const CardTitle = styled.p`
 
 const SingleCard = styled.div`
   border-radius: 15px;
-  box-shadow: 0px 0px 8px #ccc;
+  box-shadow: 0 0 8px #ccc;
   background: #f6f5fb;
   color: #4b417a;
   margin: 1rem;

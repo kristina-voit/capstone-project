@@ -14,13 +14,19 @@ const GlobalStyle = createGlobalStyle`
 } */
 html {
   /* height: 100vh; */
+
 }
 body {
-margin-bottom: 3rem;
   background: var(--background-one);
   font-family: 'Montserrat', sans-serif;
-  /* height: 100vh; */
 }
+
+main {
+  margin-bottom: 60px;
+  padding-bottom: 10px;
+  height: 100vh;
+}
+
 details > summary {
   background: #f5f9f9;
     color: #509b9b;

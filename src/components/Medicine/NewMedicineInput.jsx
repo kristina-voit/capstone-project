@@ -1,3 +1,5 @@
+import styled from "styled-components";
+
 function NewMedicineInput({
   name,
   value,
@@ -8,7 +10,7 @@ function NewMedicineInput({
   return (
     <>
       <label htmlFor={name}>{children}</label>
-      <input
+      <Input
         type="text"
         id={name}
         name={name}
@@ -21,3 +23,7 @@ function NewMedicineInput({
 }
 
 export default NewMedicineInput;
+
+const Input = styled.input`
+  height: 40px;
+`

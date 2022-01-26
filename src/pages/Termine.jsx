@@ -1,24 +1,50 @@
-import NewEvent from "../components/Events/NewEvent";
+import { useState, useEffect } from "react";
+import NewAppointment from "../components/Events/NewAppointment";
 import EventsList from "../components/Events/EventsList";
-import { eventsData } from "../components/Events/appointmentdata";
+import { appointmentsData } from "../components/Events/appointmentdata";
 import Header from "../components/Header/Header.jsx";
 import styled from "styled-components";
-import { NavLink } from "react-router-dom";
+import { loadFromLocal, saveToLocal } from "../lib/localStorage";
 
 const Termine = () => {
+  const [appointments, setAppointments] = useState(appointmentsData);
+
+  useEffect(() => {
+    const storageData = loadFromLocal("_appointments");
+    if (storageData && storageData.length > 0) {
+      setAppointments(storageData);
+    }
+  }, []);
+
+  useEffect(() => {
+    saveToLocal("_appointments", appointments);
+  }, [appointments]);
+
+  function addAppointment(appointment) {
+    setAppointments([...appointments, appointment]);
+  }
+
+  const removeItem = (appointmentName) => {
+    const remainingAppointments = appointments.filter(
+      (appointment) => appointment.name !== appointmentName
+    );
+    setAppointments(remainingAppointments);
+  };
+
   return (
-    <div>
-      <Header />
-      <h1>Deine anstehenden Termine</h1>
+    <main>
+      <div>
+        <Header />
+        <h1>Deine anstehenden Termine</h1>
+        <NewAppointment onAddAppointment={addAppointment} />
 
-      <NewEvent />
+        <EventsList data={appointments} onRemoveAppointment={removeItem} />
 
-      <EventsList data={eventsData} />
-
-      <a target="_blank" href="https://jameda.de">
-        <ButtonStyle>Neuen Termin finden</ButtonStyle>
-      </a>
-    </div>
+        <a target="_blank" href="https://jameda.de">
+          <ButtonStyle>Neuen Termin finden</ButtonStyle>
+        </a>
+      </div>
+    </main>
   );
 };
 export default Termine;
@@ -31,7 +57,7 @@ const ButtonStyle = styled.button`
   font-weight: bold;
   border-radius: 15px;
   margin-left: 5px;
-  margin-bottom: 40px;
+
   cursor: pointer;
   font-family: "Montserrat", sans-serif;
   height: 5rem;

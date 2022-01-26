@@ -1,16 +1,17 @@
 import Card from "../Medicine/MedicineCard";
 
-export default function MedicineList(props) {
-  const medicineList = props.data.map((event) => (
+export default function MedicineList({ data, onRemoveProduct }) {
+  const medicineList = data.map((product) => (
     <Card
-      id={event.id}
-      name={event.name}
-      hersteller={event.hersteller}
-      einnahmehinweis={event.einnahmehinweis}
-      einnahmeMorgens={event.einnahmeMorgens}
-      einnahmeMittags={event.einnahmeMittags}
-      einnahmeAbends={event.einnahmeAbends}
-      einnahmeNachts={event.einnahmeNachts}
+      id={product.id}
+      name={product.name}
+      hersteller={product.hersteller}
+      einnahmehinweis={product.einnahmehinweis}
+      einnahmeMorgens={product.einnahmeMorgens}
+      einnahmeMittags={product.einnahmeMittags}
+      einnahmeAbends={product.einnahmeAbends}
+      einnahmeNachts={product.einnahmeNachts}
+      onRemoveProduct={onRemoveProduct}
     />
   ));
 

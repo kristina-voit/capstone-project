@@ -1,22 +1,14 @@
-import NewSymptom from "../components/Symptoms/NewSymptom";
-import SymptomsList from "../components/Symptoms/SymptomsList";
-import { journaldata } from "../components/Symptoms/journaldata.jsx";
 import Header from "../components/Header/Header.jsx";
-import Graph from "../components/Symptoms/MoodGraph";
 import Search from "../components/Symptoms/Search/Search";
 import styled from "styled-components";
 
 const Symptome = () => {
   return (
-    <div>
+    <main>
       <Header />
       <h1>Stimmung & Symptome</h1>
-      <Graph />
-   
-
-
       <Search />
-    </div>
+    </main>
   );
 };
 export default Symptome;

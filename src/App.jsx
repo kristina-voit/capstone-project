@@ -5,7 +5,6 @@ import Symptome from "./pages/Symptome.jsx";
 import Medikamente from "./pages/Medikamente.jsx";
 import Termine from "./pages/Termine.jsx";
 
-
 import Footer from "./components/Footer/Footer.jsx";
 
 function App() {
@@ -17,8 +16,6 @@ function App() {
         <Route path="/symptome" element={<Symptome />} />
         <Route path="/medikamente" element={<Medikamente />} />
         <Route path="/termine" element={<Termine />} />
-     
-     
       </Routes>
 
       <Footer />

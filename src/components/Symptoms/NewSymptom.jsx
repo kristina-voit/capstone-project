@@ -4,23 +4,22 @@ import NewSymptomInput from "./NewSymptomInput";
 import { saveToLocal, loadFromLocal } from "../../lib/localStorage";
 import isSymptomValid from "../../lib/validationSymptom";
 
-function NewSymptom() {
+function NewSymptom({ onAddSymptom }) {
   const initialSymptom = {
     stimmung: "",
     datum: "",
     notizen: "",
   };
   const [symptom, setSymptom] = useState(initialSymptom);
-  const localStorageSymptoms = loadFromLocal("_symptoms");
-  const [symptoms, setSymptoms] = useState(localStorageSymptoms ?? []);
-
-  const removeItem = () => localStorage.removeItem("_symptoms");
+  //const localStorageSymptoms = loadFromLocal("_symptoms");
+  //const [symptoms, setSymptoms] = useState(localStorageSymptoms ?? []);
+  //const removeItem = () => localStorage.removeItem("_symptoms");
 
   const [hasFormErrors, setHasFormErrors] = useState(false);
 
-  useEffect(() => {
+  /*useEffect(() => {
     saveToLocal("_symptoms", symptoms);
-  }, [symptoms]);
+  }, [symptoms]);*/
 
   const handleChange = (event) => {
     let inputValue = event.target.value;
@@ -34,7 +33,7 @@ function NewSymptom() {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (isSymptomValid(symptom)) {
-      setSymptoms([...symptoms, symptom]);
+      onAddSymptom(symptom);
       setHasFormErrors(false);
     } else {
       setHasFormErrors(true);
@@ -90,17 +89,15 @@ function NewSymptom() {
         </details>
       </section>
 
-      <Card>
-        {symptoms.map((symptom, index) => (
-          <div>
-            <CardTitle>{symptom.stimmung}</CardTitle>
-            <CardTitle>{symptom.datum}</CardTitle>
-            <p>{symptom.notizen}</p>
+      {/*{symptoms.map((symptom, index) => (
+        <Card>
+          <CardTitle>{symptom.stimmung}</CardTitle>
+          <CardTitle>{symptom.datum}</CardTitle>
+          <p>{symptom.notizen}</p>
 
-            <Button onClick={removeItem}>Entfernen</Button>
-          </div>
-        ))}
-      </Card>
+          <Button onClick={removeItem}>Entfernen</Button>
+        </Card>
+      ))}*/}
     </div>
   );
 }
@@ -112,7 +109,7 @@ const Card = styled.div`
   grid-template-columns: repeat(1, 1fr);
   grid-gap: 10px;
   border-radius: 15px;
-  box-shadow: 0px 0px 8px #ccc;
+  box-shadow: 0 0 8px #ccc;
   background: #f6f5fb;
   color: #4b417a;
   margin: 1rem;
@@ -125,7 +122,7 @@ const Form = styled.form`
   grid-template-columns: repeat(1, 1fr);
   grid-gap: 10px;
   border-radius: 15px;
-  box-shadow: 0px 0px 8px #ccc;
+  box-shadow: 0 0 8px #ccc;
   background: #f6f5fb;
   color: #4b417a;
   margin: 1rem;
@@ -146,7 +143,7 @@ const Button = styled.button`
 `;
 const CardTitle = styled.p`
   font-weight: 600;
-  margin: 12px 0px 0px 0px;
+  margin: 12px 0 0 0;
 `;
 const ErrorMessage = styled.div`
   align-items: center;

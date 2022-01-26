@@ -13,6 +13,20 @@ function CardContent(props) {
       <Description>{props.telefon}</Description>
       <Description>{props.email}</Description>
       <Description>{props.website}</Description>
+      <Icons>
+        <a target="_blank" href={props.website}>
+          <SingleIcon src={WebsiteIcon} alt="Homepage" />
+        </a>
+        <a
+          href={`mailto:${props.email}?subject=Anfrage von Kristina Voit, *13.01.1989`}
+        >
+          <SingleIcon src={EmailIcon} alt="Email" />
+        </a>
+
+        <a href={`tel:${props.telefon}`}>
+          <SingleIcon src={CallIcon} alt="Call" />
+        </a>
+      </Icons>
     </FullCardContent>
   );
 }
@@ -26,20 +40,9 @@ export default function Card(props) {
           fachrichtung={props.fachrichtung}
           adresse={props.adresse}
         />
-        <Icons>
-          <a target="_blank" href={props.website}>
-            <SingleIcon src={WebsiteIcon} alt="Homepage" />
-          </a>
-          <a
-            href={`mailto:${props.email}?subject=Anfrage von Kristina Voit, *13.01.1989`}
-          >
-            <SingleIcon src={EmailIcon} alt="Email" />
-          </a>
-
-          <a href={`tel:${props.telefon}`}>
-            <SingleIcon src={CallIcon} alt="Call" />
-          </a>
-        </Icons>
+        <Button onClick={() => props.onRemoveAppointment(props.arztname)}>
+          Entfernen
+        </Button>
       </SingleCard>
     </div>
   );
@@ -47,26 +50,25 @@ export default function Card(props) {
 
 const FullCardContent = styled.div`
   padding: 4px 4px 4px 4px;
-  text-align: left;
   margin: 1rem;
 `;
 
 const CardTitle = styled.p`
   font-weight: 600;
-  margin: 12px 0px 0px 0px;
+  margin: 12px 0 0 0;
+  text-align: left;
 `;
 
 const SingleCard = styled.div`
   border-radius: 15px;
-  box-shadow: 0px 0px 8px #ccc;
+  box-shadow: 0 0 8px #ccc;
   background: #fff4f4;
   color: #253b56;
   margin: 1rem;
 `;
 
 const Description = styled.p`
-  font-size: 14;
-  margin: 8px 0 0 0;
+  text-align: left;
 `;
 
 const Icons = styled.div`
@@ -80,4 +82,20 @@ const SingleIcon = styled.img`
   margin-left: 5px;
   margin-right: 5px;
   margin-bottom: 5px;
+`;
+
+const Button = styled.button`
+  padding: 0 1.3rem;
+  border: none;
+  background: #509b9b;
+  color: #4b417a;
+  font-weight: bold;
+  border-radius: 15px;
+  margin-left: 5px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  cursor: pointer;
+  font-family: "Montserrat", sans-serif;
+  height: 2rem;
 `;

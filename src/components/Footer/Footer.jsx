@@ -33,6 +33,6 @@ const NavbarStyled = styled.footer`
   grid-template-columns: 1fr 1fr 1fr 1fr;
   position: fixed;
   bottom: 0;
-  padding-top: 3rem;
-  padding: 0.25em;
+  padding-top: 0.75rem;
+
 `;

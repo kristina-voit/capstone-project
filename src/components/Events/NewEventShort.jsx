@@ -12,29 +12,42 @@ function NewAppointment() {
  
   return (
     <div>
-      <Card>
+   
         {appointments.map((appointment, index) => (
-          <article>
+          <article>  
+            <Section>
             <FullCardContent>
               <Description>{appointment.datum}</Description>
               <CardTitle>{appointment.arztname}</CardTitle>
               <Description>{appointment.fachrichtung}</Description>
             </FullCardContent>
+            </Section>
           </article>
         ))}
-      </Card>
+  
     </div>
   );
 }
 
 export default NewAppointment;
 
+const Section = styled.div`
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 10px;
+  border-radius: 15px;
+  box-shadow: 0 0 8px #ccc;
+  background: #fff4f4;
+  color: #4b417a;
+  margin: 1rem;
+`
+
 const Card = styled.div`
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   grid-gap: 10px;
   border-radius: 15px;
-  box-shadow: 0px 0px 8px #ccc;
+  box-shadow: 0 0 8px #ccc;
   background: #fff4f4;
   color: #4b417a;
   margin: 1rem;
@@ -48,7 +61,7 @@ const FullCardContent = styled.div`
 
 const CardTitle = styled.p`
   font-weight: 600;
-  margin: 12px 0px 0px 0px;
+  margin: 12px 0 0 0;
 `;
 
 const Description = styled.p`

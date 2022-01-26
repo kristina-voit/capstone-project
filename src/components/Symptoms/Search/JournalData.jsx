@@ -13,7 +13,7 @@ export default JournalData;
 
 const FullCardContent = styled.div`
   border-radius: 15px;
-  box-shadow: 0px 0px 8px #ccc;
+  box-shadow: 0 0 8px #ccc;
   background: #f6f5fb;
   color: #4b417a;
   margin: 1rem;

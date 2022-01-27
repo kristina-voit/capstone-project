@@ -1,16 +1,16 @@
 import Card from "../Events/Card";
 
 export default function EventsList({ data, onRemoveAppointment }) {
-  const eventsList = data.map((appointment) => (
+  const eventsList = data.map((props) => (
     <Card
-      id={appointment.id}
-      name={appointment.arztname}
-      datum={appointment.datum}
-      fachrichtung={appointment.fachrichtung}
-      adresse={appointment.adresse}
-      telefon={appointment.telefon}
-      email={appointment.email}
-      website={appointment.website}
+      id={props.id}
+      name={props.arztname}
+      datum={props.datum}
+      fachrichtung={props.fachrichtung}
+      adresse={props.adresse}
+      telefon={props.telefon}
+      email={props.email}
+      website={props.website}
       onRemoveAppointment={onRemoveAppointment}
     />
   ));

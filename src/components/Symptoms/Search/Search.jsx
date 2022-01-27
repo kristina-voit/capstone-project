@@ -44,20 +44,21 @@ function Search() {
 
       <NewSymptom onAddSymptom={addSymptom} />
 
-      {journaldata
-        .filter((journaldata) =>
-          `${journaldata.stimmung} ${journaldata.datum} ${journaldata.notizen}`
+      {
+        symptoms.filter((symptoms) =>
+          `${symptoms.stimmung} ${symptoms.datum} ${symptoms.notizen}`
             .toUpperCase()
             .includes(searchTerm.toUpperCase())
         )
 
-        .map((journaldata) => (
+        /* .map((journaldata) => (
           <JournalData
             key={journaldata.id}
             journaldata={journaldata}
             onRemoveSymptom={removeItem}
           />
-        ))}
+        ))*/
+      }
     </div>
   );
 }

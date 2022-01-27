@@ -1,12 +1,12 @@
-import Card from "./Card"
+import Card from "./Card";
 
 export default function SymptomsList(props) {
-  const symptomsList = props.data.map((event) => (
+  const symptomsList = props.data.map((props) => (
     <Card
-      id={event.id}
-      stimmung={event.stimmung}
-      datum={event.datum}
-      notizen={event.notizen}
+      id={props.id}
+      stimmung={props.stimmung}
+      datum={props.datum}
+      notizen={props.notizen}
     />
   ));
 

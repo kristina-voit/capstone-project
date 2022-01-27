@@ -25,16 +25,11 @@ const Home = () => {
         <div>
           <NewMedicineShort />
         </div>
-        <div>
-          <MedicineListShort data={medicineData} />
-        </div>
 
         <div>
           <NewEventShort />
         </div>
-        <div>
-          <EventsListShort data={appointmentsData} />
-        </div>
+        <div></div>
         <div>
           <TodoList />
         </div>

@@ -21,12 +21,12 @@ const Termine = () => {
   }, [appointments]);
 
   function addAppointment(appointment) {
-    setAppointments([...appointments, appointment]);
+    setAppointments([appointment, ...appointments]);
   }
 
   const removeItem = (appointmentName) => {
     const remainingAppointments = appointments.filter(
-      (appointment) => appointment.name !== appointmentName
+      (appointment) => appointment.arztname !== appointmentName
     );
     setAppointments(remainingAppointments);
   };

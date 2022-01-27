@@ -1,3 +1,4 @@
+import styled from "styled-components";
 function NewSymptomInput({
   name,
   value,
@@ -8,7 +9,7 @@ function NewSymptomInput({
   return (
     <>
       <label htmlFor={name}>{children}</label>
-      <input
+      <Input
         type="text"
         id={name}
         name={name}
@@ -22,5 +23,6 @@ function NewSymptomInput({
 
 export default NewSymptomInput;
 
-
-
+const Input = styled.input`
+  height: 40px;
+`;

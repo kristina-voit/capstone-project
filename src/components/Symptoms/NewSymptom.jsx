@@ -11,15 +11,8 @@ function NewSymptom({ onAddSymptom }) {
     notizen: "",
   };
   const [symptom, setSymptom] = useState(initialSymptom);
-  //const localStorageSymptoms = loadFromLocal("_symptoms");
-  //const [symptoms, setSymptoms] = useState(localStorageSymptoms ?? []);
-  //const removeItem = () => localStorage.removeItem("_symptoms");
 
   const [hasFormErrors, setHasFormErrors] = useState(false);
-
-  /*useEffect(() => {
-    saveToLocal("_symptoms", symptoms);
-  }, [symptoms]);*/
 
   const handleChange = (event) => {
     let inputValue = event.target.value;

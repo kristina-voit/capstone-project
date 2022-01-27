@@ -1,13 +1,11 @@
 import styled from "styled-components";
 
-
 function CardContent(props) {
   return (
     <FullCardContent>
-      <CardTitle>{props.name}</CardTitle>
+      <CardTitle>{props.stimmung}</CardTitle>
       <Description>{props.datum}</Description>
       <Description>{props.notizen}</Description>
-
     </FullCardContent>
   );
 }
@@ -16,12 +14,10 @@ export default function Card(props) {
     <div>
       <SingleCard id={props.id}>
         <CardContent
-        name={props.name}
+          stimmung={props.stimmung}
           datum={props.datum}
           notizen={props.notizen}
-         
         />
-        
       </SingleCard>
     </div>
   );

@@ -19,12 +19,13 @@ html {
 body {
   background: var(--background-one);
   font-family: 'Montserrat', sans-serif;
+
 }
 
 main {
   margin-bottom: 60px;
   padding-bottom: 10px;
-  height: 100vh;
+
 }
 
 details > summary {

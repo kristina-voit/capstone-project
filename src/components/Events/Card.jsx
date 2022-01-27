@@ -4,15 +4,14 @@ import CallIcon from "../../images/phone.svg";
 import EmailIcon from "../../images/email.svg";
 
 function CardContent(props) {
+  console.log(props);
   return (
     <FullCardContent>
       <CardTitle>{props.name}</CardTitle>
       <Description>{props.datum}</Description>
       <Description>{props.fachrichtung}</Description>
       <Description>{props.adresse}</Description>
-      <Description>{props.telefon}</Description>
-      <Description>{props.email}</Description>
-      <Description>{props.website}</Description>
+
       <Icons>
         <a target="_blank" href={props.website}>
           <SingleIcon src={WebsiteIcon} alt="Homepage" />
@@ -39,8 +38,11 @@ export default function Card(props) {
           datum={props.datum}
           fachrichtung={props.fachrichtung}
           adresse={props.adresse}
+          email={props.email}
+          website={props.website}
+          telefon={props.telefon}
         />
-        <Button onClick={() => props.onRemoveAppointment(props.arztname)}>
+        <Button onClick={() => props.onRemoveAppointment(props.name)}>
           Entfernen
         </Button>
       </SingleCard>
@@ -50,7 +52,7 @@ export default function Card(props) {
 
 const FullCardContent = styled.div`
   padding: 4px 4px 4px 4px;
-  margin: 1rem;
+  margin: 1rem 1rem 0 1rem;
 `;
 
 const CardTitle = styled.p`

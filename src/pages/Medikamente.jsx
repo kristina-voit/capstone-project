@@ -21,7 +21,7 @@ const Medikamente = () => {
   }, [products]);
 
   function addProduct(product) {
-    setProducts([...products, product]);
+    setProducts([product, ...products]);
   }
 
   const removeItem = (productName) => {

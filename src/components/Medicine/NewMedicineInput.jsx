@@ -26,4 +26,4 @@ export default NewMedicineInput;
 
 const Input = styled.input`
   height: 40px;
-`
+`;

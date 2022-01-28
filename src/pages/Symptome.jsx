@@ -1,11 +1,11 @@
 import Header from "../components/Header/Header.jsx";
-import Search from "../components/Symptoms/Search/Search";
+
 import styled from "styled-components";
 import { useState, useEffect } from "react";
 import SymptomsList from "../components/Symptoms/SymptomsList";
 import { journaldata } from "../components/Symptoms/journaldata";
 import NewSymptom from "../components/Symptoms/NewSymptom";
-import SearchInput from "../components/Symptoms/Search/SearchInput";
+
 import { loadFromLocal, saveToLocal } from "../lib/localStorage";
 
 const Symptome = () => {

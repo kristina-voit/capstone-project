@@ -1,6 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
+
 *,
 *::before,
 *::after {
@@ -19,6 +20,8 @@ html {
 body {
   background: var(--background-one);
   font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  text-align: center;
 
 }
 
@@ -54,6 +57,18 @@ h1 {
 
 p {
   color: #4B417A;
+}
+
+.App {
+  text-align: center;
+
+  background: rgb(215, 212, 227);
+  background: linear-gradient(
+    0deg,
+    rgba(215, 212, 227, 1) 0%,
+    rgba(255, 255, 255, 1) 100%,
+    rgba(0, 212, 255, 1) 100%
+  );
 }
 
 

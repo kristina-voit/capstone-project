@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 
-const JournalData = ({ journaldata }) => (
+const JournalData = ({ appointments }) => (
   <FullCardContent>
-    <CardTitle>{journaldata.stimmung}</CardTitle>
-    <CardTitle>{journaldata.datum}</CardTitle>
-    <p>{journaldata.notizen}</p>
+    <CardTitle>{appointments.name}</CardTitle>
+    <CardTitle>{appointments.datum}</CardTitle>
+    <p>{appointments.fachrichtung}</p>
   </FullCardContent>
 );
 

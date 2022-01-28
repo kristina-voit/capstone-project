@@ -11,7 +11,6 @@ function TodoList() {
   ]);
 
   const create = (newTodo) => {
-    console.log(newTodo);
     setTodos([...todos, newTodo]);
   };
 
@@ -50,15 +49,16 @@ const TodoListStyle = styled.div`
   text-align: left;
   padding: 1rem 1rem 1rem;
   background: #f5f9f9;
-  color: #509b9b;
+  color: #4b417a;
   border-style: none;
   border-radius: 25px;
   margin: 1rem;
-
+  font-family: "Montserrat", sans-serif;
 `;
 
 const TodoListUl = styled.div`
   margin-top: 1rem;
   margin-inline-start: -20px;
   color: #4b417a;
+  font-family: "Montserrat", sans-serif;
 `;

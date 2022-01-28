@@ -1,10 +1,8 @@
-import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home.jsx";
 import Symptome from "./pages/Symptome.jsx";
 import Medikamente from "./pages/Medikamente.jsx";
 import Termine from "./pages/Termine.jsx";
-
 import Footer from "./components/Footer/Footer.jsx";
 
 function App() {

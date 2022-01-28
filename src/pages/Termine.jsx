@@ -5,6 +5,7 @@ import { appointmentsData } from "../components/Events/appointmentdata";
 import Header from "../components/Header/Header.jsx";
 import styled from "styled-components";
 import { loadFromLocal, saveToLocal } from "../lib/localStorage";
+import Search from "../components/Events/Search";
 
 const Termine = () => {
   const [appointments, setAppointments] = useState(appointmentsData);

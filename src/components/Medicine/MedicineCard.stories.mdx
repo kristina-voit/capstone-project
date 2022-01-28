@@ -1,0 +1,25 @@
+import { Meta, Story } from "@storybook/addon-docs";
+import MedicineCard from "./MedicineCard";
+
+<Meta title="Components/Cards" component={MedicineCard} />
+
+# Card component
+
+The Card component represents a card with detailed information about a book with its title and optionally its author.
+
+export const Template = (args) => <MedicineCard {...args} />;
+
+<Story
+  name="Medicine"
+  args={{
+    name: "Ibuprofen 400mg",
+    hersteller: "Ratiopharm",
+    einnahmehinweis: "Unzerkaut, mit viel Flüssigkeit",
+    einnahmeMorgens: "1",
+    einnahmeMittags: "1",
+    einnahmeAbends: "1",
+    einnahmeNachts: "0",
+  }}
+>
+  {Template.bind({})}
+</Story>

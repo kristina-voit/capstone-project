@@ -2,12 +2,7 @@ import TodoList from "../components/To-Do/TodoList.jsx";
 import styled from "styled-components";
 import Header from "../components/Header/Header.jsx";
 import NewEventShort from "../components/Events/NewEventShort";
-import EventsListShort from "../components/Events/EventsListShort";
 import NewMedicineShort from "../components/Medicine/NewMedicineShort";
-import MedicineListShort from "../components/Medicine/MedicineListShort";
-
-import { appointmentsData } from "../components/Events/appointmentdata";
-import { medicineData } from "../components/Medicine/medicinedata";
 
 const Home = () => {
   return (

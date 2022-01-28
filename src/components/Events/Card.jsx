@@ -4,7 +4,6 @@ import CallIcon from "../../images/phone.svg";
 import EmailIcon from "../../images/email.svg";
 
 function CardContent(props) {
-  console.log(props);
   return (
     <FullCardContent>
       <CardTitle>{props.name}</CardTitle>
@@ -96,7 +95,6 @@ const Button = styled.button`
   margin-left: 5px;
   margin-top: 1rem;
   margin-bottom: 1rem;
-  text-align: center;
   cursor: pointer;
   font-family: "Montserrat", sans-serif;
   height: 2rem;

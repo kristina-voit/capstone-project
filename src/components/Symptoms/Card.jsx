@@ -37,7 +37,7 @@ const CardTitle = styled.p`
 const SingleCard = styled.div`
   border-radius: 15px;
   box-shadow: 0 0 8px #ccc;
-  background: #fff4f4;
+  background: #f5f9f9;
   color: #253b56;
   margin: 1rem;
 `;

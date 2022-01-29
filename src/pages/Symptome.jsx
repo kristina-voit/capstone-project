@@ -1,5 +1,5 @@
 import Header from "../components/Header/Header.jsx";
-
+import Search from "../components/Symptoms/Search/Search";
 import styled from "styled-components";
 import { useState, useEffect } from "react";
 import SymptomsList from "../components/Symptoms/SymptomsList";

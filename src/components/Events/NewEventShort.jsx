@@ -3,28 +3,25 @@ import { useState } from "react";
 import { loadFromLocal } from "../../lib/localStorage";
 
 function NewAppointment() {
- 
   const localStorageAppointments = loadFromLocal("_appointments");
   const [appointments, setAppointments] = useState(
     localStorageAppointments ?? []
   );
 
- 
+  console.log(appointments);
   return (
     <div>
-   
-        {appointments.map((appointment, index) => (
-          <article>  
-            <Section>
+      {appointments.map((appointment, index) => (
+        <article>
+          <Section>
             <FullCardContent>
               <Description>{appointment.datum}</Description>
               <CardTitle>{appointment.arztname}</CardTitle>
               <Description>{appointment.fachrichtung}</Description>
             </FullCardContent>
-            </Section>
-          </article>
-        ))}
-  
+          </Section>
+        </article>
+      ))}
     </div>
   );
 }
@@ -40,7 +37,7 @@ const Section = styled.div`
   background: #fff4f4;
   color: #4b417a;
   margin: 1rem;
-`
+`;
 
 const Card = styled.div`
   display: grid;

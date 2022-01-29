@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { journaldata } from "../journaldata";
 import SearchInput from "./SearchInput";
-import JournalData from "../Search/JournalData";
+
 import NewSymptom from "../NewSymptom";
 import { saveToLocal, loadFromLocal } from "../../../lib/localStorage";
 
@@ -44,21 +44,20 @@ function Search() {
 
       <NewSymptom onAddSymptom={addSymptom} />
 
-      {
-        symptoms.filter((symptoms) =>
+      {symptoms
+        .filter((symptoms) =>
           `${symptoms.stimmung} ${symptoms.datum} ${symptoms.notizen}`
             .toUpperCase()
             .includes(searchTerm.toUpperCase())
         )
 
-        /* .map((journaldata) => (
+        .map((journaldata) => (
           <JournalData
             key={journaldata.id}
             journaldata={journaldata}
             onRemoveSymptom={removeItem}
           />
-        ))*/
-      }
+        ))}
     </div>
   );
 }

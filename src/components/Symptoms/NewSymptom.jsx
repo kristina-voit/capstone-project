@@ -3,6 +3,11 @@ import { useEffect, useState } from "react";
 import NewSymptomInput from "./NewSymptomInput";
 import { saveToLocal, loadFromLocal } from "../../lib/localStorage";
 import isSymptomValid from "../../lib/validationSymptom";
+import happy from "../../images/happy.svg";
+import good from "../../images/good.svg";
+import hmm from "../../images/hmm.svg";
+import sad from "../../images/sad.svg";
+import sceptic from "../../images/sceptic.svg";
 
 function NewSymptom({ onAddSymptom }) {
   const initialSymptom = {
@@ -43,7 +48,65 @@ function NewSymptom({ onAddSymptom }) {
               <p>Bitte füllen Sie alle Felder korrekt aus.</p>
             </ErrorMessage>
           )}
+
           <Form onSubmit={handleSubmit}>
+            <FullCardContent>
+              <IconStyling src={sad} />
+              <IconStyling src={hmm} />
+              <IconStyling src={sceptic} />
+              <IconStyling src={good} />
+              <IconStyling src={happy} />
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="inlineRadioOptions"
+                  id="inlineRadio1"
+                  value="option1"
+                ></input>{" "}
+                <label class="form-check-label" for="inlineRadio1"></label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="inlineRadioOptions"
+                  id="inlineRadio2"
+                  value="option2"
+                ></input>{" "}
+                <label class="form-check-label" for="inlineRadio2"></label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="inlineRadioOptions"
+                  id="inlineRadio3"
+                  value="option3"
+                ></input>{" "}
+                <label class="form-check-label" for="inlineRadio3"></label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="inlineRadioOptions"
+                  id="inlineRadio4"
+                  value="option4"
+                ></input>{" "}
+                <label class="form-check-label" for="inlineRadio4"></label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="inlineRadioOptions"
+                  id="inlineRadio5"
+                  value="option5"
+                ></input>{" "}
+                <label class="form-check-label" for="inlineRadio5"></label>
+              </div>
+            </FullCardContent>
             <NewSymptomInput
               onNewSymptomInputChange={handleChange}
               name="stimmung"
@@ -144,4 +207,24 @@ const ErrorMessage = styled.div`
   border-radius: 6px;
   color: white;
   margin: 0 0 1rem;
+`;
+const Container = styled.div`
+  background: #d7d4e3;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+`;
+
+const IconStyling = styled.img`
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+`;
+
+const FullCardContent = styled.div`
+  padding: 0 0 4px 0;
+  margin: 1rem;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 10px;
+  justify-items: center;
 `;

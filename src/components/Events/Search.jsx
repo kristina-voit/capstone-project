@@ -1,35 +1,37 @@
-import { useState, useEffect } from "react";
-import SearchInput from "./SearchInput";
-import SearchAppointments from "./SearchAppointments";
+import React, { useState, useEffect } from "react";
+import { loadFromLocal } from "../../lib/localStorage";
 
-function Search() {
-  const [state, setState] = useState({ searchTerm: "" });
-  const [appointments, setAppointments] = useState(appointments);
-  const onSearch = (searchTerm) => {
-    setState({ searchTerm });
+export default function App() {
+  const appointments = loadFromLocal("_appointments");
+
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const [searchResults, setSearchResults] = useState([]);
+
+  const handleChange = (event) => {
+    setSearchTerm(event.target.value);
   };
 
-  const { searchTerm } = state;
+  useEffect(() => {
+    const results = appointments.filter((appointment) =>
+      appointment.toLowerCase().includes(searchTerm)
+    );
+    setSearchResults(results);
+  }, [searchTerm]);
 
   return (
     <div>
-      <SearchInput searchTerm={searchTerm} onSearch={onSearch} />
-
-      {appointments
-        .filter((appointments) =>
-          `${appointments.name} ${appointments.datum} ${appointments.fachrichtung}`
-            .toUpperCase()
-            .includes(searchTerm.toUpperCase())
-        )
-
-        .map((appointments) => (
-          <SearchAppointments
-            key={appointments.id}
-            appointments={appointments}
-          />
+      <input
+        type="text"
+        placeholder="Search"
+        value={searchTerm}
+        onChange={handleChange}
+      />
+      <ul>
+        {searchResults.map((appointment) => (
+          <li>{appointment}</li>
         ))}
+      </ul>
     </div>
   );
 }
-
-export default Search;

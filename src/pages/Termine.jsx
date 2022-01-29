@@ -38,7 +38,7 @@ const Termine = () => {
         <Header />
         <h1>Deine anstehenden Termine</h1>
         <NewAppointment onAddAppointment={addAppointment} />
-
+        {/*} <Search />*/}
         <EventsList data={appointments} onRemoveAppointment={removeItem} />
 
         <a target="_blank" href="https://jameda.de">

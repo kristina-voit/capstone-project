@@ -1,16 +1,10 @@
 import styled from "styled-components";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import NewSymptomInput from "./NewSymptomInput";
-import { saveToLocal, loadFromLocal } from "../../lib/localStorage";
 import isSymptomValid from "../../lib/validationSymptom";
-import happy from "../../images/happy.svg";
-import good from "../../images/good.svg";
-import hmm from "../../images/hmm.svg";
-import sad from "../../images/sad.svg";
-import sceptic from "../../images/sceptic.svg";
 import RadioButton from "./RadioButton";
 
-function NewSymptom({ onAddSymptom, value, children, onRadioChange }) {
+function NewSymptom({ onAddSymptom }) {
   const initialSymptom = {
     stimmung: "",
     datum: "",
@@ -65,7 +59,6 @@ function NewSymptom({ onAddSymptom, value, children, onRadioChange }) {
             <NewSymptomInput
               onNewSymptomInputChange={handleChange}
               name="datum"
-              type="text"
               value={symptom.datum}
               placeholder="Datum"
             ></NewSymptomInput>
@@ -92,16 +85,6 @@ function NewSymptom({ onAddSymptom, value, children, onRadioChange }) {
           </Form>
         </details>
       </section>
-
-      {/*{symptoms.map((symptom, index) => (
-        <Card>
-          <CardTitle>{symptom.stimmung}</CardTitle>
-          <CardTitle>{symptom.datum}</CardTitle>
-          <p>{symptom.notizen}</p>
-
-          <Button onClick={removeItem}>Entfernen</Button>
-        </Card>
-      ))}*/}
     </div>
   );
 }

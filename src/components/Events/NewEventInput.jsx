@@ -25,5 +25,5 @@ function NewEventInput({
 export default NewEventInput;
 
 const Input = styled.input`
-height: 40px;
-`
+  height: 40px;
+`;

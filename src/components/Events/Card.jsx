@@ -50,8 +50,8 @@ export default function Card(props) {
 }
 
 const FullCardContent = styled.div`
-  padding: 4px 4px 4px 4px;
   margin: 1rem 1rem 0 1rem;
+  padding: 4px 4px 4px 4px;
 `;
 
 const CardTitle = styled.p`
@@ -61,9 +61,9 @@ const CardTitle = styled.p`
 `;
 
 const SingleCard = styled.div`
+  background: #fff4f4;
   border-radius: 15px;
   box-shadow: 0 0 8px #ccc;
-  background: #fff4f4;
   color: #253b56;
   margin: 1rem;
 `;
@@ -74,28 +74,28 @@ const Description = styled.p`
 
 const Icons = styled.div`
   display: flex;
-  padding: 0.5rem;
-  margin: 0.5rem;
   justify-content: right;
+  margin: 0.5rem;
+  padding: 0.5rem;
 `;
 
 const SingleIcon = styled.img`
+  margin-bottom: 5px;
   margin-left: 5px;
   margin-right: 5px;
-  margin-bottom: 5px;
 `;
 
 const Button = styled.button`
-  padding: 0 1.3rem;
-  border: none;
   background: #509b9b;
-  color: #4b417a;
-  font-weight: bold;
   border-radius: 15px;
-  margin-left: 5px;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  border: none;
+  color: #4b417a;
   cursor: pointer;
   font-family: "Montserrat", sans-serif;
+  font-weight: bold;
   height: 2rem;
+  margin-bottom: 1rem;
+  margin-left: 5px;
+  margin-top: 1rem;
+  padding: 0 1.3rem;
 `;

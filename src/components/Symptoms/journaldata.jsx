@@ -37,9 +37,9 @@ export let journaldata = [
   },
   {
     id: 1,
-    stimmung: "Gut",
+    stimmung: "Schlecht",
     datum: "02.01.2022",
-    notizen: "Morgens leichte Übelkeit, war aber nach einer Stunde vorbei.",
+    notizen: "Starke Übelkeit",
   },
   {
     id: 0,

@@ -8,8 +8,9 @@ import good from "../../images/good.svg";
 import hmm from "../../images/hmm.svg";
 import sad from "../../images/sad.svg";
 import sceptic from "../../images/sceptic.svg";
+import RadioButton from "./RadioButton";
 
-function NewSymptom({ onAddSymptom }) {
+function NewSymptom({ onAddSymptom, value, children, onRadioChange }) {
   const initialSymptom = {
     stimmung: "",
     datum: "",
@@ -50,63 +51,10 @@ function NewSymptom({ onAddSymptom }) {
           )}
 
           <Form onSubmit={handleSubmit}>
-            <FullCardContent>
-              <IconStyling src={sad} />
-              <IconStyling src={hmm} />
-              <IconStyling src={sceptic} />
-              <IconStyling src={good} />
-              <IconStyling src={happy} />
-              <div class="form-check form-check-inline">
-                <input
-                  class="form-check-input"
-                  type="radio"
-                  name="inlineRadioOptions"
-                  id="inlineRadio1"
-                  value="option1"
-                ></input>{" "}
-                <label class="form-check-label" for="inlineRadio1"></label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input
-                  class="form-check-input"
-                  type="radio"
-                  name="inlineRadioOptions"
-                  id="inlineRadio2"
-                  value="option2"
-                ></input>{" "}
-                <label class="form-check-label" for="inlineRadio2"></label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input
-                  class="form-check-input"
-                  type="radio"
-                  name="inlineRadioOptions"
-                  id="inlineRadio3"
-                  value="option3"
-                ></input>{" "}
-                <label class="form-check-label" for="inlineRadio3"></label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input
-                  class="form-check-input"
-                  type="radio"
-                  name="inlineRadioOptions"
-                  id="inlineRadio4"
-                  value="option4"
-                ></input>{" "}
-                <label class="form-check-label" for="inlineRadio4"></label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input
-                  class="form-check-input"
-                  type="radio"
-                  name="inlineRadioOptions"
-                  id="inlineRadio5"
-                  value="option5"
-                ></input>{" "}
-                <label class="form-check-label" for="inlineRadio5"></label>
-              </div>
-            </FullCardContent>
+            <RadioButton value={symptom.stimmung} onRadioChange={handleChange}>
+              Stimmung
+            </RadioButton>
+
             <NewSymptomInput
               onNewSymptomInputChange={handleChange}
               name="stimmung"

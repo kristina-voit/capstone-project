@@ -23,52 +23,26 @@ ChartJS.register(
 
 const dataMood = {
   labels: [
-    "01.01.2022",
-    "02.01.2022",
-    "03.01.2022",
-    "04.01.2022",
-    "05.01.2022",
-    "06.01.2022", 
-    "07.01.2022",
-    "08.01.2022",
+    "01.02.2022",
+    "02.02.2022",
+    "03.02.2022",
+    "04.02.2022",
+    "05.02.2022",
+    "06.02.2022",
   ],
   datasets: [
     {
       label: "Stimmung",
-      data: [66, 66, 99, 99, 33, 66, 99, 99],
-      fill: true,
-      backgroundColor: "rgba(75,192,192,0.2)",
-      borderColor: "rgba(75,192,192,1)",
+      data: [0, 33, 0, 0, 33, 0],
+      borderColor: "#742774",
     },
-    
   ],
 };
-
-const dataSymptoms = {
-    labels: [
-      "01.02.2022",
-      "02.02.2022",
-      "03.02.2022",
-      "04.02.2022",
-      "05.02.2022",
-      "06.02.2022", 
-    ],
-    datasets: [
-      {
-        label: "Beschwerden",
-        data: [0, 33, 0, 0, 33, 0],
-        fill: false,
-        borderColor: "#742774",
-      },
-    ],
-  };
-
 
 export default function Graph() {
   return (
     <div>
       <Line data={dataMood} />
-      <Line data={dataSymptoms} />
     </div>
   );
 }

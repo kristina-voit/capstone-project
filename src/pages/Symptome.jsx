@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import SymptomsList from "../components/Symptoms/SymptomsList";
 import { journaldata } from "../components/Symptoms/journaldata";
 import NewSymptom from "../components/Symptoms/NewSymptom";
+import Graph from "../components/Symptoms/MoodGraph";
 
 import { loadFromLocal, saveToLocal } from "../lib/localStorage";
 
@@ -37,7 +38,7 @@ const Symptome = () => {
     <main>
       <Header />
       <h1>Stimmung & Symptome</h1>
-
+      <Graph />
       <NewSymptom onAddSymptom={addSymptom} />
       <SymptomsList data={symptoms} onRemoveSymptom={removeItem} />
     </main>

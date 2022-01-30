@@ -1,58 +1,53 @@
 import React, { Component } from "react";
 import "../Meditation/styles.css";
+import { useState } from "react";
 
-class App extends Component {
-  state = {
-    text: "Halten",
-    count: 0,
-    grow: false,
-    shrink: false,
-  };
+function App() {
+  const [text, setText] = useState("Halten");
+  const [grow, setGrow] = useState(false);
+  const [shrink, setShrink] = useState(false);
+  const [count, setCount] = useState();
 
-  breathIn = () => {
-    this.setState({
-      text: "Einatmen",
-      count: this.state.count + 1,
-      grow: true,
-      shrink: false,
+  const breathIn = () => {
+    ({
+      setText: "Einatmen",
+      setCount: count + 1,
+      setGrow: true,
+      setShrink: false,
     });
   };
 
-  breathOut = () => {
-    this.setState({
-      text: "Ausatmen",
-      count: this.state.count - 1,
-      grow: false,
-      shrink: true,
+  const breathOut = () => {
+    ({
+      setText: "Ausatmen",
+      setCount: count - 1,
+      setGrow: false,
+      setShrink: true,
     });
   };
 
-  render() {
-    return (
-      <div id="Universal">
-        <div
-          className={`moon-container ${this.state.grow ? "grow" : ""} ${
-            this.state.shrink ? "shrink" : ""
-          }`}
-          id="animation"
-          onAnimationIteration={
-            this.state.count === 1 ? this.breathOut : this.breathIn
-          }
-        >
-          <div className="text-area">
-            <h2>
-              {this.state.count} : {this.state.text}
-            </h2>
-          </div>
-          <div className="moon"></div>
+  return (
+    <div id="Universal">
+      <div
+        className={`moon-container ${grow ? "grow" : ""} ${
+          shrink ? "shrink" : ""
+        }`}
+        id="animation"
+        onAnimationIteration={count === 1 ? breathOut : breathIn}
+      >
+        <div className="text-area">
+          <h2>
+            {count} : {text}
+          </h2>
+        </div>
+        <div className="moon"></div>
 
-          <div className="star-container">
-            <span className="star"></span>
-          </div>
+        <div className="star-container">
+          <span className="star"></span>
         </div>
       </div>
-    );
-  }
+    </div>
+  );
 }
 
 export default App;

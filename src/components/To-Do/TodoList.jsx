@@ -6,8 +6,8 @@ import { v4 as uuidv4 } from "uuid";
 
 function TodoList() {
   const [todos, setTodos] = useState([
-    { id: uuidv4(), task: "Überweisung Augenarzt" },
-    { id: uuidv4(), task: "OP-Bericht anfragen " },
+    { id: uuidv4(), task: "OP-Bericht anfragen" },
+    { id: uuidv4(), task: "Neues Rezept HNO" },
   ]);
 
   const create = (newTodo) => {

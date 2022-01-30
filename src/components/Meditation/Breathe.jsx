@@ -1,29 +1,24 @@
-import React, { Component } from "react";
 import "../Meditation/styles.css";
 import { useState } from "react";
 
-function App() {
+function Breathe() {
   const [text, setText] = useState("Halten");
   const [grow, setGrow] = useState(false);
   const [shrink, setShrink] = useState(false);
-  const [count, setCount] = useState();
+  const [count, setCount] = useState(0);
 
   const breathIn = () => {
-    ({
-      setText: "Einatmen",
-      setCount: count + 1,
-      setGrow: true,
-      setShrink: false,
-    });
+    setText("Einatmen");
+    setCount(count + 1);
+    setGrow(true);
+    setShrink(false);
   };
 
   const breathOut = () => {
-    ({
-      setText: "Ausatmen",
-      setCount: count - 1,
-      setGrow: false,
-      setShrink: true,
-    });
+    setText("Ausatmen");
+    setCount(count - 1);
+    setGrow(false);
+    setShrink(true);
   };
 
   return (
@@ -42,12 +37,12 @@ function App() {
         </div>
         <div className="moon"></div>
 
-        <div className="star-container">
-          <span className="star"></span>
+        <div className="yogi-container">
+          <span className="yogi"></span>
         </div>
       </div>
     </div>
   );
 }
 
-export default App;
+export default Breathe;

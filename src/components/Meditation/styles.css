@@ -43,7 +43,7 @@
 }
 
 .moon {
-  background: url(../images/circle.png) no-repeat center center/cover;
+  background: url(../../images/circle.png) no-repeat center center/cover;
   box-shadow: 0 70px 70px rgba(0, 0, 0, 0.67);
 
   height: 100%;
@@ -55,8 +55,8 @@
   z-index: -1;
 }
 
-.star {
-  background: url(../images/yoga.svg);
+.yogi {
+  background: url(../../images/yoga.svg);
   border: none;
   height: 30px;
   width: 30px;
@@ -103,7 +103,7 @@
   }
 }
 
-.star-container {
+.yogi-container {
   position: absolute;
   top: -30px;
   left: 120px;

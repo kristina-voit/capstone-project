@@ -9,7 +9,7 @@ function Footer() {
           width="44"
           height="44"
           id="Layer_1"
-          enable-background="new 0 0 512 512"
+          enableBackground="new 0 0 512 512"
           viewBox="0 0 512 512"
           xmlns="http://www.w3.org/2000/svg"
         >
@@ -25,7 +25,7 @@ function Footer() {
           width="44"
           height="44"
           id="Capa_1"
-          enable-background="new 0 0 512 512"
+          enableBackground="new 0 0 512 512"
           viewBox="0 0 512 512"
           xmlns="http://www.w3.org/2000/svg"
         >
@@ -44,7 +44,7 @@ function Footer() {
           width="44"
           height="44"
           id="Capa_1"
-          enable-background="new 0 0 512 512"
+          enableBackground="new 0 0 512 512"
           viewBox="0 0 512 512"
           xmlns="http://www.w3.org/2000/svg"
         >
@@ -56,7 +56,7 @@ function Footer() {
       <NavLink to="termine">
         <svg
           id="Capa_1"
-          enable-background="new 0 0 512 512"
+          enableBackground="new 0 0 512 512"
           height="44"
           viewBox="0 0 512 512"
           width="44"

@@ -1,17 +1,12 @@
-import styled from "styled-components";
-import { useState } from "react";
 import { loadFromLocal } from "../../lib/localStorage";
+import styled from "styled-components";
 
-function NewAppointment() {
-  const localStorageAppointments = loadFromLocal("_appointments");
-  const [appointments, setAppointments] = useState(
-    localStorageAppointments ?? []
-  );
+function NewAppointment({ appointments }) {
+  const initialAppointments = appointments ?? loadFromLocal("_appointments");
 
-  console.log(appointments);
   return (
     <div>
-      {appointments.map((appointment, index) => (
+      {initialAppointments.map((appointment, index) => (
         <article>
           <Section>
             <FullCardContent>
@@ -28,6 +23,20 @@ function NewAppointment() {
 
 export default NewAppointment;
 
+const CardTitle = styled.p`
+  font-weight: 600;
+  margin: 12px 0 0 0;
+`;
+
+const Description = styled.p`
+  font-size: 14;
+  margin: 8px 0 0 0;
+`;
+
+const FullCardContent = styled.div`
+  text-align: left;
+  margin: 1rem;
+`;
 const Section = styled.div`
   display: grid;
   grid-template-columns: repeat(1, 1fr);
@@ -37,31 +46,4 @@ const Section = styled.div`
   background: #fff4f4;
   color: #4b417a;
   margin: 1rem;
-`;
-
-const Card = styled.div`
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  grid-gap: 10px;
-  border-radius: 15px;
-  box-shadow: 0 0 8px #ccc;
-  background: #fff4f4;
-  color: #4b417a;
-  margin: 1rem;
-  padding-top: 0.1rem;
-`;
-
-const FullCardContent = styled.div`
-  text-align: left;
-  margin: 1rem;
-`;
-
-const CardTitle = styled.p`
-  font-weight: 600;
-  margin: 12px 0 0 0;
-`;
-
-const Description = styled.p`
-  font-size: 14;
-  margin: 8px 0 0 0;
 `;

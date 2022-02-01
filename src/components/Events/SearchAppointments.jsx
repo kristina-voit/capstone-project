@@ -11,6 +11,13 @@ const JournalData = ({ appointments }) => (
 
 export default JournalData;
 
+const CardTitle = styled.p`
+  color: #4b417a;
+  font-size: 14;
+  margin: 8px 0 0 0;
+  font-weight: 600;
+`;
+
 const FullCardContent = styled.div`
   border-radius: 15px;
   box-shadow: 0 0 8px #ccc;
@@ -19,11 +26,4 @@ const FullCardContent = styled.div`
   margin: 1rem;
   padding-top: 0.1rem;
   padding-bottom: 0.1rem;
-`;
-
-const CardTitle = styled.p`
-  color: #4b417a;
-  font-size: 14;
-  margin: 8px 0 0 0;
-  font-weight: 600;
 `;

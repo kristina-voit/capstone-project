@@ -1,7 +1,7 @@
-import styled from "styled-components";
 import { useState } from "react";
 import NewMedicineInput from "./NewMedicineInput";
 import isProductValid from "../../lib/validationMedicine";
+import styled from "styled-components";
 
 function NewMedicine({ onAddProduct }) {
   const initialProduct = {
@@ -115,71 +115,21 @@ function NewMedicine({ onAddProduct }) {
 
 export default NewMedicine;
 
-const Section = styled.div`
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-
-  border-radius: 15px;
-  box-shadow: 0 0 8px #ccc;
-  background: #f6f5fb;
-  color: #4b417a;
-  margin: 1rem;
-`;
-
-const Form = styled.form`
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  grid-gap: 10px;
-  border-radius: 15px;
-  box-shadow: 0 0 8px #ccc;
-  background: #f6f5fb;
-  color: #4b417a;
-  margin: 1rem;
-  padding: 1rem;
-`;
-
 const Button = styled.button`
-  padding: 0 1.3rem;
-  border: none;
+  align-items: center;
   background: #509b9b;
+  border-radius: 15px;
+  border: none;
   color: #4b417a;
   font-weight: bold;
-  border-radius: 15px;
-  align-items: center;
-  margin-top: 1rem;
   margin-bottom: 1rem;
+  margin-top: 1rem;
+  padding: 0 1.3rem;
 
   cursor: pointer;
   font-family: "Montserrat", sans-serif;
   height: 2rem;
 `;
-const CardTitle = styled.p`
-  font-weight: 600;
-  margin: 12px 0 0 0;
-`;
-
-const IconStyling = styled.img`
-  margin-left: 5px;
-  margin-right: 5px;
-  margin-bottom: 5px;
-`;
-
-const FullCardContent = styled.div`
-  padding: 0 0 4px 0;
-
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 10px;
-  justify-items: center;
-`;
-
-const Description = styled.p`
-  font-size: 14;
-  margin: 8px 0 0 0;
-  font-weight: 600;
-`;
-
-const Article = styled.article``;
 
 const ErrorMessage = styled.div`
   align-items: center;
@@ -187,4 +137,16 @@ const ErrorMessage = styled.div`
   border-radius: 6px;
   color: white;
   margin: 0 0 1rem;
+`;
+
+const Form = styled.form`
+  background: #f6f5fb;
+  border-radius: 15px;
+  box-shadow: 0 0 8px #ccc;
+  color: #4b417a;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(1, 1fr);
+  margin: 1rem;
+  padding: 1rem;
 `;

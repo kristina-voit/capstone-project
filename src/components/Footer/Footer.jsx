@@ -1,5 +1,5 @@
-import styled from "styled-components";
 import { NavLink } from "react-router-dom";
+import styled from "styled-components";
 
 function Footer() {
   return (
@@ -83,12 +83,12 @@ export default Footer;
 
 const NavbarStyled = styled.footer`
   background: #d7d4e3;
-  width: 100vw;
+  bottom: 0;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  position: fixed;
-  bottom: 0;
   padding-top: 0.75rem;
+  position: fixed;
+  width: 100vw;
 
   a svg {
     fill: black;

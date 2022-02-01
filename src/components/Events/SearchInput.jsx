@@ -19,15 +19,15 @@ function SearchInput(props) {
 export default SearchInput;
 
 const FormInput = styled.input`
-  flex-grow: 1;
-  border: solid grey 1px;
   background: #f7f1f1;
+  border: solid grey 1px;
   color: #4b417a;
-  font-size: initial;
+  flex-grow: 1;
   font-family: "Montserrat", sans-serif;
+  font-size: initial;
   height: 2rem;
   margin-bottom: 10px;
   margin-top: 10px;
-  padding-right: 2rem;
   padding-left: 2rem;
+  padding-right: 2rem;
 `;

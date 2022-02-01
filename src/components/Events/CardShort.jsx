@@ -1,21 +1,15 @@
 import styled from "styled-components";
 
-
 function CardContent(props) {
-
-    
   return (
     <FullCardContent>
       <Description>{props.datum}</Description>
       <CardTitle>{props.name}</CardTitle>
       <Description>{props.fachrichtung}</Description>
-  
     </FullCardContent>
-    
   );
 }
 export default function Card(props) {
-
   return (
     <div>
       <SingleCard id={props.id}>
@@ -23,23 +17,26 @@ export default function Card(props) {
           datum={props.datum}
           name={props.name}
           fachrichtung={props.fachrichtung}
-          
         />
       </SingleCard>
-
     </div>
   );
 }
+
+const CardTitle = styled.p`
+  font-weight: 600;
+  margin: 12px 0 0 0;
+`;
+
+const Description = styled.p`
+  font-size: 14;
+  margin: 8px 0 0 0;
+`;
 
 const FullCardContent = styled.div`
   padding: 4px 4px 4px 4px;
   text-align: left;
   margin: 1rem;
-`;
-
-const CardTitle = styled.p`
-  font-weight: 600;
-  margin: 12px 0 0 0;
 `;
 
 const SingleCard = styled.div`
@@ -48,9 +45,4 @@ const SingleCard = styled.div`
   background: #fff4f4;
   color: #253b56;
   margin: 1rem;
-`;
-
-const Description = styled.p`
-  font-size: 14;
-  margin: 8px 0 0 0;
 `;

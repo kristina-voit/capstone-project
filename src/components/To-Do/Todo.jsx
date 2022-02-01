@@ -1,5 +1,5 @@
-import styled from "styled-components";
 import React, { useState } from "react";
+import styled from "styled-components";
 import DeleteIcon from "../../images/delete.svg";
 import EditIcon from "../../images/edit.svg";
 
@@ -52,45 +52,46 @@ function Todo({ todo, remove, update }) {
 
 export default Todo;
 
-const TodoStyle = styled.div`
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  align-items: left;
+const TodoButton = styled.button`
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1em;
 `;
 
-const TodoButton = styled.button`
+const TodoEditFormButton = styled.button`
+  background: #509b9b;
+  border-radius: 15px;
   border: none;
-  font-size: 1em;
-  background: none;
+  color: #4b417a;
   cursor: pointer;
-  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  height: 2rem;
+  margin-left: 5px;
+  margin-top: 1rem;
+  padding: 0 1.3rem;
 `;
+
 const TodoEditForm = styled.form`
   display: flex;
   flex-wrap: wrap;
 `;
 
 const TodoEditFormInput = styled.input`
-  flex-grow: 1;
-  border: none;
   background: #f7f1f1;
-  padding: 0 1.5em;
-  font-size: initial;
+  border: none;
+  flex-grow: 1;
   font-family: "Montserrat", sans-serif;
+  font-size: initial;
   height: 2rem;
+  padding: 0 1.5em;
 `;
 
-const TodoEditFormButton = styled.button`
-  padding: 0 1.3rem;
-  border: none;
-  background: #509b9b;
-  color: #4b417a;
-  font-weight: bold;
-  border-radius: 15px;
-  margin-left: 5px;
-  margin-top: 1rem;
-  cursor: pointer;
-  font-family: "Montserrat", sans-serif;
-  height: 2rem;
+const TodoStyle = styled.div`
+  align-items: left;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 `;

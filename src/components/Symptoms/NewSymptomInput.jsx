@@ -1,4 +1,5 @@
 import styled from "styled-components";
+
 function NewSymptomInput({
   name,
   value,

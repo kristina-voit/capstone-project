@@ -1,11 +1,10 @@
 import { useState, useEffect } from "react";
 import NewAppointment from "../components/Events/NewAppointment";
 import EventsList from "../components/Events/EventsList";
-import { appointmentsData } from "../components/Events/appointmentdata";
 import Header from "../components/Header/Header.jsx";
-import styled from "styled-components";
+import { appointmentsData } from "../components/Events/appointmentdata";
 import { loadFromLocal, saveToLocal } from "../lib/localStorage";
-import Search from "../components/Events/Search";
+import styled from "styled-components";
 
 const Termine = () => {
   const [appointments, setAppointments] = useState(appointmentsData);
@@ -52,14 +51,13 @@ export default Termine;
 
 const ButtonStyle = styled.button`
   background: #f5f9f9;
-  color: #509b9b;
-  padding: 0.2;
-  border: none;
-  font-weight: bold;
   border-radius: 15px;
-  margin-left: 5px;
-
+  border: none;
+  color: #509b9b;
   cursor: pointer;
   font-family: "Montserrat", sans-serif;
+  font-weight: bold;
   height: 5rem;
+  margin-left: 5px;
+  padding: 0.2;
 `;

@@ -1,5 +1,5 @@
-import "../Meditation/styles.css";
 import { useState } from "react";
+import "../Meditation/styles.css";
 
 function Breathe() {
   const [text, setText] = useState("Halten");
@@ -33,6 +33,7 @@ function Breathe() {
         <div className="text-area">
           <h2>
             {count} : {text}
+            <p>Relax and unwind</p>
           </h2>
         </div>
         <div className="moon"></div>

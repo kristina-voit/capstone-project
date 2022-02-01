@@ -1,8 +1,8 @@
-import styled from "styled-components";
 import React, { useState } from "react";
 import Todo from "./Todo";
 import NewTodoForm from "./NewTodoForm";
 import { v4 as uuidv4 } from "uuid";
+import styled from "styled-components";
 
 function TodoList() {
   const [todos, setTodos] = useState([
@@ -46,19 +46,19 @@ function TodoList() {
 export default TodoList;
 
 const TodoListStyle = styled.div`
-  text-align: left;
-  padding: 1rem 1rem 1rem;
   background: #f5f9f9;
-  color: #4b417a;
-  border-style: none;
   border-radius: 25px;
-  margin: 1rem;
+  border-style: none;
+  color: #4b417a;
   font-family: "Montserrat", sans-serif;
+  margin: 1rem;
+  padding: 1rem 1rem 1rem;
+  text-align: left;
 `;
 
 const TodoListUl = styled.div`
-  margin-top: 1rem;
-  margin-inline-start: -20px;
   color: #4b417a;
   font-family: "Montserrat", sans-serif;
+  margin-inline-start: -20px;
+  margin-top: 1rem;
 `;

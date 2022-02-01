@@ -43,49 +43,6 @@ export default function Card(props) {
   );
 }
 
-const FullCardContent = styled.div`
-  padding: 0 0 4px 0;
-  margin: 1rem;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 10px;
-  justify-items: center;
-`;
-
-const CardTitle = styled.p`
-  color: #4b417a;
-  font-size: 14;
-  margin: 8px 0 0 0;
-  font-weight: 600;
-`;
-
-const SingleCard = styled.div`
-  border-radius: 15px;
-  box-shadow: 0 0 8px #ccc;
-  background: #f6f5fb;
-  color: #4b417a;
-  margin: 1rem;
-  padding-top: 0.1rem;
-`;
-
-const Description = styled.p`
-  font-size: 14;
-  margin: 8px 0 0 0;
-  font-weight: 600;
-`;
-
-const Icons = styled.div`
-  display: flex;
-  padding: 0.5rem;
-  margin: 0.5rem;
-`;
-
-const IconStyling = styled.img`
-  margin-left: 5px;
-  margin-right: 5px;
-  margin-bottom: 5px;
-`;
-
 const Button = styled.button`
   padding: 0 1.3rem;
   border: none;
@@ -100,4 +57,41 @@ const Button = styled.button`
   cursor: pointer;
   font-family: "Montserrat", sans-serif;
   height: 2rem;
+`;
+
+const CardTitle = styled.p`
+  color: #4b417a;
+  font-size: 14;
+  margin: 8px 0 0 0;
+  font-weight: 600;
+`;
+
+const Description = styled.p`
+  font-size: 14;
+  margin: 8px 0 0 0;
+  font-weight: 600;
+`;
+
+const FullCardContent = styled.div`
+  padding: 0 0 4px 0;
+  margin: 1rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+  justify-items: center;
+`;
+
+const IconStyling = styled.img`
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+`;
+
+const SingleCard = styled.div`
+  border-radius: 15px;
+  box-shadow: 0 0 8px #ccc;
+  background: #f6f5fb;
+  color: #4b417a;
+  margin: 1rem;
+  padding-top: 0.1rem;
 `;

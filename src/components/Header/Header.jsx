@@ -29,8 +29,8 @@ function Header() {
 export default Header;
 
 const H1 = styled.h1`
-  font-size: 1.5rem;
   color: #4b417a;
-  margin: 1.5rem;
   font-family: "Montserrat", sans-serif;
+  font-size: 1.5rem;
+  margin: 1.5rem;
 `;

@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import MedicineList from "../components/Medicine/MedicineList";
-import { medicineData } from "../components/Medicine/medicinedata";
 import Header from "../components/Header/Header.jsx";
-import styled from "styled-components";
 import NewMedicine from "../components/Medicine/NewMedicine";
+import { medicineData } from "../components/Medicine/medicinedata";
 import { loadFromLocal, saveToLocal } from "../lib/localStorage";
+import styled from "styled-components";
 
 const Medikamente = () => {
   const [products, setProducts] = useState(medicineData);
@@ -54,13 +54,12 @@ export default Medikamente;
 
 const ButtonStyle = styled.button`
   background: #f5f9f9;
-  color: #509b9b;
-  border: none;
-  font-weight: bold;
   border-radius: 15px;
-  margin-left: 5px;
-
+  border: none;
+  color: #509b9b;
   cursor: pointer;
   font-family: "Montserrat", sans-serif;
+  font-weight: bold;
   height: 5rem;
+  margin-left: 5px;
 `;

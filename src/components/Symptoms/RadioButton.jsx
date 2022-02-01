@@ -72,17 +72,17 @@ function RadioButton({ value, children, onRadioChange }) {
 
 export default RadioButton;
 
-const IconStyling = styled.img`
-  margin-left: 5px;
-  margin-right: 5px;
-  margin-bottom: 5px;
+const FullCardContent = styled.div`
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(5, 1fr);
+  justify-items: center;
+  margin: 1rem;
+  padding: 0 0 4px 0;
 `;
 
-const FullCardContent = styled.div`
-  padding: 0 0 4px 0;
-  margin: 1rem;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-gap: 10px;
-  justify-items: center;
+const IconStyling = styled.img`
+  margin-bottom: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
 `;

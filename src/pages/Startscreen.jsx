@@ -58,7 +58,7 @@ const slideInTop = keyframes`
 
 const H2 = styled.h2`
   animation: ${slideInTop} 5s ease-in infinite;
-  color: #509b9b;
+  color: #03989e;
 `;
 
 const slideDown = keyframes`

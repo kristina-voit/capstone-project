@@ -43,6 +43,7 @@ const SingleCard = styled.div`
   background: #f5f9f9;
   border-radius: 15px;
   box-shadow: 0 0 8px #ccc;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   color: #253b56;
   margin: 1rem;
 `;

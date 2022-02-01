@@ -2,6 +2,7 @@ import { useState } from "react";
 import NewSymptomInput from "./NewSymptomInput";
 import isSymptomValid from "../../lib/validationSymptom";
 import RadioButton from "./RadioButton";
+
 import styled from "styled-components";
 
 function NewSymptom({ onAddSymptom }) {
@@ -51,6 +52,7 @@ function NewSymptom({ onAddSymptom }) {
 
             <NewSymptomInput
               onNewSymptomInputChange={handleChange}
+              type="text"
               name="stimmung"
               value={symptom.stimmung}
               placeholder="Stimmung"
@@ -59,6 +61,8 @@ function NewSymptom({ onAddSymptom }) {
             <NewSymptomInput
               onNewSymptomInputChange={handleChange}
               name="datum"
+              type="date"
+              pattern="(0[1-9]|1[0-9]|2[0-9]|3[01]).(0[1-9]|1[012]).[0-9]{4}"
               value={symptom.datum}
               placeholder="Datum"
             ></NewSymptomInput>
@@ -66,6 +70,7 @@ function NewSymptom({ onAddSymptom }) {
             <NewSymptomInput
               onNewSymptomInputChange={handleChange}
               name="notizen"
+              type="text"
               value={symptom.notizen}
               placeholder="Notizen"
             ></NewSymptomInput>
@@ -92,10 +97,11 @@ function NewSymptom({ onAddSymptom }) {
 export default NewSymptom;
 
 const Button = styled.button`
-  background: #509b9b;
+  background: #fff;
   border-radius: 15px;
   border: none;
-  color: #4b417a;
+  border: solid 2px #509b9b;
+  color: #509b9b;
   cursor: pointer;
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
@@ -112,7 +118,7 @@ const ErrorMessage = styled.div`
 `;
 
 const Form = styled.form`
-  background: #f6f5fb;
+  background: #f5f9f9;
   border-radius: 15px;
   box-shadow: 0 0 8px #ccc;
   color: #4b417a;

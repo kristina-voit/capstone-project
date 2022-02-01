@@ -50,10 +50,10 @@ export default function Card(props) {
 }
 
 const Button = styled.button`
-  background: #509b9b;
+  background: #fff;
   border-radius: 15px;
-  border: none;
-  color: #4b417a;
+  border: solid 2px #509b9b;
+  color: #509b9b;
   cursor: pointer;
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
@@ -92,6 +92,7 @@ const SingleCard = styled.div`
   box-shadow: 0 0 8px #ccc;
   color: #253b56;
   margin: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 `;
 
 const SingleIcon = styled.img`

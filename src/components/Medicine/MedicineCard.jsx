@@ -46,8 +46,10 @@ export default function Card(props) {
 const Button = styled.button`
   padding: 0 1.3rem;
   border: none;
-  background: #509b9b;
-  color: #4b417a;
+  background: #fff;
+  border-radius: 15px;
+  border: solid 2px #509b9b;
+  color: #509b9b;
   font-weight: bold;
   border-radius: 15px;
   margin-left: 5px;
@@ -90,6 +92,7 @@ const IconStyling = styled.img`
 const SingleCard = styled.div`
   border-radius: 15px;
   box-shadow: 0 0 8px #ccc;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   background: #f6f5fb;
   color: #4b417a;
   margin: 1rem;

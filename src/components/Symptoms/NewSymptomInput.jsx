@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 function NewSymptomInput({
   name,
+  type,
   value,
   onNewSymptomInputChange,
   placeholder,
@@ -11,7 +12,7 @@ function NewSymptomInput({
     <>
       <label htmlFor={name}>{children}</label>
       <Input
-        type="text"
+        type={type}
         id={name}
         name={name}
         onChange={onNewSymptomInputChange}

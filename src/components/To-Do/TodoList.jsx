@@ -54,6 +54,7 @@ const TodoListStyle = styled.div`
   margin: 1rem;
   padding: 1rem 1rem 1rem;
   text-align: left;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 `;
 
 const TodoListUl = styled.div`

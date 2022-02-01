@@ -1,9 +1,9 @@
 import Card from "../Medicine/MedicineCard";
 
 export default function MedicineList({ data, onRemoveProduct }) {
-  const medicineList = data.map((product) => (
+  const medicineList = data.map((product, index) => (
     <Card
-      id={product.id}
+      key={index}
       name={product.name}
       hersteller={product.hersteller}
       einnahmehinweis={product.einnahmehinweis}

@@ -42,6 +42,7 @@ const FullCardContent = styled.div`
 const SingleCard = styled.div`
   border-radius: 15px;
   box-shadow: 0 0 8px #ccc;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   background: #fff4f4;
   color: #253b56;
   margin: 1rem;

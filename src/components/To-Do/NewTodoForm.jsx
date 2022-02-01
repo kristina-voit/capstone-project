@@ -42,10 +42,10 @@ function NewTodoForm({ task, createTodo }) {
 export default NewTodoForm;
 
 const NewTodoFormButton = styled.button`
-  background: #509b9b;
+  background: #fff;
   border-radius: 15px;
-  border: none;
-  color: #4b417a;
+  border: solid 2px #509b9b;
+  color: #509b9b;
   cursor: pointer;
   font-family: "Montserrat", sans-serif;
   font-weight: bold;

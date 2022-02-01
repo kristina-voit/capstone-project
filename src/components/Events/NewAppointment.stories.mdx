@@ -1,0 +1,12 @@
+import { Meta, Story } from "@storybook/addon-docs";
+import NewAppointment from "./NewAppointment";
+
+<Meta title="Components/Cards" component={NewAppointment} />
+
+# Card component
+
+The Card component represents a card with detailed information about a book with its title and optionally its author.
+
+export const Template = (args) => <NewAppointment />;
+
+<Story name="New Appointment">{Template.bind({})}</Story>

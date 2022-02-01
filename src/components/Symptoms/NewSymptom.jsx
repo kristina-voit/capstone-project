@@ -1,26 +1,18 @@
-import styled from "styled-components";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import NewSymptomInput from "./NewSymptomInput";
-import { saveToLocal, loadFromLocal } from "../../lib/localStorage";
 import isSymptomValid from "../../lib/validationSymptom";
+import RadioButton from "./RadioButton";
+import styled from "styled-components";
 
-function NewSymptom() {
+function NewSymptom({ onAddSymptom }) {
   const initialSymptom = {
     stimmung: "",
     datum: "",
     notizen: "",
   };
   const [symptom, setSymptom] = useState(initialSymptom);
-  const localStorageSymptoms = loadFromLocal("_symptoms");
-  const [symptoms, setSymptoms] = useState(localStorageSymptoms ?? []);
-
-  const removeItem = () => localStorage.removeItem("_symptoms");
 
   const [hasFormErrors, setHasFormErrors] = useState(false);
-
-  useEffect(() => {
-    saveToLocal("_symptoms", symptoms);
-  }, [symptoms]);
 
   const handleChange = (event) => {
     let inputValue = event.target.value;
@@ -34,7 +26,7 @@ function NewSymptom() {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (isSymptomValid(symptom)) {
-      setSymptoms([...symptoms, symptom]);
+      onAddSymptom(symptom);
       setHasFormErrors(false);
     } else {
       setHasFormErrors(true);
@@ -51,7 +43,12 @@ function NewSymptom() {
               <p>Bitte füllen Sie alle Felder korrekt aus.</p>
             </ErrorMessage>
           )}
+
           <Form onSubmit={handleSubmit}>
+            <RadioButton value={symptom.stimmung} onRadioChange={handleChange}>
+              Stimmung
+            </RadioButton>
+
             <NewSymptomInput
               onNewSymptomInputChange={handleChange}
               name="stimmung"
@@ -62,7 +59,6 @@ function NewSymptom() {
             <NewSymptomInput
               onNewSymptomInputChange={handleChange}
               name="datum"
-              type="text"
               value={symptom.datum}
               placeholder="Datum"
             ></NewSymptomInput>
@@ -89,69 +85,40 @@ function NewSymptom() {
           </Form>
         </details>
       </section>
-
-      <Card>
-        {symptoms.map((symptom, index) => (
-          <div>
-            <CardTitle>{symptom.stimmung}</CardTitle>
-            <CardTitle>{symptom.datum}</CardTitle>
-            <p>{symptom.notizen}</p>
-
-            <Button onClick={removeItem}>Entfernen</Button>
-          </div>
-        ))}
-      </Card>
     </div>
   );
 }
 
 export default NewSymptom;
 
-const Card = styled.div`
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  grid-gap: 10px;
-  border-radius: 15px;
-  box-shadow: 0px 0px 8px #ccc;
-  background: #f6f5fb;
-  color: #4b417a;
-  margin: 1rem;
-  padding-top: 0.1rem;
-  padding: 1rem;
-`;
-
-const Form = styled.form`
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  grid-gap: 10px;
-  border-radius: 15px;
-  box-shadow: 0px 0px 8px #ccc;
-  background: #f6f5fb;
-  color: #4b417a;
-  margin: 1rem;
-  padding: 1rem;
-`;
-
 const Button = styled.button`
-  padding: 0 1.3rem;
-  border: none;
   background: #509b9b;
-  color: #4b417a;
-  font-weight: bold;
   border-radius: 15px;
-  margin-left: 5px;
+  border: none;
+  color: #4b417a;
   cursor: pointer;
   font-family: "Montserrat", sans-serif;
+  font-weight: bold;
   height: 2rem;
+  margin-left: 5px;
+  padding: 0 1.3rem;
 `;
-const CardTitle = styled.p`
-  font-weight: 600;
-  margin: 12px 0px 0px 0px;
-`;
+
 const ErrorMessage = styled.div`
   align-items: center;
-  background: var(--warning);
   border-radius: 6px;
   color: white;
   margin: 0 0 1rem;
+`;
+
+const Form = styled.form`
+  background: #f6f5fb;
+  border-radius: 15px;
+  box-shadow: 0 0 8px #ccc;
+  color: #4b417a;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(1, 1fr);
+  margin: 1rem;
+  padding: 1rem;
 `;

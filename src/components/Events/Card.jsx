@@ -10,9 +10,21 @@ function CardContent(props) {
       <Description>{props.datum}</Description>
       <Description>{props.fachrichtung}</Description>
       <Description>{props.adresse}</Description>
-      <Description>{props.telefon}</Description>
-      <Description>{props.email}</Description>
-      <Description>{props.website}</Description>
+
+      <Icons>
+        <a target="_blank" href={props.website}>
+          <SingleIcon src={WebsiteIcon} alt="Homepage" />
+        </a>
+        <a
+          href={`mailto:${props.email}?subject=Anfrage von Kristina Voit, *13.01.1989`}
+        >
+          <SingleIcon src={EmailIcon} alt="Email" />
+        </a>
+
+        <a href={`tel:${props.telefon}`}>
+          <SingleIcon src={CallIcon} alt="Call" />
+        </a>
+      </Icons>
     </FullCardContent>
   );
 }
@@ -25,59 +37,65 @@ export default function Card(props) {
           datum={props.datum}
           fachrichtung={props.fachrichtung}
           adresse={props.adresse}
+          email={props.email}
+          website={props.website}
+          telefon={props.telefon}
         />
-        <Icons>
-          <a target="_blank" href={props.website}>
-            <SingleIcon src={WebsiteIcon} alt="Homepage" />
-          </a>
-          <a
-            href={`mailto:${props.email}?subject=Anfrage von Kristina Voit, *13.01.1989`}
-          >
-            <SingleIcon src={EmailIcon} alt="Email" />
-          </a>
-
-          <a href={`tel:${props.telefon}`}>
-            <SingleIcon src={CallIcon} alt="Call" />
-          </a>
-        </Icons>
+        <Button onClick={() => props.onRemoveAppointment(props.name)}>
+          Entfernen
+        </Button>
       </SingleCard>
     </div>
   );
 }
 
-const FullCardContent = styled.div`
-  padding: 4px 4px 4px 4px;
-  text-align: left;
-  margin: 1rem;
+const Button = styled.button`
+  background: #509b9b;
+  border-radius: 15px;
+  border: none;
+  color: #4b417a;
+  cursor: pointer;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  height: 2rem;
+  margin-bottom: 1rem;
+  margin-left: 5px;
+  margin-top: 1rem;
+  padding: 0 1.3rem;
 `;
 
 const CardTitle = styled.p`
   font-weight: 600;
-  margin: 12px 0px 0px 0px;
-`;
-
-const SingleCard = styled.div`
-  border-radius: 15px;
-  box-shadow: 0px 0px 8px #ccc;
-  background: #fff4f4;
-  color: #253b56;
-  margin: 1rem;
+  margin: 12px 0 0 0;
+  text-align: left;
 `;
 
 const Description = styled.p`
-  font-size: 14;
-  margin: 8px 0 0 0;
+  text-align: left;
+`;
+
+const FullCardContent = styled.div`
+  margin: 1rem 1rem 0 1rem;
+  padding: 4px 4px 4px 4px;
 `;
 
 const Icons = styled.div`
   display: flex;
-  padding: 0.5rem;
-  margin: 0.5rem;
   justify-content: right;
+  margin: 0.5rem;
+  padding: 0.5rem;
+`;
+
+const SingleCard = styled.div`
+  background: #fff4f4;
+  border-radius: 15px;
+  box-shadow: 0 0 8px #ccc;
+  color: #253b56;
+  margin: 1rem;
 `;
 
 const SingleIcon = styled.img`
+  margin-bottom: 5px;
   margin-left: 5px;
   margin-right: 5px;
-  margin-bottom: 5px;
 `;

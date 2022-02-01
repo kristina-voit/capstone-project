@@ -1,6 +1,5 @@
-import styled from "styled-components";
-import { v4 as uuidv4 } from "uuid";
 import React, { useState } from "react";
+import styled from "styled-components";
 
 const Form = () => {
   const [formData, setFormData] = useState({
@@ -92,37 +91,37 @@ const Form = () => {
 
 export default Form;
 
-const NewMedicineButton = styled.button`
-  padding: 0 1.3rem;
-  border: none;
-  background: #509b9b;
-  color: #4b417a;
-  font-weight: bold;
+const Card = styled.div`
+  background: #f6f5fb;
   border-radius: 15px;
-  margin-left: 5px;
-  margin-top: 1rem;
-  cursor: pointer;
-  font-family: "Montserrat", sans-serif;
-  height: 2rem;
+  box-shadow: 0 0 8px #ccc;
+  color: #4b417a;
+  margin: 1rem;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
 `;
 
 const Inputfield = styled.input`
-  flex-grow: 1;
-  border: none;
   background: #f7f1f1;
-  padding: 0 1.5em;
-  margin: 0.5em;
-  font-size: initial;
+  border: none;
+  flex-grow: 1;
   font-family: "Montserrat", sans-serif;
+  font-size: initial;
   height: 2rem;
+  margin: 0.5em;
+  padding: 0 1.5em;
 `;
 
-const Card = styled.div`
+const NewMedicineButton = styled.button`
+  background: #509b9b;
   border-radius: 15px;
-  box-shadow: 0px 0px 8px #ccc;
-  background: #f6f5fb;
+  border: none;
   color: #4b417a;
-  margin: 1rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  cursor: pointer;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  height: 2rem;
+  margin-left: 5px;
+  margin-top: 1rem;
+  padding: 0 1.3rem;
 `;

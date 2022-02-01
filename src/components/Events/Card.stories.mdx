@@ -1,10 +1,25 @@
-import Card from "./Card";
 import { Meta, Story } from "@storybook/addon-docs";
 
-<Meta title="Components/Card" component={Card} />
+import Card from "./Card";
 
-# My first Card
+<Meta title="Components/Cards" component={Card} />
 
-<Story name="Simple Appointment Card">
-  <Card product={{ name: "Vanillekipferl", category: "Kekse", price: 10 }} />
+# Card component
+
+The Card component represents a card with detailed information about the next doctor's appointment.
+
+export const Template = (args) => <Card {...args} />;
+
+<Story
+  name="Appointment"
+  args={{
+    name: "Dr. Michael Meier",
+    datum: "16.03.2022, 15:30 Uhr",
+    fachrichtung: "Dermatologe",
+    website: "www.google.de",
+    email: "info@arzt.com",
+    telefon: "089627575",
+  }}
+>
+  {Template.bind({})}
 </Story>

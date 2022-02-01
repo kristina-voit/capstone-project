@@ -1,0 +1,22 @@
+import { Meta, Story } from "@storybook/addon-docs";
+import TodoList from "./TodoList";
+
+<Meta title="Components/Cards" component={TodoList} />
+
+# Card component
+
+The Card component represents a card with detailed information about a book with its title and optionally its author.
+
+export const Template = (args) => <TodoList {...args} />;
+
+<Story
+  name="Todo list"
+  args={{
+    color: "#",
+    text: "",
+    title: "",
+    isActive: true,
+  }}
+>
+  {Template.bind({})}
+</Story>

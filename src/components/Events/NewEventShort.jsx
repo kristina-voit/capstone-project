@@ -1,57 +1,49 @@
-import styled from "styled-components";
-import { useState } from "react";
 import { loadFromLocal } from "../../lib/localStorage";
+import styled from "styled-components";
 
-function NewAppointment() {
- 
-  const localStorageAppointments = loadFromLocal("_appointments");
-  const [appointments, setAppointments] = useState(
-    localStorageAppointments ?? []
-  );
+function NewAppointment({ appointments }) {
+  const initialAppointments = appointments ?? loadFromLocal("_appointments");
 
- 
   return (
     <div>
-      <Card>
-        {appointments.map((appointment, index) => (
-          <article>
+      {initialAppointments.map((appointment, index) => (
+        <article>
+          <Section>
             <FullCardContent>
               <Description>{appointment.datum}</Description>
               <CardTitle>{appointment.arztname}</CardTitle>
               <Description>{appointment.fachrichtung}</Description>
             </FullCardContent>
-          </article>
-        ))}
-      </Card>
+          </Section>
+        </article>
+      ))}
     </div>
   );
 }
 
 export default NewAppointment;
 
-const Card = styled.div`
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  grid-gap: 10px;
-  border-radius: 15px;
-  box-shadow: 0px 0px 8px #ccc;
-  background: #fff4f4;
-  color: #4b417a;
-  margin: 1rem;
-  padding-top: 0.1rem;
+const CardTitle = styled.p`
+  font-weight: 600;
+  margin: 12px 0 0 0;
+`;
+
+const Description = styled.p`
+  font-size: 14;
+  margin: 8px 0 0 0;
 `;
 
 const FullCardContent = styled.div`
   text-align: left;
   margin: 1rem;
 `;
-
-const CardTitle = styled.p`
-  font-weight: 600;
-  margin: 12px 0px 0px 0px;
-`;
-
-const Description = styled.p`
-  font-size: 14;
-  margin: 8px 0 0 0;
+const Section = styled.div`
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 10px;
+  border-radius: 15px;
+  box-shadow: 0 0 8px #ccc;
+  background: #fff4f4;
+  color: #4b417a;
+  margin: 1rem;
 `;

@@ -1,3 +1,5 @@
+import styled from "styled-components";
+
 function NewEventInput({
   name,
   value,
@@ -8,7 +10,7 @@ function NewEventInput({
   return (
     <>
       <label htmlFor={name}>{children}</label>
-      <input
+      <Input
         type="text"
         id={name}
         name={name}
@@ -21,3 +23,7 @@ function NewEventInput({
 }
 
 export default NewEventInput;
+
+const Input = styled.input`
+  height: 40px;
+`;

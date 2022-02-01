@@ -1,7 +1,7 @@
-export let eventsData = [
+export let appointmentsData = [
   {
     id: 0,
-    name: "Dermazentrum München",
+    arztname: "Dermazentrum München",
     datum: "15.03.2021, 16:30 Uhr",
     fachrichtung: "Dermatologie",
     adresse: "Albert-Roßhaupter-Strasse 32, 81369 München",
@@ -11,7 +11,7 @@ export let eventsData = [
   },
   {
     id: 1,
-    name: "Dr. Martin Butz",
+    arztname: "Dr. Martin Butz",
     datum: "19.03.2021, 10:00 Uhr",
     fachrichtung: "Zahnarzt",
     adresse: "Theatinerstrasse 15, 80333 München",

@@ -1,6 +1,6 @@
-import styled from "styled-components";
-import React, { useState, useReducer } from "react";
+import React, { useReducer } from "react";
 import { v4 as uuidv4 } from "uuid";
+import styled from "styled-components";
 
 function NewTodoForm({ task, createTodo }) {
   const [userInput, setUserInput] = useReducer(
@@ -41,33 +41,32 @@ function NewTodoForm({ task, createTodo }) {
 
 export default NewTodoForm;
 
-const NewTodoFormStyle = styled.form`
-  margin: auto;
-  display: flex;
-  flex-wrap: wrap;
-`;
-
 const NewTodoFormButton = styled.button`
-  padding: 0 1.3rem;
-  border: none;
   background: #509b9b;
-  color: #4b417a;
-  font-weight: bold;
   border-radius: 15px;
-  margin-left: 5px;
-  margin-top: 10px;
-  
+  border: none;
+  color: #4b417a;
   cursor: pointer;
   font-family: "Montserrat", sans-serif;
+  font-weight: bold;
   height: 2rem;
+  margin-left: 5px;
+  margin-top: 10px;
+  padding: 0 1.3rem;
 `;
 
 const NewTodoFormInput = styled.input`
-  flex-grow: 1;
-  border: none;
   background: #f7f1f1;
-  padding: 0 1.5em;
-  font-size: initial;
+  border: none;
+  flex-grow: 1;
   font-family: "Montserrat", sans-serif;
+  font-size: initial;
   height: 2rem;
+  padding: 0 1.5em;
+`;
+
+const NewTodoFormStyle = styled.form`
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
 `;

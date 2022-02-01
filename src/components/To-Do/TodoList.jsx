@@ -1,17 +1,16 @@
-import styled from "styled-components";
 import React, { useState } from "react";
 import Todo from "./Todo";
 import NewTodoForm from "./NewTodoForm";
 import { v4 as uuidv4 } from "uuid";
+import styled from "styled-components";
 
 function TodoList() {
   const [todos, setTodos] = useState([
-    { id: uuidv4(), task: "Überweisung Augenarzt" },
-    { id: uuidv4(), task: "OP-Bericht anfragen " },
+    { id: uuidv4(), task: "OP-Bericht anfragen" },
+    { id: uuidv4(), task: "Neues Rezept HNO" },
   ]);
 
   const create = (newTodo) => {
-    console.log(newTodo);
     setTodos([...todos, newTodo]);
   };
 
@@ -47,18 +46,19 @@ function TodoList() {
 export default TodoList;
 
 const TodoListStyle = styled.div`
-  text-align: left;
-  padding: 1rem 1rem 1rem;
   background: #f5f9f9;
-  color: #509b9b;
-  border-style: none;
   border-radius: 25px;
+  border-style: none;
+  color: #4b417a;
+  font-family: "Montserrat", sans-serif;
   margin: 1rem;
-  margin-bottom: 40px;
+  padding: 1rem 1rem 1rem;
+  text-align: left;
 `;
 
 const TodoListUl = styled.div`
-  margin-top: 1rem;
-  margin-inline-start: -20px;
   color: #4b417a;
+  font-family: "Montserrat", sans-serif;
+  margin-inline-start: -20px;
+  margin-top: 1rem;
 `;

@@ -11,7 +11,7 @@ function CardContent(props) {
 }
 export default function Card(props) {
   return (
-    <div style={{ width: props.width + "px" }}>
+    <div>
       <SingleCard id={props.id}>
         <CardContent
           datum={props.datum}
@@ -23,26 +23,26 @@ export default function Card(props) {
   );
 }
 
+const CardTitle = styled.p`
+  font-weight: 600;
+  margin: 12px 0 0 0;
+`;
+
+const Description = styled.p`
+  font-size: 14;
+  margin: 8px 0 0 0;
+`;
+
 const FullCardContent = styled.div`
   padding: 4px 4px 4px 4px;
   text-align: left;
   margin: 1rem;
 `;
 
-const CardTitle = styled.p`
-  font-weight: 600;
-  margin: 12px 0px 0px 0px;
-`;
-
 const SingleCard = styled.div`
   border-radius: 15px;
-  box-shadow: 0px 0px 8px #ccc;
+  box-shadow: 0 0 8px #ccc;
   background: #fff4f4;
   color: #253b56;
   margin: 1rem;
-`;
-
-const Description = styled.p`
-  font-size: 14;
-  margin: 8px 0 0 0;
 `;

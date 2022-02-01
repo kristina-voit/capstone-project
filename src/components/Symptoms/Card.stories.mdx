@@ -1,0 +1,21 @@
+import { Meta, Story } from "@storybook/addon-docs";
+import Card from "./Card";
+
+<Meta title="Components/Cards" component={Card} />
+
+# Card component
+
+The Card component represents a card with detailed information about a book with its title and optionally its author.
+
+export const Template = (args) => <Card {...args} />;
+
+<Story
+  name="Symptoms"
+  args={{
+    stimmung: "Super!",
+    datum: "16.03.2022",
+    notizen: "Kopfschmerzen sind weg, Übelkeit ebenfalls",
+  }}
+>
+  {Template.bind({})}
+</Story>

@@ -113,10 +113,11 @@ const Inputfield = styled.input`
 `;
 
 const NewMedicineButton = styled.button`
-  background: #509b9b;
+  background: #fff;
   border-radius: 15px;
+  border: solid 2px #509b9b;
   border: none;
-  color: #4b417a;
+  color: #509b9b;
   cursor: pointer;
   font-family: "Montserrat", sans-serif;
   font-weight: bold;

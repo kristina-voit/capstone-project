@@ -68,6 +68,7 @@ const SingleCard = styled.div`
   background: #f6f5fb;
   border-radius: 15px;
   box-shadow: 0 0 8px #ccc;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   color: #4b417a;
   margin: 1rem;
   padding-top: 0.1rem;

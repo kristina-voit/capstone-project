@@ -2,11 +2,9 @@ import Breathe from "../components/Meditation/Breathe";
 
 const Home = () => {
   return (
-    <main>
-      <div>
-        <Breathe />
-      </div>
-    </main>
+    <div>
+      <Breathe />
+    </div>
   );
 };
 export default Home;

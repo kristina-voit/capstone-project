@@ -3,7 +3,7 @@ import NewEventInput from "./NewEventInput";
 import isAppointmentValid from "../../lib/validationAppointment";
 import styled from "styled-components";
 
-function NewAppointment({ onAddAppointment }) {
+function NewAppointment({ onAddAppointment, index }) {
   const initialAppointment = {
     arztname: "",
     datum: "",
@@ -40,11 +40,7 @@ function NewAppointment({ onAddAppointment }) {
     <section>
       <details>
         <summary>Neuen Termin eintragen</summary>
-        {hasFormErrors && (
-          <ErrorMessage>
-            <p>Bitte füllen Sie alle Felder korrekt aus.</p>
-          </ErrorMessage>
-        )}
+
         <Form onSubmit={handleSubmit}>
           <NewEventInput
             onNewEventInputChange={handleChange}
@@ -55,6 +51,7 @@ function NewAppointment({ onAddAppointment }) {
 
           <NewEventInput
             onNewEventInputChange={handleChange}
+            type="date"
             name="datum"
             value={appointment.datum}
             placeholder="Datum, Uhrzeit"
@@ -78,24 +75,29 @@ function NewAppointment({ onAddAppointment }) {
             onNewEventInputChange={handleChange}
             name="telefon"
             value={appointment.telefon}
-            placeholder="Telefon"
+            placeholder="Telefon (z.B. 0123456789)"
           ></NewEventInput>
 
           <NewEventInput
             onNewEventInputChange={handleChange}
             name="email"
             value={appointment.email}
-            placeholder="Email-Adresse"
+            placeholder="Email-Adresse (z.B. muster@muster.de)"
           ></NewEventInput>
 
           <NewEventInput
             onNewEventInputChange={handleChange}
             name="website"
             value={appointment.website}
-            placeholder="Website"
+            placeholder="Website (z.B. www.muster.de)"
           ></NewEventInput>
 
           <div>
+            {hasFormErrors && (
+              <ErrorMessage>
+                <Warning>Bitte füllen Sie alle Felder korrekt aus.</Warning>
+              </ErrorMessage>
+            )}
             <Button>Termin hinzufügen</Button>
 
             <Button
@@ -116,10 +118,10 @@ function NewAppointment({ onAddAppointment }) {
 export default NewAppointment;
 
 const Button = styled.button`
-  background: #509b9b;
+  background: #fff;
   border-radius: 15px;
-  border: none;
-  color: #4b417a;
+  border: solid 2px #509b9b;
+  color: #509b9b;
   cursor: pointer;
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
@@ -148,4 +150,10 @@ const Form = styled.form`
   grid-template-columns: repeat(1, 1fr);
   margin: 1rem;
   padding: 1rem;
+`;
+
+const Warning = styled.p`
+  color: red;
+  margin: 0;
+  padding: 0;
 `;

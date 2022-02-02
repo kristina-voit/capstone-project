@@ -53,13 +53,16 @@ const Medikamente = () => {
 export default Medikamente;
 
 const ButtonStyle = styled.button`
-  background: #f5f9f9;
+  background: #509b9b;
   border-radius: 15px;
   border: none;
-  color: #509b9b;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  color: #fff;
   cursor: pointer;
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
   height: 5rem;
   margin-left: 5px;
+
+  padding: 2rem;
 `;

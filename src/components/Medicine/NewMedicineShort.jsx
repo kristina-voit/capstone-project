@@ -21,7 +21,6 @@ function NewProduct({ products }) {
               <DosageShort einnahmeMenge={product.einnahmeMittags} />
               <DosageShort einnahmeMenge={product.einnahmeAbends} />
               <DosageShort einnahmeMenge={product.einnahmeNachts} />
-
               <IconStyling src={Morning} alt="Morning" />
               <IconStyling src={Noon} alt="Noon" />
               <IconStyling src={Evening} alt="Evening" />

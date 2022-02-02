@@ -74,6 +74,7 @@ const ButtonStyle = styled.a`
   font-weight: bold;
   margin-left: 5px;
   margin-top: 1rem;
+  margin-bottom: 1rem;
   text-decoration: none;
 `;
 

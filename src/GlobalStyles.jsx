@@ -8,22 +8,26 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
 }
 
-html {
-bottom: 0;
-
-
-}
 
 body {
-  background: var(--background-one);
   font-family: 'Montserrat', sans-serif;
   margin: 0;
   text-align: center;
+  text-align: center;
+  background: rgb(215, 212, 227);
+  background: linear-gradient(
+    0deg,
+    rgba(215, 212, 227, 1) 0%,
+    rgba(255, 255, 255, 1) 100%,
+    rgba(0, 212, 255, 1) 100%
+  );
 }
 
 main {
   margin-bottom: 60px;
   padding-bottom: 10px;
+
+
 }
 
 details > summary {
@@ -36,7 +40,6 @@ details > summary {
     margin-left: 5px;
     margin-top: 1rem;
     padding: 0.2;
-  background: #f5f9f9;
 }
 
 details > summary > * {
@@ -52,16 +55,7 @@ p {
   color: #4B417A;
 }
 
-.App {
-  text-align: center;
-  background: rgb(215, 212, 227);
-  background: linear-gradient(
-    0deg,
-    rgba(215, 212, 227, 1) 0%,
-    rgba(255, 255, 255, 1) 100%,
-    rgba(0, 212, 255, 1) 100%
-  );
-}
+
 `;
 
 export default GlobalStyle;

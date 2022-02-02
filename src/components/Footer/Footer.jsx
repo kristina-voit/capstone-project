@@ -82,7 +82,10 @@ function Footer() {
 export default Footer;
 
 const NavbarStyled = styled.footer`
-  background: #d7d4e3;
+  background: #fff;
+  border-radius: 15px 15px 0 0px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
   bottom: 0;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -91,7 +94,7 @@ const NavbarStyled = styled.footer`
   width: 100vw;
 
   a svg {
-    fill: black;
+    fill: #4b417a;
   }
   a.active svg {
     fill: #509b9b;

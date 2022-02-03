@@ -1,17 +1,17 @@
-import { useState } from "react";
-import NewEventInput from "./NewEventInput";
-import isAppointmentValid from "../../lib/validationAppointment";
-import styled from "styled-components";
+import { useState } from 'react';
+import NewEventInput from './NewEventInput';
+import isAppointmentValid from '../../lib/validationAppointment';
+import styled from 'styled-components';
 
 function NewAppointment({ onAddAppointment, index }) {
   const initialAppointment = {
-    arztname: "",
-    datum: "",
-    fachrichtung: "",
-    adresse: "",
-    telefon: "",
-    email: "",
-    website: "",
+    arztname: '',
+    datum: '',
+    fachrichtung: '',
+    adresse: '',
+    telefon: '',
+    email: '',
+    website: '',
   };
   const [appointment, setAppointment] = useState(initialAppointment);
 
@@ -123,7 +123,7 @@ const Button = styled.button`
   border: solid 2px #509b9b;
   color: #509b9b;
   cursor: pointer;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: bold;
   height: 2rem;
   justify-content: right;

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 function SearchInput(props) {
   const onSearch = (event) => {
@@ -23,7 +23,7 @@ const FormInput = styled.input`
   border: solid grey 1px;
   color: #4b417a;
   flex-grow: 1;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: initial;
   height: 2rem;
   margin-bottom: 10px;

@@ -1,8 +1,8 @@
-import styled from "styled-components";
-import Morning from "../../images/sunrise.svg";
-import Noon from "../../images/noon.svg";
-import Evening from "../../images/sunset.svg";
-import Night from "../../images/night.svg";
+import styled from 'styled-components';
+import Morning from '../../images/sunrise.svg';
+import Noon from '../../images/noon.svg';
+import Evening from '../../images/sunset.svg';
+import Night from '../../images/night.svg';
 
 function CardContent(props) {
   return (
@@ -57,7 +57,7 @@ const Button = styled.button`
   margin-bottom: 1rem;
   text-align: center;
   cursor: pointer;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   height: 2rem;
 `;
 

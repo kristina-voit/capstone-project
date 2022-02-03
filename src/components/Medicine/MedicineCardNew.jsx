@@ -1,14 +1,14 @@
-import React, { useState } from "react";
-import styled from "styled-components";
+import React, { useState } from 'react';
+import styled from 'styled-components';
 
 const Form = () => {
   const [formData, setFormData] = useState({
-    nameAndDose: "",
-    einnahmehinweis: "",
-    einnahmeMorgens: "",
-    einnahmeMittags: "",
-    einnahmeAbends: "",
-    einnahmeNachts: "",
+    nameAndDose: '',
+    einnahmehinweis: '',
+    einnahmeMorgens: '',
+    einnahmeMittags: '',
+    einnahmeAbends: '',
+    einnahmeNachts: '',
   });
 
   const updateFormData = (event) =>
@@ -105,7 +105,7 @@ const Inputfield = styled.input`
   background: #f7f1f1;
   border: none;
   flex-grow: 1;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: initial;
   height: 2rem;
   margin: 0.5em;
@@ -119,7 +119,7 @@ const NewMedicineButton = styled.button`
   border: none;
   color: #509b9b;
   cursor: pointer;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: bold;
   height: 2rem;
   margin-left: 5px;

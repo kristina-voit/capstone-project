@@ -1,13 +1,13 @@
-import { loadFromLocal } from "../../lib/localStorage";
-import styled from "styled-components";
-import Morning from "../../images/sunrise.svg";
-import Noon from "../../images/noon.svg";
-import Evening from "../../images/sunset.svg";
-import Night from "../../images/night.svg";
-import DosageShort from "../Medicine/DosageShort";
+import { loadFromLocal } from '../../lib/localStorage';
+import styled from 'styled-components';
+import Morning from '../../images/sunrise.svg';
+import Noon from '../../images/noon.svg';
+import Evening from '../../images/sunset.svg';
+import Night from '../../images/night.svg';
+import DosageShort from '../Medicine/DosageShort';
 
 function NewProduct({ products }) {
-  const initialProducts = products ?? loadFromLocal("_products");
+  const initialProducts = products ?? loadFromLocal('_products');
 
   return (
     <div>

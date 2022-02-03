@@ -1,7 +1,7 @@
-import styled from "styled-components";
-import WebsiteIcon from "../../images/homepage.svg";
-import CallIcon from "../../images/phone.svg";
-import EmailIcon from "../../images/email.svg";
+import styled from 'styled-components';
+import WebsiteIcon from '../../images/homepage.svg';
+import CallIcon from '../../images/phone.svg';
+import EmailIcon from '../../images/email.svg';
 
 function CardContent(props) {
   return (
@@ -55,7 +55,7 @@ const Button = styled.button`
   border: solid 2px #509b9b;
   color: #509b9b;
   cursor: pointer;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: bold;
   height: 2rem;
   margin-bottom: 1rem;

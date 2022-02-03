@@ -1,4 +1,4 @@
-import Breathe from "../components/Meditation/Breathe";
+import Breathe from '../components/Meditation/Breathe';
 
 const Home = () => {
   return (

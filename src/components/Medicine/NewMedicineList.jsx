@@ -1,4 +1,4 @@
-import Card from "../Medicine/MedicineCard";
+import Card from '../Medicine/MedicineCard';
 
 export default function MedicineList(props) {
   const medicineList = props.data.map((event) => (

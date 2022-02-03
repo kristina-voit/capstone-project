@@ -1,38 +1,38 @@
-import { useState, useEffect } from "react";
-import TodoList from "../components/To-Do/TodoList.jsx";
-import Header from "../components/Header/Header.jsx";
-import NewEventShort from "../components/Events/NewEventShort";
-import NewMedicineShort from "../components/Medicine/NewMedicineShort";
-import { medicineData } from "../components/Medicine/medicinedata";
-import { appointmentsData } from "../components/Events/appointmentdata";
-import { loadFromLocal, saveToLocal } from "../lib/localStorage";
-import styled from "styled-components";
+import { useState, useEffect } from 'react';
+import TodoList from '../components/To-Do/TodoList.jsx';
+import Header from '../components/Header/Header.jsx';
+import NewEventShort from '../components/Events/NewEventShort';
+import NewMedicineShort from '../components/Medicine/NewMedicineShort';
+import { medicineData } from '../components/Medicine/medicinedata';
+import { appointmentsData } from '../components/Events/appointmentdata';
+import { loadFromLocal, saveToLocal } from '../lib/localStorage';
+import styled from 'styled-components';
 
 const Home = () => {
   const [products, setProducts] = useState(medicineData);
 
   useEffect(() => {
-    const storageData = loadFromLocal("_products");
+    const storageData = loadFromLocal('_products');
     if (storageData && storageData.length > 0) {
       setProducts(storageData);
     }
   }, []);
 
   useEffect(() => {
-    saveToLocal("_products", products);
+    saveToLocal('_products', products);
   }, [products]);
 
   const [appointments, setAppointments] = useState(appointmentsData);
 
   useEffect(() => {
-    const storageData = loadFromLocal("_appointments");
+    const storageData = loadFromLocal('_appointments');
     if (storageData && storageData.length > 0) {
       setAppointments(storageData);
     }
   }, []);
 
   useEffect(() => {
-    saveToLocal("_appointments", appointments);
+    saveToLocal('_appointments', appointments);
   }, [appointments]);
 
   return (
@@ -70,7 +70,7 @@ const ButtonStyle = styled.a`
   border: none;
   color: #509b9b;
   cursor: pointer;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: bold;
   margin-left: 5px;
   margin-top: 1rem;

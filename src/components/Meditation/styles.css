@@ -12,7 +12,7 @@
 }
 
 #Universal::after {
-  content: "";
+  content: '';
   opacity: 0.8;
   top: 0;
   left: 0;

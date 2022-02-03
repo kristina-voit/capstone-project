@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import styled from "styled-components";
-import DeleteIcon from "../../images/delete.svg";
-import EditIcon from "../../images/edit.svg";
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import DeleteIcon from '../../images/delete.svg';
+import EditIcon from '../../images/edit.svg';
 
 function Todo({ todo, remove, update }) {
   const [isEditing, setIsEditing] = useState(false);
@@ -66,7 +66,7 @@ const TodoEditFormButton = styled.button`
   border: none;
   color: #4b417a;
   cursor: pointer;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: bold;
   height: 2rem;
   margin-left: 5px;
@@ -83,7 +83,7 @@ const TodoEditFormInput = styled.input`
   background: #f7f1f1;
   border: none;
   flex-grow: 1;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: initial;
   height: 2rem;
   padding: 0 1.5em;

@@ -1,10 +1,10 @@
 export let medicineData = [
   {
     id: 0,
-    name: "Ibuprofen 400mg",
-    hersteller: "Ratiopharm",
+    name: 'Ibuprofen 400mg',
+    hersteller: 'Ratiopharm',
     einnahmehinweis:
-      "Unzerkaut, mit reichlich Flüssigkeit und nicht auf nüchternen Magen.",
+      'Unzerkaut, mit reichlich Flüssigkeit und nicht auf nüchternen Magen.',
     einnahmeMorgens: 1,
     einnahmeMittags: 1,
     einnahmeAbends: 1,
@@ -12,10 +12,10 @@ export let medicineData = [
   },
   {
     id: 1,
-    name: "L-Thyroxin 150mcg",
-    hersteller: "Henning",
+    name: 'L-Thyroxin 150mcg',
+    hersteller: 'Henning',
     einnahmehinweis:
-      "Morgens nüchtern, mindestens ½ Stunde vor dem Frühstück mit reichlich Flüssigkeit.",
+      'Morgens nüchtern, mindestens ½ Stunde vor dem Frühstück mit reichlich Flüssigkeit.',
     einnahmeMorgens: 1,
     einnahmeMittags: 0,
     einnahmeAbends: 0,
@@ -23,9 +23,9 @@ export let medicineData = [
   },
   {
     id: 2,
-    name: "Vitamin B12",
-    hersteller: "Metagenics",
-    einnahmehinweis: "Mit reichlich Flüssigkeit.",
+    name: 'Vitamin B12',
+    hersteller: 'Metagenics',
+    einnahmehinweis: 'Mit reichlich Flüssigkeit.',
     einnahmeMorgens: 0,
     einnahmeMittags: 1,
     einnahmeAbends: 0,

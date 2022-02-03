@@ -1,5 +1,5 @@
-import { Meta, Story } from "@storybook/addon-docs";
-import MedicineCard from "./MedicineCard";
+import { Meta, Story } from '@storybook/addon-docs';
+import MedicineCard from './MedicineCard';
 
 <Meta title="Components/Cards" component={MedicineCard} />
 
@@ -12,13 +12,13 @@ export const Template = (args) => <MedicineCard {...args} />;
 <Story
   name="Medicine"
   args={{
-    name: "Ibuprofen 400mg",
-    hersteller: "Ratiopharm",
-    einnahmehinweis: "Unzerkaut, mit viel Flüssigkeit",
-    einnahmeMorgens: "1",
-    einnahmeMittags: "1",
-    einnahmeAbends: "1",
-    einnahmeNachts: "0",
+    name: 'Ibuprofen 400mg',
+    hersteller: 'Ratiopharm',
+    einnahmehinweis: 'Unzerkaut, mit viel Flüssigkeit',
+    einnahmeMorgens: '1',
+    einnahmeMittags: '1',
+    einnahmeAbends: '1',
+    einnahmeNachts: '0',
   }}
 >
   {Template.bind({})}

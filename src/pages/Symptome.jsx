@@ -1,24 +1,24 @@
-import { useState, useEffect } from "react";
-import Header from "../components/Header/Header.jsx";
-import SymptomsList from "../components/Symptoms/SymptomsList";
-import NewSymptom from "../components/Symptoms/NewSymptom";
-import Graph from "../components/Symptoms/MoodGraph";
-import { journaldata } from "../components/Symptoms/journaldata";
-import { loadFromLocal, saveToLocal } from "../lib/localStorage";
-import styled from "styled-components";
+import { useState, useEffect } from 'react';
+import Header from '../components/Header/Header.jsx';
+import SymptomsList from '../components/Symptoms/SymptomsList';
+import NewSymptom from '../components/Symptoms/NewSymptom';
+import Graph from '../components/Symptoms/MoodGraph';
+import { journaldata } from '../components/Symptoms/journaldata';
+import { loadFromLocal, saveToLocal } from '../lib/localStorage';
+import styled from 'styled-components';
 
 const Symptome = () => {
   const [symptoms, setSymptoms] = useState(journaldata);
 
   useEffect(() => {
-    const storageData = loadFromLocal("_symptoms");
+    const storageData = loadFromLocal('_symptoms');
     if (storageData && storageData.length > 0) {
       setSymptoms(storageData);
     }
   }, []);
 
   useEffect(() => {
-    saveToLocal("_symptoms", symptoms);
+    saveToLocal('_symptoms', symptoms);
   }, [symptoms]);
 
   function addSymptom(symptom) {

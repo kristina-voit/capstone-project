@@ -1,5 +1,5 @@
-import React from "react";
-import { Line } from "react-chartjs-2";
+import React from 'react';
+import { Line } from 'react-chartjs-2';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -9,7 +9,7 @@ import {
   Title,
   Tooltip,
   Legend,
-} from "chart.js";
+} from 'chart.js';
 
 ChartJS.register(
   CategoryScale,
@@ -23,20 +23,20 @@ ChartJS.register(
 
 const dataMood = {
   labels: [
-    "01.01.2022",
-    "02.01.2022",
-    "03.01.2022",
-    "04.01.2022",
-    "05.01.2022",
-    "06.01.2022",
-    "07.01.2022",
-    "08.01.2022",
+    '01.01.2022',
+    '02.01.2022',
+    '03.01.2022',
+    '04.01.2022',
+    '05.01.2022',
+    '06.01.2022',
+    '07.01.2022',
+    '08.01.2022',
   ],
   datasets: [
     {
-      label: "Stimmung",
+      label: 'Stimmung',
       data: [50, 0, 99, 99, 25, 50, 75, 99],
-      borderColor: "#742774",
+      borderColor: '#742774',
     },
   ],
 };

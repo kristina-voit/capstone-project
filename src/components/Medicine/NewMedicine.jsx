@@ -1,17 +1,17 @@
-import { useState } from "react";
-import NewMedicineInput from "./NewMedicineInput";
-import isProductValid from "../../lib/validationMedicine";
-import styled from "styled-components";
+import { useState } from 'react';
+import NewMedicineInput from './NewMedicineInput';
+import isProductValid from '../../lib/validationMedicine';
+import styled from 'styled-components';
 
 function NewMedicine({ onAddProduct }) {
   const initialProduct = {
-    name: "",
-    hersteller: "",
-    einnahmehinweis: "",
-    einnahmeMorgens: "",
-    einnahmeMittags: "",
-    einnahmeAbends: "",
-    einnahmeNachts: "",
+    name: '',
+    hersteller: '',
+    einnahmehinweis: '',
+    einnahmeMorgens: '',
+    einnahmeMittags: '',
+    einnahmeAbends: '',
+    einnahmeNachts: '',
   };
   const [product, setProduct] = useState(initialProduct);
 
@@ -128,7 +128,7 @@ const Button = styled.button`
   padding: 0 1.3rem;
 
   cursor: pointer;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   height: 2rem;
 `;
 

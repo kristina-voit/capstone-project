@@ -1,9 +1,9 @@
-import styled from "styled-components";
-import Morning from "../../images/sunrise.svg";
-import Noon from "../../images/noon.svg";
-import Evening from "../../images/sunset.svg";
-import Night from "../../images/night.svg";
-import Dosage from "../Medicine/Dosage";
+import styled from 'styled-components';
+import Morning from '../../images/sunrise.svg';
+import Noon from '../../images/noon.svg';
+import Evening from '../../images/sunset.svg';
+import Night from '../../images/night.svg';
+import Dosage from '../Medicine/Dosage';
 
 function CardContent(props) {
   return (

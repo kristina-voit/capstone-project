@@ -1,4 +1,4 @@
-import Card from "./Card";
+import Card from './Card';
 
 export default function SymptomsList(props) {
   const symptomsList = props.data.map((props) => (

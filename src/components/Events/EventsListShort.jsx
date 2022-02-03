@@ -1,4 +1,4 @@
-import Card from "./CardShort";
+import Card from './CardShort';
 
 export default function EventsList(props) {
   const eventsList = props.data.map((event) => (

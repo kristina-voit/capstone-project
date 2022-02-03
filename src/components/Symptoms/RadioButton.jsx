@@ -1,9 +1,9 @@
-import styled from "styled-components";
-import happy from "../../images/happy.svg";
-import good from "../../images/good.svg";
-import hmm from "../../images/hmm.svg";
-import sad from "../../images/sad.svg";
-import sceptic from "../../images/sceptic.svg";
+import styled from 'styled-components';
+import happy from '../../images/happy.svg';
+import good from '../../images/good.svg';
+import hmm from '../../images/hmm.svg';
+import sad from '../../images/sad.svg';
+import sceptic from '../../images/sceptic.svg';
 
 function RadioButton({ value, children, onRadioChange }) {
   return (
@@ -19,50 +19,50 @@ function RadioButton({ value, children, onRadioChange }) {
           <input
             type="radio"
             value="Schlecht"
-            checked={value === "Schlecht"}
+            checked={value === 'Schlecht'}
             onChange={onRadioChange}
             name="stimmung"
-          ></input>{" "}
+          ></input>{' '}
           <label class="form-check-label" for="inlineRadio1"></label>
         </div>
         <div class="form-check form-check-inline">
           <input
             type="radio"
             value="Nicht so gut"
-            checked={value === "Nicht so gut"}
+            checked={value === 'Nicht so gut'}
             onChange={onRadioChange}
             name="stimmung"
-          ></input>{" "}
+          ></input>{' '}
           <label class="form-check-label" for="inlineRadio2"></label>
         </div>
         <div class="form-check form-check-inline">
           <input
             type="radio"
             value="So mittel"
-            checked={value === "So mittel"}
+            checked={value === 'So mittel'}
             onChange={onRadioChange}
             name="stimmung"
-          ></input>{" "}
+          ></input>{' '}
           <label class="form-check-label" for="inlineRadio3"></label>
         </div>
         <div class="form-check form-check-inline">
           <input
             type="radio"
             value="Gut"
-            checked={value === "Gut"}
+            checked={value === 'Gut'}
             onChange={onRadioChange}
             name="stimmung"
-          ></input>{" "}
+          ></input>{' '}
           <label class="form-check-label" for="inlineRadio4"></label>
         </div>
         <div class="form-check form-check-inline">
           <input
             type="radio"
             value="Super"
-            checked={value === "Super"}
+            checked={value === 'Super'}
             onChange={onRadioChange}
             name="stimmung"
-          ></input>{" "}
+          ></input>{' '}
           <label class="form-check-label" for="inlineRadio5"></label>
         </div>
       </FullCardContent>

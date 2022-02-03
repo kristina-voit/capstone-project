@@ -1,8 +1,8 @@
-import { loadFromLocal } from "../../lib/localStorage";
-import styled from "styled-components";
+import { loadFromLocal } from '../../lib/localStorage';
+import styled from 'styled-components';
 
 function NewAppointment({ appointments }) {
-  const initialAppointments = appointments ?? loadFromLocal("_appointments");
+  const initialAppointments = appointments ?? loadFromLocal('_appointments');
 
   return (
     <div>

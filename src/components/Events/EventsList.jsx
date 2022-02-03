@@ -1,4 +1,4 @@
-import Card from "../Events/Card";
+import Card from '../Events/Card';
 
 export default function EventsList({ data, onRemoveAppointment }) {
   const eventsList = data.map((props, index) => (

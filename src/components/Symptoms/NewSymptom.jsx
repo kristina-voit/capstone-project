@@ -1,15 +1,15 @@
-import { useState } from "react";
-import NewSymptomInput from "./NewSymptomInput";
-import isSymptomValid from "../../lib/validationSymptom";
-import RadioButton from "./RadioButton";
+import { useState } from 'react';
+import NewSymptomInput from './NewSymptomInput';
+import isSymptomValid from '../../lib/validationSymptom';
+import RadioButton from './RadioButton';
 
-import styled from "styled-components";
+import styled from 'styled-components';
 
 function NewSymptom({ onAddSymptom }) {
   const initialSymptom = {
-    stimmung: "",
-    datum: "",
-    notizen: "",
+    stimmung: '',
+    datum: '',
+    notizen: '',
   };
   const [symptom, setSymptom] = useState(initialSymptom);
 
@@ -103,7 +103,7 @@ const Button = styled.button`
   border: solid 2px #509b9b;
   color: #509b9b;
   cursor: pointer;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: bold;
   height: 2rem;
   margin-left: 5px;

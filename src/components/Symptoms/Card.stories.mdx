@@ -1,5 +1,5 @@
-import { Meta, Story } from "@storybook/addon-docs";
-import Card from "./Card";
+import { Meta, Story } from '@storybook/addon-docs';
+import Card from './Card';
 
 <Meta title="Components/Cards" component={Card} />
 
@@ -12,9 +12,9 @@ export const Template = (args) => <Card {...args} />;
 <Story
   name="Symptoms"
   args={{
-    stimmung: "Super!",
-    datum: "16.03.2022",
-    notizen: "Kopfschmerzen sind weg, Übelkeit ebenfalls",
+    stimmung: 'Super!',
+    datum: '16.03.2022',
+    notizen: 'Kopfschmerzen sind weg, Übelkeit ebenfalls',
   }}
 >
   {Template.bind({})}

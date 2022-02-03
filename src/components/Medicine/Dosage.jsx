@@ -1,5 +1,5 @@
-import { useState } from "react";
-import styled from "styled-components";
+import { useState } from 'react';
+import styled from 'styled-components';
 
 export default function Dosage(props) {
   const [isColored, setIsColored] = useState(true);
@@ -26,7 +26,7 @@ export default function Dosage(props) {
 }
 
 const Description = styled.p`
-  color: ${(props) => (props.isColored ? "red" : "green")};
+  color: ${(props) => (props.isColored ? 'red' : 'green')};
   font-size: 14;
   font-weight: 600;
   margin: 8px 0 0 0;

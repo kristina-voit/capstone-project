@@ -1,13 +1,13 @@
-import React, { useState } from "react";
-import Todo from "./Todo";
-import NewTodoForm from "./NewTodoForm";
-import { v4 as uuidv4 } from "uuid";
-import styled from "styled-components";
+import React, { useState } from 'react';
+import Todo from './Todo';
+import NewTodoForm from './NewTodoForm';
+import { v4 as uuidv4 } from 'uuid';
+import styled from 'styled-components';
 
 function TodoList() {
   const [todos, setTodos] = useState([
-    { id: uuidv4(), task: "OP-Bericht anfragen" },
-    { id: uuidv4(), task: "Neues Rezept HNO" },
+    { id: uuidv4(), task: 'OP-Bericht anfragen' },
+    { id: uuidv4(), task: 'Neues Rezept HNO' },
   ]);
 
   const create = (newTodo) => {
@@ -50,7 +50,7 @@ const TodoListStyle = styled.div`
   border-radius: 25px;
   border-style: none;
   color: #4b417a;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   margin: 1rem;
   padding: 1rem 1rem 1rem;
   text-align: left;
@@ -59,7 +59,7 @@ const TodoListStyle = styled.div`
 
 const TodoListUl = styled.div`
   color: #4b417a;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   margin-inline-start: -20px;
   margin-top: 1rem;
 `;

@@ -1,15 +1,15 @@
-import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
-import { keyframes } from "styled-components";
-import styled from "styled-components";
-import Logo from "../images/vitamed.svg";
+import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
+import { keyframes } from 'styled-components';
+import styled from 'styled-components';
+import Logo from '../images/vitamed.svg';
 
 export default function Startscreen() {
   const redirect = useNavigate();
 
   useEffect(() => {
     const redirectTimer = setTimeout(() => {
-      redirect("/home");
+      redirect('/home');
     }, 3000);
 
     return () => {

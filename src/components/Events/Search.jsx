@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
-import { loadFromLocal } from "../../lib/localStorage";
+import React, { useState, useEffect } from 'react';
+import { loadFromLocal } from '../../lib/localStorage';
 
 export default function App() {
-  const appointments = loadFromLocal("_appointments");
+  const appointments = loadFromLocal('_appointments');
 
-  const [searchTerm, setSearchTerm] = useState("");
+  const [searchTerm, setSearchTerm] = useState('');
 
   const [searchResults, setSearchResults] = useState([]);
 

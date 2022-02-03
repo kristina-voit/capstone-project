@@ -1,21 +1,21 @@
-import { useState } from "react";
-import "../Meditation/styles.css";
+import { useState } from 'react';
+import '../Meditation/styles.css';
 
 function Breathe() {
-  const [text, setText] = useState("Ausatmen");
+  const [text, setText] = useState('Ausatmen');
   const [grow, setGrow] = useState(false);
   const [shrink, setShrink] = useState(true);
   const [count, setCount] = useState(0);
 
   const breathIn = () => {
-    setText("Einatmen");
+    setText('Einatmen');
     setCount(count + 1);
     setGrow(true);
     setShrink(false);
   };
 
   const breathOut = () => {
-    setText("Ausatmen");
+    setText('Ausatmen');
     setCount(count - 1);
     setGrow(false);
     setShrink(true);
@@ -24,8 +24,8 @@ function Breathe() {
   return (
     <div id="Universal">
       <div
-        className={`moon-container ${grow ? "grow" : ""} ${
-          shrink ? "shrink" : ""
+        className={`moon-container ${grow ? 'grow' : ''} ${
+          shrink ? 'shrink' : ''
         }`}
         id="animation"
         onAnimationIteration={count === 1 ? breathOut : breathIn}

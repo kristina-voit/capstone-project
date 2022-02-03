@@ -1,12 +1,12 @@
-import React, { useReducer } from "react";
-import { v4 as uuidv4 } from "uuid";
-import styled from "styled-components";
+import React, { useReducer } from 'react';
+import { v4 as uuidv4 } from 'uuid';
+import styled from 'styled-components';
 
 function NewTodoForm({ task, createTodo }) {
   const [userInput, setUserInput] = useReducer(
     (state, newState) => ({ ...state, ...newState }),
     {
-      task: "",
+      task: '',
     }
   );
 
@@ -18,7 +18,7 @@ function NewTodoForm({ task, createTodo }) {
     evt.preventDefault();
     const newTodo = { id: uuidv4(), task: userInput.task };
     createTodo(newTodo);
-    setUserInput({ task: "" });
+    setUserInput({ task: '' });
   };
 
   return (
@@ -47,7 +47,7 @@ const NewTodoFormButton = styled.button`
   border: solid 2px #509b9b;
   color: #509b9b;
   cursor: pointer;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: bold;
   height: 2rem;
   margin-left: 5px;
@@ -59,7 +59,7 @@ const NewTodoFormInput = styled.input`
   background: #f7f1f1;
   border: none;
   flex-grow: 1;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: initial;
   height: 2rem;
   padding: 0 1.5em;
